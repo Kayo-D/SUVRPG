@@ -1,0 +1,8 @@
+    Tiles
+
+0 = Wall
+1 = Floor
+2 = Exit
+3 = Entrance
+4 = Loot
+5 = Enemy

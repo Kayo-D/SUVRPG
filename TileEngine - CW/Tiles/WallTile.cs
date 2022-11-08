@@ -1,10 +1,10 @@
 public class WallTile : Tile
 {
-    public override int ID
+    public override int TileID
     {
         get
         {
-            return _ID = 0;
+            return _TileID = 0;
         }
     }
     public override bool canPlayerStandOnTile
