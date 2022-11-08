@@ -1,12 +1,32 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+using static System.Console;
 
 namespace SUVRPG
 {
     public class CombatUI
     {
-        
+        public void StartFight()
+        {
+            WriteLine("Fight is starting!");
+        }
+
+        public void CombatScreen()
+        {
+
+        }
+
+        public void DisplayHealth()
+        {
+            
+        }
+
+        public void YouWinScreen()
+        {
+
+        }
+
+        public void YouLoseScreen()
+        {
+
+        }
     }
 }
