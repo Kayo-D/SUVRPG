@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace SUVRPG
 {
-    public class Enemies
+    public class Enemy
     {
         public string enemyName = "";
         
