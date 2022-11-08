@@ -14,7 +14,7 @@ namespace SUVRPG
 
             Console.WriteLine("CHARACTER CREATION\n");
             Console.WriteLine("The name of your character: ");
-            string? name = Console.ReadLine();
+            string name = Console.ReadLine();
             
             while (true)
             {
@@ -33,9 +33,9 @@ namespace SUVRPG
             Console.WriteLine("- ORC");
             Console.WriteLine("- ELF");
             Console.WriteLine("- DWARF");
-            string? race = Console.ReadLine();
+            string race = Console.ReadLine();
 
-            string? characterDescription = Console.ReadLine();
+            string characterDescription = Console.ReadLine();
             character.CharacterInfo(name, race, characterDescription);
         }
     }

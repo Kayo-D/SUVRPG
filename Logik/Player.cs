@@ -7,9 +7,9 @@ namespace SUVRPG
 {
     public class Player
     {
-        string? name { get; set; }
-        string? race { get; set; }
-        string? characterDescription { get; set; }    
+        string name { get; set; }
+        string race { get; set; }
+        string characterDescription { get; set; }    
 
         public void CharacterInfo(string name, string race, string characterDescription)
         {
