@@ -1,0 +1,15 @@
+C:\Users\Simon\Documents\SUVNET\SUVRPG\bin\Debug\net6.0\SUVRPG.exe
+C:\Users\Simon\Documents\SUVNET\SUVRPG\bin\Debug\net6.0\SUVRPG.deps.json
+C:\Users\Simon\Documents\SUVNET\SUVRPG\bin\Debug\net6.0\SUVRPG.runtimeconfig.json
+C:\Users\Simon\Documents\SUVNET\SUVRPG\bin\Debug\net6.0\SUVRPG.dll
+C:\Users\Simon\Documents\SUVNET\SUVRPG\bin\Debug\net6.0\SUVRPG.pdb
+C:\Users\Simon\Documents\SUVNET\SUVRPG\obj\Debug\net6.0\SUVRPG.csproj.AssemblyReference.cache
+C:\Users\Simon\Documents\SUVNET\SUVRPG\obj\Debug\net6.0\SUVRPG.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Simon\Documents\SUVNET\SUVRPG\obj\Debug\net6.0\SUVRPG.AssemblyInfoInputs.cache
+C:\Users\Simon\Documents\SUVNET\SUVRPG\obj\Debug\net6.0\SUVRPG.AssemblyInfo.cs
+C:\Users\Simon\Documents\SUVNET\SUVRPG\obj\Debug\net6.0\SUVRPG.csproj.CoreCompileInputs.cache
+C:\Users\Simon\Documents\SUVNET\SUVRPG\obj\Debug\net6.0\SUVRPG.dll
+C:\Users\Simon\Documents\SUVNET\SUVRPG\obj\Debug\net6.0\refint\SUVRPG.dll
+C:\Users\Simon\Documents\SUVNET\SUVRPG\obj\Debug\net6.0\SUVRPG.pdb
+C:\Users\Simon\Documents\SUVNET\SUVRPG\obj\Debug\net6.0\SUVRPG.genruntimeconfig.cache
+C:\Users\Simon\Documents\SUVNET\SUVRPG\obj\Debug\net6.0\ref\SUVRPG.dll
