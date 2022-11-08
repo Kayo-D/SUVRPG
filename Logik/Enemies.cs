@@ -7,6 +7,7 @@ namespace SUVRPG
 {
     public class Enemies
     {
+        public string enemyName = "";
         
     }
 }
