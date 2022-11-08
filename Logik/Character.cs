@@ -7,6 +7,8 @@ namespace SUVRPG
 {
     public class Character
     {
-        
+        string? name;
+        string? race;
+        string? characterDescription;
     }
 }
