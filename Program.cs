@@ -25,11 +25,8 @@
                 
                 case 2:
                     break;
-                
-                case 3:
-                    break;
 
-                case 4:
+                case 3:
                     Environment.Exit(0);
                     break;
             }

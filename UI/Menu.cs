@@ -6,18 +6,18 @@ namespace SUVRPG
     {
         private int SelectedIndex;
         private string[] Options;
-        private string Prompt;
+        private string Title;
 
-        public Menu(string prompt, string[] options)
+        public Menu(string title, string[] options)
         {
-            Prompt = prompt;
+            Title = title;
             Options = options;
             SelectedIndex = 0;
         }
 
         private void DisplayOptions()
         {
-            WriteLine(Prompt);
+            WriteLine(Title);
             for (int i = 0; i < Options.Length; i++)
             {
                 string currentOption = Options[i];
