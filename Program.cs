@@ -4,7 +4,7 @@
     {
         private static void Main(string[] args)
         {
-            string title = "Welcome to SUVRPG!";
+            string title = "Welcome to SUVRPG!\n";
             
             string[] options = { "NEW GAME", 
             "LOAD GAME", 
