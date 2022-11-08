@@ -9,6 +9,7 @@ namespace SUVRPG
     {
         public static void characterCreation()
         {
+            ConsoleKey menuKeys = ConsoleKey.NoName;
             Console.Clear();
             Player character = new Player();
 
@@ -33,10 +34,20 @@ namespace SUVRPG
             Console.WriteLine("- ORC");
             Console.WriteLine("- ELF");
             Console.WriteLine("- DWARF");
-            string? race = Console.ReadLine();
+            menuKeys = Console.ReadKey(true).Key;
+            
+
+                switch (menuKeys)
+                {
+                    case ConsoleKey.D1:
+                    break;
+
+                    default:
+                    break;
+                }
 
             string? characterDescription = Console.ReadLine();
-            character.CharacterInfo(name, race, characterDescription);
+            //character.CharacterInfo(name, race, characterDescription);
         }
     }
 }
