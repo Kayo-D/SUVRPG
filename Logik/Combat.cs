@@ -17,6 +17,11 @@ namespace SUVRPG
 
         }
 
+        public void CombatOver()
+        {
+            
+        }
+
         
     }
 }
