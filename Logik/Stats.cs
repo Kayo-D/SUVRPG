@@ -7,6 +7,8 @@ namespace SUVRPG
 {
     public class Stats
     {
-        
+        int hitpoints = 20;
+        int armor = 0;
+        int attackdmg = 3;
     }
 }
