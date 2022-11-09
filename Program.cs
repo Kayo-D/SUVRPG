@@ -8,7 +8,7 @@
             //Testa inom dessa
 
             //Testa inom dessa
-            //Gör detta till en metod i UI. Kalla på den direkt här istället MVH Christian
+            //Gör detta till en metod i MenuUI. Kalla på den direkt här istället MVH Christian
             string title = "Welcome to SUVRPG!\n";
             
             string[] options = { "NEW GAME", 
