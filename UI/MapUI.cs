@@ -18,21 +18,38 @@ public class MapUI
                 }
                 if (tileEngine.SelectTile(levelData, i, j, mapWidth) == new FloorTile().TileID)
                 {
-                    if (currentPlayerPosY == i && currentPlayerPosX == j)
-                    {
-                        BackgroundColor = ConsoleColor.White;
-                        Write("🚶");
-                    }
-                    else
-                    {
-                        BackgroundColor = ConsoleColor.White;
-                        Write("  ");
-                    }
+                    BackgroundColor = ConsoleColor.White;
+                    Write("  ");
                 }
-                if (tileEngine.SelectTile(levelData, i, j, mapWidth) == new ExitTile().TileID)
+                if (tileEngine.SelectTile(levelData, i, j, mapWidth) == new DoorTile().TileID)
+                {
+                    BackgroundColor = ConsoleColor.White;
+                    Write("🚪");
+                }
+                if (tileEngine.SelectTile(levelData, i, j, mapWidth) == new EntryTile().TileID)
                 {
                     BackgroundColor = ConsoleColor.Blue;
                     Write("🚪");
+                }
+                if (tileEngine.SelectTile(levelData, i, j, mapWidth) == new ExitTile().TileID)
+                {
+                    BackgroundColor = ConsoleColor.Green;
+                    Write("🚪");
+                }
+                if (tileEngine.SelectTile(levelData, i, j, mapWidth) == new EnemyTile().TileID)
+                {
+                    BackgroundColor = ConsoleColor.Red;
+                    Write("☠ ");
+                }
+                if (tileEngine.SelectTile(levelData, i, j, mapWidth) == new LootTile().TileID)
+                {
+                    BackgroundColor = ConsoleColor.Yellow;
+                    Write("💸");
+                }
+                if (currentPlayerPosY == i && currentPlayerPosX == j)
+                {
+                    BackgroundColor = ConsoleColor.White;
+                    Write("\b\b🚶");
                 }
             }
             WriteLine("");

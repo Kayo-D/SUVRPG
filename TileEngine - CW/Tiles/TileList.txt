@@ -1,0 +1,26 @@
+Tiles
+ID  Name        Color       Icon
+0 = Wall        DarkGray    Null
+1 = Floor       White       Null
+2 = Door        White       🚪
+3 = EntryTile   Blue        🚪
+4 = Loot        Yellow      💸
+5 = Enemy       DarkRed     ☠
+6 = ExitTile    Green       🚪
+
+Player 🚶
+
+//TestKod
+TileEngine engine = new TileEngine();
+MapUI mapui = new MapUI();
+LevelManager manager = new LevelManager();
+ConsoleKeyInfo keyInput = new ConsoleKeyInfo();
+manager.SelectLevel(1);
+engine.SpawnPlayer(manager.playerStartPosX, manager.playerStartPosY);
+mapui.UILevelUpdate(manager.levelData, manager.mapHeight, manager.mapWidth, engine.currentPlayerPosX, engine.currentPlayerPosY);
+while (true)
+{
+    keyInput = Console.ReadKey();
+    engine.PlayerMovement(keyInput, manager.levelData, manager.mapWidth);
+    mapui.UILevelUpdate(manager.levelData, manager.mapHeight, manager.mapWidth, engine.currentPlayerPosX, engine.currentPlayerPosY);
+}

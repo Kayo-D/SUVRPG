@@ -1,4 +1,4 @@
-public class Loot : Tile
+public class LootTile : Tile
 {
     public override int TileID
     {
