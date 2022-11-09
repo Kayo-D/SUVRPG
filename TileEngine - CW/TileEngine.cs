@@ -40,7 +40,7 @@ public class TileEngine
                     if (y == selectedTileYPos && x == selectedTileXPos)
                     {
                         tempArray1[x] = newTileID;
-                        xAxis = string.Join(",",tempArray1);
+                        xAxis = string.Join(",", tempArray1);
                         levelData[y, 0] = xAxis;
                         return levelData;
                     }
@@ -60,13 +60,22 @@ public class TileEngine
             return false;
         }
     }
-    public void TileEvents(string[,] levelData, int currentPlayerPosY, int currentPlayerPosX, int mapWidth)
+    public int TileEvents(string[,] levelData, int currentPlayerPosY, int currentPlayerPosX, int mapWidth, int currentLevel)
     {
         int currenTileID = SelectTile(levelData, currentPlayerPosY, currentPlayerPosX, mapWidth);
         if (currenTileID == 4 || currenTileID == 5)
         {
             ChangeTileID(levelData, currentPlayerPosY, currentPlayerPosX, mapWidth, "1");
         }
+        if (currenTileID == 6)
+        {
+            if (currentLevel != 3)
+            {
+                currentLevel = currentLevel + 1;
+                return currentLevel;
+            }
+        }
+        return currentLevel;
     }
     public void SpawnPlayer(int playerStartPosX, int playerStartPosY)
     {

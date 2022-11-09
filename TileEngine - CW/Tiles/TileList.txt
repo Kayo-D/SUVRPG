@@ -16,12 +16,19 @@ TileEngine engine = new TileEngine();
             LevelManager manager = new LevelManager();
             ConsoleKeyInfo keyInput = new ConsoleKeyInfo();
             manager.SelectLevel(1);
+            int levelCheck = manager.currentLevel;
             engine.SpawnPlayer(manager.playerStartPosX, manager.playerStartPosY);
             mapui.UILevelUpdate(manager.levelData, manager.mapHeight, manager.mapWidth, engine.currentPlayerPosX, engine.currentPlayerPosY);
             while (true)
             {
                 keyInput = Console.ReadKey();
                 engine.PlayerMovement(keyInput, manager.levelData, manager.mapWidth);
-                engine.TileEvents(manager.levelData,engine.currentPlayerPosY,engine.currentPlayerPosX,manager.mapWidth);
+                levelCheck = engine.TileEvents(manager.levelData,engine.currentPlayerPosY,engine.currentPlayerPosX,manager.mapWidth,manager.currentLevel);
+                if(manager.currentLevel != levelCheck)
+                {
+                    manager.currentLevel = levelCheck;
+                    manager.SelectLevel(manager.currentLevel);
+                    engine.SpawnPlayer(manager.playerStartPosX, manager.playerStartPosY);
+                }
                 mapui.UILevelUpdate(manager.levelData, manager.mapHeight, manager.mapWidth, engine.currentPlayerPosX, engine.currentPlayerPosY);
             }
