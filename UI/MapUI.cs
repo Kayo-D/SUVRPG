@@ -23,7 +23,7 @@ public class MapUI
                 }
                 if (tileEngine.SelectTile(levelData, i, j, mapWidth) == new DoorTile().TileID)
                 {
-                    BackgroundColor = ConsoleColor.White;
+                    BackgroundColor = ConsoleColor.DarkGray;
                     Write("🚪");
                 }
                 if (tileEngine.SelectTile(levelData, i, j, mapWidth) == new EntryTile().TileID)

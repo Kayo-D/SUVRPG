@@ -22,6 +22,6 @@ TileEngine engine = new TileEngine();
             {
                 keyInput = Console.ReadKey();
                 engine.PlayerMovement(keyInput, manager.levelData, manager.mapWidth);
-                engine.TileEvent(manager.levelData,engine.currentPlayerPosY,engine.currentPlayerPosX,manager.mapWidth);
+                engine.TileEvents(manager.levelData,engine.currentPlayerPosY,engine.currentPlayerPosX,manager.mapWidth);
                 mapui.UILevelUpdate(manager.levelData, manager.mapHeight, manager.mapWidth, engine.currentPlayerPosX, engine.currentPlayerPosY);
             }

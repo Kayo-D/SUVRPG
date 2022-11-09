@@ -60,18 +60,10 @@ public class TileEngine
             return false;
         }
     }
-    public bool ShouldWeMovePlayerToNewLevel(int selectedTileID)
-    {
-        if (selectedTileID == 6)
-        {
-            return true;
-        }
-        return false;
-    }
-    public void TileEvent(string[,] levelData, int currentPlayerPosY, int currentPlayerPosX, int mapWidth)
+    public void TileEvents(string[,] levelData, int currentPlayerPosY, int currentPlayerPosX, int mapWidth)
     {
         int currenTileID = SelectTile(levelData, currentPlayerPosY, currentPlayerPosX, mapWidth);
-        if (currenTileID == 4 || currenTileID == 5 || currenTileID == 6)
+        if (currenTileID == 4 || currenTileID == 5)
         {
             ChangeTileID(levelData, currentPlayerPosY, currentPlayerPosX, mapWidth, "1");
         }
