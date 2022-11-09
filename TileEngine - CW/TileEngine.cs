@@ -1,6 +1,5 @@
 public class TileEngine
 {
-    public LevelManager currentLevel = new LevelManager();
     public int currentPlayerPosX;
     public int currentPlayerPosY;
     public int SelectTile(string[,] levelData, int selectedTileYPos, int selectedTileXPos, int mapWidth)
@@ -19,14 +18,7 @@ public class TileEngine
                     if (i == selectedTileYPos && k == selectedTileXPos)
                     {
                         selectedTileID = int.Parse(tempArray1[k]);
-                        if (selectedTileID == 0)
-                        {
-                            return 0;
-                        }
-                        if (selectedTileID == 1)
-                        {
-                            return 1;
-                        }
+                        return selectedTileID;
                     }
                 }
             }
@@ -44,46 +36,50 @@ public class TileEngine
             return false;
         }
     }
+    public bool ShouldWeMovePlayer(int selectedTileID)
+    {
+        if (selectedTileID == 2)
+        {
+            return true;
+        }
+        return false;
+    }
     public void SpawnPlayer(int playerStartPosX, int playerStartPosY)
     {
         currentPlayerPosX = playerStartPosX;
         currentPlayerPosY = playerStartPosY;
     }
-    public void PlayerPositionUpdate(ConsoleKeyInfo keyInput)
+    public void PlayerPositionUpdate(ConsoleKeyInfo keyInput, string[,] currentLevelData)
     {
         int collisionDetector;
         switch (keyInput.Key)
         {
             case ConsoleKey.UpArrow:
                 collisionDetector = currentPlayerPosY - 1;
-                if (CanPlayerStandOnTile(SelectTile(currentLevel.levelData, collisionDetector, currentPlayerPosX, currentLevel.mapWidth)))
+                if (CanPlayerStandOnTile(SelectTile(currentLevelData, collisionDetector, currentPlayerPosX, currentLevelData.Length)))
                 {
                     currentPlayerPosY = currentPlayerPosY - 1;
-                    break;
                 }
                 break;
             case ConsoleKey.LeftArrow:
                 collisionDetector = currentPlayerPosX - 1;
-                if (CanPlayerStandOnTile(SelectTile(currentLevel.levelData, currentPlayerPosY, collisionDetector, currentLevel.mapWidth)))
+                if (CanPlayerStandOnTile(SelectTile(currentLevelData, currentPlayerPosY, collisionDetector, currentLevelData.Length)))
                 {
                     currentPlayerPosX = currentPlayerPosX - 1;
-                    break;
                 }
                 break;
             case ConsoleKey.RightArrow:
                 collisionDetector = currentPlayerPosX + 1;
-                if (CanPlayerStandOnTile(SelectTile(currentLevel.levelData, currentPlayerPosY, collisionDetector, currentLevel.mapWidth)))
+                if (CanPlayerStandOnTile(SelectTile(currentLevelData, currentPlayerPosY, collisionDetector, currentLevelData.Length)))
                 {
                     currentPlayerPosX = currentPlayerPosX + 1;
-                    break;
                 }
                 break;
             case ConsoleKey.DownArrow:
                 collisionDetector = currentPlayerPosY + 1;
-                if (CanPlayerStandOnTile(SelectTile(currentLevel.levelData, collisionDetector, currentPlayerPosX, currentLevel.mapWidth)))
+                if (CanPlayerStandOnTile(SelectTile(currentLevelData, collisionDetector, currentPlayerPosX, currentLevelData.Length)))
                 {
                     currentPlayerPosY = currentPlayerPosY + 1;
-                    break;
                 }
                 break;
             default:
