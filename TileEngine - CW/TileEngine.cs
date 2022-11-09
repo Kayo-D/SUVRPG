@@ -6,24 +6,48 @@ public class TileEngine
     {
         string xAxis;
         int selectedTileID;
-        for (int i = 0; i < levelData.Length; i++)
+        for (int y = 0; y < levelData.Length; y++)
         {
-            xAxis = levelData[i, 0];
+            xAxis = levelData[y, 0];
             for (int j = 0; j < mapWidth; j++)
             {
                 string[] tempArray1 = new string[xAxis.Length];
                 tempArray1 = xAxis.Split(",").ToArray();
-                for (int k = 0; k < tempArray1.Length; k++)
+                for (int x = 0; x < tempArray1.Length; x++)
                 {
-                    if (i == selectedTileYPos && k == selectedTileXPos)
+                    if (y == selectedTileYPos && x == selectedTileXPos)
                     {
-                        selectedTileID = int.Parse(tempArray1[k]);
+                        selectedTileID = int.Parse(tempArray1[x]);
                         return selectedTileID;
                     }
                 }
             }
         }
         return 0;
+    }
+    public string[,] ChangeTileID(string[,] levelData, int selectedTileYPos, int selectedTileXPos, int mapWidth, string newTileID)
+    {
+        string xAxis;
+        for (int y = 0; y < levelData.Length; y++)
+        {
+            xAxis = levelData[y, 0];
+            for (int j = 0; j < mapWidth; j++)
+            {
+                string[] tempArray1 = new string[xAxis.Length];
+                tempArray1 = xAxis.Split(",").ToArray();
+                for (int x = 0; x < tempArray1.Length; x++)
+                {
+                    if (y == selectedTileYPos && x == selectedTileXPos)
+                    {
+                        tempArray1[x] = newTileID;
+                        xAxis = string.Join(",",tempArray1);
+                        levelData[y, 0] = xAxis;
+                        return levelData;
+                    }
+                }
+            }
+        }
+        return levelData;
     }
     public bool CanPlayerStandOnTile(int selectedTileID)
     {
@@ -36,13 +60,21 @@ public class TileEngine
             return false;
         }
     }
-    public bool ShouldWeMovePlayer(int selectedTileID)
+    public bool ShouldWeMovePlayerToNewLevel(int selectedTileID)
     {
-        if (selectedTileID == 2)
+        if (selectedTileID == 6)
         {
             return true;
         }
         return false;
+    }
+    public void TileEvent(string[,] levelData, int currentPlayerPosY, int currentPlayerPosX, int mapWidth)
+    {
+        int currenTileID = SelectTile(levelData, currentPlayerPosY, currentPlayerPosX, mapWidth);
+        if (currenTileID == 4 || currenTileID == 5 || currenTileID == 6)
+        {
+            ChangeTileID(levelData, currentPlayerPosY, currentPlayerPosX, mapWidth, "1");
+        }
     }
     public void SpawnPlayer(int playerStartPosX, int playerStartPosY)
     {
