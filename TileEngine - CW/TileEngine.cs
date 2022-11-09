@@ -27,7 +27,7 @@ public class TileEngine
     }
     public bool CanPlayerStandOnTile(int selectedTileID)
     {
-        if (selectedTileID == 1)
+        if (selectedTileID == 1 || selectedTileID == 2)
         {
             return true;
         }
@@ -49,35 +49,35 @@ public class TileEngine
         currentPlayerPosX = playerStartPosX;
         currentPlayerPosY = playerStartPosY;
     }
-    public void PlayerPositionUpdate(ConsoleKeyInfo keyInput, string[,] currentLevelData)
+    public void PlayerMovement(ConsoleKeyInfo keyInput, string[,] currentLevelData, int mapWidth)
     {
         int collisionDetector;
         switch (keyInput.Key)
         {
             case ConsoleKey.UpArrow:
                 collisionDetector = currentPlayerPosY - 1;
-                if (CanPlayerStandOnTile(SelectTile(currentLevelData, collisionDetector, currentPlayerPosX, currentLevelData.Length)))
+                if (CanPlayerStandOnTile(SelectTile(currentLevelData, collisionDetector, currentPlayerPosX, mapWidth)))
                 {
                     currentPlayerPosY = currentPlayerPosY - 1;
                 }
                 break;
             case ConsoleKey.LeftArrow:
                 collisionDetector = currentPlayerPosX - 1;
-                if (CanPlayerStandOnTile(SelectTile(currentLevelData, currentPlayerPosY, collisionDetector, currentLevelData.Length)))
+                if (CanPlayerStandOnTile(SelectTile(currentLevelData, currentPlayerPosY, collisionDetector, mapWidth)))
                 {
                     currentPlayerPosX = currentPlayerPosX - 1;
                 }
                 break;
             case ConsoleKey.RightArrow:
                 collisionDetector = currentPlayerPosX + 1;
-                if (CanPlayerStandOnTile(SelectTile(currentLevelData, currentPlayerPosY, collisionDetector, currentLevelData.Length)))
+                if (CanPlayerStandOnTile(SelectTile(currentLevelData, currentPlayerPosY, collisionDetector, mapWidth)))
                 {
                     currentPlayerPosX = currentPlayerPosX + 1;
                 }
                 break;
             case ConsoleKey.DownArrow:
                 collisionDetector = currentPlayerPosY + 1;
-                if (CanPlayerStandOnTile(SelectTile(currentLevelData, collisionDetector, currentPlayerPosX, currentLevelData.Length)))
+                if (CanPlayerStandOnTile(SelectTile(currentLevelData, collisionDetector, currentPlayerPosX, mapWidth)))
                 {
                     currentPlayerPosY = currentPlayerPosY + 1;
                 }

@@ -9,7 +9,12 @@ public class LevelManager
     {
         if(levelID == 1)
         {
-
+            Level1 lvl1 = new Level1();
+            levelData = lvl1.mapData;
+            playerStartPosX = lvl1.playerStartPosX;
+            playerStartPosY = lvl1.playerStartPosY;
+            mapWidth = lvl1.mapWidth;
+            mapHeight = lvl1.mapHeight;
         }
         if(levelID == 2)
         {

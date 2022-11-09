@@ -28,3 +28,18 @@ C:\Users\belle\Documents\SUVNET22\C#\Betygsatta inlämningar\SUVRPG\SUVRPG\obj\D
 C:\Users\belle\Documents\SUVNET22\C#\Betygsatta inlämningar\SUVRPG\SUVRPG\obj\Debug\net6.0\ref\SUVRPG.dll
 C:\Users\belle\Documents\SUVNET22\C#\Betygsatta inlämningar\SUVRPG\SUVRPG\obj\Debug\net6.0\SUVRPG.pdb
 C:\Users\belle\Documents\SUVNET22\C#\Betygsatta inlämningar\SUVRPG\SUVRPG\obj\Debug\net6.0\SUVRPG.genruntimeconfig.cache
+C:\Users\cw94\Desktop\Skolarbeten\SUVRPG\bin\Debug\net6.0\SUVRPG.exe
+C:\Users\cw94\Desktop\Skolarbeten\SUVRPG\bin\Debug\net6.0\SUVRPG.deps.json
+C:\Users\cw94\Desktop\Skolarbeten\SUVRPG\bin\Debug\net6.0\SUVRPG.runtimeconfig.json
+C:\Users\cw94\Desktop\Skolarbeten\SUVRPG\bin\Debug\net6.0\SUVRPG.dll
+C:\Users\cw94\Desktop\Skolarbeten\SUVRPG\bin\Debug\net6.0\SUVRPG.pdb
+C:\Users\cw94\Desktop\Skolarbeten\SUVRPG\obj\Debug\net6.0\SUVRPG.csproj.AssemblyReference.cache
+C:\Users\cw94\Desktop\Skolarbeten\SUVRPG\obj\Debug\net6.0\SUVRPG.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\cw94\Desktop\Skolarbeten\SUVRPG\obj\Debug\net6.0\SUVRPG.AssemblyInfoInputs.cache
+C:\Users\cw94\Desktop\Skolarbeten\SUVRPG\obj\Debug\net6.0\SUVRPG.AssemblyInfo.cs
+C:\Users\cw94\Desktop\Skolarbeten\SUVRPG\obj\Debug\net6.0\SUVRPG.csproj.CoreCompileInputs.cache
+C:\Users\cw94\Desktop\Skolarbeten\SUVRPG\obj\Debug\net6.0\SUVRPG.dll
+C:\Users\cw94\Desktop\Skolarbeten\SUVRPG\obj\Debug\net6.0\refint\SUVRPG.dll
+C:\Users\cw94\Desktop\Skolarbeten\SUVRPG\obj\Debug\net6.0\SUVRPG.pdb
+C:\Users\cw94\Desktop\Skolarbeten\SUVRPG\obj\Debug\net6.0\SUVRPG.genruntimeconfig.cache
+C:\Users\cw94\Desktop\Skolarbeten\SUVRPG\obj\Debug\net6.0\ref\SUVRPG.dll

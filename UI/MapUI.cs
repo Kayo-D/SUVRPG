@@ -3,21 +3,22 @@ public class MapUI
 {
     TileEngine tileEngine = new TileEngine();
     LevelManager manager = new LevelManager();
-    public void UILevelUpdate()
+    public void UILevelUpdate(string[,] levelData, int mapHeight, int mapWidth, int currentPlayerPosX, int currentPlayerPosY)
     {
+        Console.OutputEncoding = System.Text.Encoding.UTF8;
         Clear();
-        for (int i = 0; i < manager.mapHeight; i++)
+        for (int i = 0; i < mapHeight; i++)
         {
-            for (int j = 0; j < manager.mapWidth; j++)
+            for (int j = 0; j < mapWidth; j++)
             {
-                if (tileEngine.SelectTile(manager.levelData, i, j, manager.mapWidth) == new WallTile().TileID)
+                if (tileEngine.SelectTile(levelData, i, j, mapWidth) == new WallTile().TileID)
                 {
                     BackgroundColor = ConsoleColor.DarkGray;
                     Write("  ");
                 }
-                if (tileEngine.SelectTile(manager.levelData, i, j, manager.mapWidth) == new FloorTile().TileID)
+                if (tileEngine.SelectTile(levelData, i, j, mapWidth) == new FloorTile().TileID)
                 {
-                    if (tileEngine.currentPlayerPosY == i && tileEngine.currentPlayerPosX == j)
+                    if (currentPlayerPosY == i && currentPlayerPosX == j)
                     {
                         BackgroundColor = ConsoleColor.White;
                         Write("🚶");
@@ -28,7 +29,7 @@ public class MapUI
                         Write("  ");
                     }
                 }
-                if (tileEngine.SelectTile(manager.levelData, i, j, manager.mapWidth) == new ExitTile().TileID)
+                if (tileEngine.SelectTile(levelData, i, j, mapWidth) == new ExitTile().TileID)
                 {
                     BackgroundColor = ConsoleColor.Blue;
                     Write("🚪");
