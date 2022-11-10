@@ -6,6 +6,7 @@ public class MapUI
     public void UILevelUpdate(string[,] levelData, int mapHeight, int mapWidth, int currentPlayerPosX, int currentPlayerPosY)
     {
         Console.OutputEncoding = System.Text.Encoding.UTF8;
+        //Kommer behöva flytta denna clear ifall vi vill ha text ovanför kartan.
         Clear();
         for (int i = 0; i < mapHeight; i++)
         {
@@ -55,5 +56,9 @@ public class MapUI
             WriteLine("");
         }
         BackgroundColor = ConsoleColor.Black;
+    }
+    public void DrawShopButton()
+    {
+        WriteLine("Press S to enter the shop");
     }
 }

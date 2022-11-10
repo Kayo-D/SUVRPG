@@ -14,12 +14,17 @@ Player 🚶
 //TileEngine
 TileEngine engine = new TileEngine();
             MapUI mapui = new MapUI();
+            Shop shop = new Shop();
             LevelManager manager = new LevelManager();
             ConsoleKeyInfo keyInput = new ConsoleKeyInfo();
             manager.SelectLevel(1);
             int levelCheck = manager.currentLevel;
+            int currentPlayerGold = 50;
+            int currentPlayerHP = 20;
+            int maxPlayerHP = 50;
             engine.SpawnPlayer(manager.playerStartPosX, manager.playerStartPosY);
             mapui.UILevelUpdate(manager.levelData, manager.mapHeight, manager.mapWidth, engine.currentPlayerPosX, engine.currentPlayerPosY);
+            mapui.DrawShopButton();
             while (true)
             {
                 keyInput = Console.ReadKey();
@@ -31,9 +36,10 @@ TileEngine engine = new TileEngine();
                     manager.SelectLevel(manager.currentLevel);
                     engine.SpawnPlayer(manager.playerStartPosX, manager.playerStartPosY);
                 }
+                if(keyInput.Key == ConsoleKey.S)
+                {
+                    shop.StartShop(currentPlayerGold,currentPlayerHP,maxPlayerHP);
+                }
                 mapui.UILevelUpdate(manager.levelData, manager.mapHeight, manager.mapWidth, engine.currentPlayerPosX, engine.currentPlayerPosY);
+                mapui.DrawShopButton();
             }
-
-//Shop
-Shop shop = new Shop();
-            shop.StartShop(50, 20, 50);

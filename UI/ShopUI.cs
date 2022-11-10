@@ -8,6 +8,18 @@ public class ShopUI
         WriteLine("Current HP : " + currentPlayerHP + "/" + maxPlayerHP);
         WriteLine("Press B to buy a healing potion for 25 gold");
         WriteLine("The potion will restore 20HP");
-        WriteLine("Press ESC to go back");
+        WriteLine("Press Q to go back");
+    }
+    public void DrawPlayerCantAffordUI()
+    {
+        Clear();
+        WriteLine("You do not have the gold for this purchase");
+        WriteLine("Press any key to return");
+    }
+    public void DrawPlayerPurchaseUI(string itemBought)
+    {
+        Clear();
+        WriteLine("Succesfully purchased a " + itemBought);
+        WriteLine("Press any key to return");
     }
 }
