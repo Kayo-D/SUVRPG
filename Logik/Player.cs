@@ -5,13 +5,9 @@ using System.Threading.Tasks;
 
 namespace SUVRPG
 {
-    public class Player
-    {
-        string name { get; set; }
+    public class Player : Character
+    {   //Behöver ha med hur mycket guld och hälsa spelaren har samt max hälsa    
         string race { get; set; }
-        string characterDescription { get; set; }
-        //Behöver ha med hur mycket guld och hälsa spelaren har samt max hälsa    
-
         public void CharacterInfo(string name, string race, string characterDescription)
         {
 
