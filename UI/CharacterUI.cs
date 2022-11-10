@@ -36,6 +36,36 @@ namespace SUVRPG
             Console.WriteLine("4# DWARF");
             string race = Console.ReadLine();
 
+            switch (menuKeys)
+            {
+                case ConsoleKey.D1:
+                Console.Clear();
+                Console.WriteLine("You chose... HUMAN! Excellent choice.");
+                Console.WriteLine("Human: Well met!");
+                break;
+
+                case ConsoleKey.D2:
+                Console.Clear();
+                Console.WriteLine("You chose... ORC! I guess that will do.");
+                Console.WriteLine("Orc: Strength and honor!");
+                break;
+
+                case ConsoleKey.D3:
+                Console.Clear();
+                Console.WriteLine("You chose... ELF! I guess you know something about something.");
+                Console.WriteLine("Elf: Bal'a dash, malanore.");
+                break;
+
+                case ConsoleKey.D4:
+                Console.Clear();
+                Console.WriteLine("You chose... DWARF! I guess you feel short and spicy today!");
+                Console.WriteLine("Dwarf: Great tae meet ya.");
+                break;
+
+                default:
+                break;
+            }
+
             Console.WriteLine("ENTER CHARACHTER ATTRIBUTES:\n ");
             string characterDescription = Console.ReadLine();
             character.CharacterInfo(name, race, characterDescription);
