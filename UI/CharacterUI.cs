@@ -9,6 +9,7 @@ namespace SUVRPG
     {
         public static void characterCreation()
         {
+            ConsoleKey menuKeys = ConsoleKey.NoName;
             Console.Clear();
             Player character = new Player();
 
