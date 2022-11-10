@@ -9,7 +9,8 @@ namespace SUVRPG
     {
         string name { get; set; }
         string race { get; set; }
-        string characterDescription { get; set; }    
+        string characterDescription { get; set; }
+        //Behöver ha med hur mycket guld och hälsa spelaren har samt max hälsa    
 
         public void CharacterInfo(string name, string race, string characterDescription)
         {
