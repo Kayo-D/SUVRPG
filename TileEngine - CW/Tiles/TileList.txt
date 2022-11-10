@@ -11,6 +11,7 @@ ID  Name        Color       Icon
 Player 🚶
 
 //TestKod
+//TileEngine
 TileEngine engine = new TileEngine();
             MapUI mapui = new MapUI();
             LevelManager manager = new LevelManager();
@@ -32,3 +33,7 @@ TileEngine engine = new TileEngine();
                 }
                 mapui.UILevelUpdate(manager.levelData, manager.mapHeight, manager.mapWidth, engine.currentPlayerPosX, engine.currentPlayerPosY);
             }
+
+//Shop
+Shop shop = new Shop();
+            shop.StartShop(50, 20, 50);
