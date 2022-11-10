@@ -1,10 +1,10 @@
-public class ExitTile : Tile
+public class DoorTile : Tile
 {
     public override int TileID
     {
         get
         {
-            return _TileID = 6;
+            return _TileID = 2;
         }
     }
     public override bool canPlayerStandOnTile

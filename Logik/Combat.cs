@@ -2,6 +2,11 @@ namespace SUVRPG
 {
     public class Combat
     {
+        public void CalculateSpeed()
+        {
+            // If player.Speed >= enemy.Speed ?
+        }
+        
         public void Attack()
         {
 
@@ -17,9 +22,17 @@ namespace SUVRPG
 
         }
 
-        public void CombatOver()
+        public void EndofCOmbat()
         {
-            
+
+        }
+
+        public void IsCharacterDead()
+        {
+        // if (hero.health <= 0)
+        // {
+        //     CombatUI.YouLose();
+        // }
         }
 
         
