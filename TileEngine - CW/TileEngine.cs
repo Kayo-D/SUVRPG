@@ -1,5 +1,6 @@
 public class TileEngine
 {
+    TileEventManager tileEventManager = new();
     public int currentPlayerPosX;
     public int currentPlayerPosY;
     public int SelectTile(string[,] levelData, int selectedTileYPos, int selectedTileXPos, int mapWidth)
@@ -60,22 +61,24 @@ public class TileEngine
             return false;
         }
     }
-    public int TileEvents(string[,] levelData, int currentPlayerPosY, int currentPlayerPosX, int mapWidth, int currentLevel)
+    //Glöm inte att byta MapUI till Character
+    public LevelManager TileEvents(LevelManager manager, TileEngine engine, MapUI mapUI)
     {
-        int currenTileID = SelectTile(levelData, currentPlayerPosY, currentPlayerPosX, mapWidth);
-        if (currenTileID == 4 || currenTileID == 5)
+        int currenTileID = SelectTile(manager.levelData, currentPlayerPosY, currentPlayerPosX, manager.mapWidth);
+        if (currenTileID == 4)
         {
-            ChangeTileID(levelData, currentPlayerPosY, currentPlayerPosX, mapWidth, "1");
+            tileEventManager.LootTileEvent(manager, engine, mapUI);
+        }
+        if (currenTileID == 5)
+        {
+            tileEventManager.EnemyTileEvent(manager, engine, mapUI);
         }
         if (currenTileID == 6)
         {
-            if (currentLevel != 3)
-            {
-                currentLevel = currentLevel + 1;
-                return currentLevel;
-            }
+            manager.currentLevel = tileEventManager.ExitTileEvent(manager.currentLevel);
+            return manager;
         }
-        return currentLevel;
+        return manager;
     }
     public void SpawnPlayer(int playerStartPosX, int playerStartPosY)
     {

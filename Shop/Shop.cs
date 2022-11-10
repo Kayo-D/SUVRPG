@@ -2,8 +2,9 @@ public class Shop
 {
     ShopUI UI = new ShopUI();
     ConsoleKeyInfo keyInput;
-    //Skicka in Player class här istället, skicka tillbaka player class när man ska tillbaka till spelet
-    public void StartShop(int currentPlayerGold, int currentPlayerHP, int maxPlayerHP)
+    //Skicka in Player class här istället, skicka tillbaka player class när man ska tillbaka till spelet.
+    //Temporärt skickar jag tillbaka gold så jag kan hantera loot
+    public int StartShop(int currentPlayerGold, int currentPlayerHP, int maxPlayerHP)
     {
         while (true)
         {
@@ -27,7 +28,7 @@ public class Shop
             if (keyInput.Key == ConsoleKey.Q)
             {
                 //Skicka tillbaka Player class här med ändringarna gjorda
-                return;
+                return currentPlayerGold;
             }
         }
     }

@@ -3,6 +3,10 @@ public class MapUI
 {
     TileEngine tileEngine = new TileEngine();
     LevelManager manager = new LevelManager();
+    //Ta detta ifrån Player class sen
+    public int currentPlayerGold;
+    public int currentPlayerHP;
+    public int maxPlayerHP;
     public void UILevelUpdate(string[,] levelData, int mapHeight, int mapWidth, int currentPlayerPosX, int currentPlayerPosY)
     {
         Console.OutputEncoding = System.Text.Encoding.UTF8;
@@ -56,9 +60,16 @@ public class MapUI
             WriteLine("");
         }
         BackgroundColor = ConsoleColor.Black;
+        WriteLine("");
+        DrawShopButton();
+        DrawCharacterInfo();
     }
     public void DrawShopButton()
     {
         WriteLine("Press S to enter the shop");
+    }
+    public void DrawCharacterInfo()
+    {
+        WriteLine("You have : " +  currentPlayerGold + " gold.");
     }
 }
