@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace SUVRPG
 {
-    public class CreateACharacterUI
+    public class CharacterUI
     {
         public static void characterCreation()
         {
