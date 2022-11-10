@@ -30,12 +30,13 @@ namespace SUVRPG
                 }
             }
             Console.WriteLine("PLEASE ENTER YOUR CHOICE OF CHARACTER RACE:\n");
-            Console.WriteLine("- HUMAN");
-            Console.WriteLine("- ORC");
-            Console.WriteLine("- ELF");
-            Console.WriteLine("- DWARF");
+            Console.WriteLine("1# HUMAN");
+            Console.WriteLine("2# ORC");
+            Console.WriteLine("3# ELF");
+            Console.WriteLine("4# DWARF");
             string race = Console.ReadLine();
 
+            Console.WriteLine("ENTER CHARACHTER ATTRIBUTES:\n ");
             string characterDescription = Console.ReadLine();
             character.CharacterInfo(name, race, characterDescription);
         }
