@@ -3,7 +3,9 @@ public class TileEventManager
     LootHandler loot = new();
     public void EnemyTileEvent(LevelManager manager, TileEngine engine, Player player)
     {
+        SUVRPG.Combat combat = new();
         engine.ChangeTileID(manager.levelData, engine.currentPlayerPosY, engine.currentPlayerPosX, manager.mapWidth, "1");
+        //player = combat.StartCombat(player);
     }
     public int ExitTileEvent(int currentLevel)
     {

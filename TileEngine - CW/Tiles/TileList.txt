@@ -14,7 +14,7 @@ Player 🚶
 GameMechanics game = new GameMechanics();
             game.StartGameTest();
 
-//Isabell
+//TestKod Isabell
 CharacterUI test = new();
             Player testplayer = test.characterCreation();
             Console.WriteLine(testplayer.name + " " + testplayer.race + " " + testplayer.characterDescription);
