@@ -10,6 +10,12 @@ ID  Name        Color       Icon
 
 Player 🚶
 
-//TestKod
+//TestKod Christian
 GameMechanics game = new GameMechanics();
             game.StartGameTest();
+
+//Isabell
+CharacterUI test = new();
+            Player testplayer = test.characterCreation();
+            Console.WriteLine(testplayer.name + " " + testplayer.race + " " + testplayer.characterDescription);
+            Console.ReadLine();
