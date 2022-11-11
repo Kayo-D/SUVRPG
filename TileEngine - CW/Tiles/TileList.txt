@@ -11,34 +11,5 @@ ID  Name        Color       Icon
 Player 🚶
 
 //TestKod
-//TileEngine
-TileEngine engine = new TileEngine();
-            MapUI mapUI = new MapUI();
-            Shop shop = new Shop();
-            LevelManager manager = new LevelManager();
-            ConsoleKeyInfo keyInput = new ConsoleKeyInfo();
-            manager.SelectLevel(1);
-            int levelCheck = manager.currentLevel;
-            //Ta detta ifrån Player classen sen
-            mapUI.currentPlayerGold = 50;
-            mapUI.currentPlayerHP = 20;
-            mapUI.maxPlayerHP = 50;
-            engine.SpawnPlayer(manager.playerStartPosX, manager.playerStartPosY);
-            mapUI.UILevelUpdate(manager.levelData, manager.mapHeight, manager.mapWidth, engine.currentPlayerPosX, engine.currentPlayerPosY);
-            while (true)
-            {
-                keyInput = Console.ReadKey();
-                engine.PlayerMovement(keyInput, manager.levelData, manager.mapWidth);
-                engine.TileEvents(manager, engine, mapUI);
-                if (manager.currentLevel != levelCheck)
-                {
-                    manager.SelectLevel(manager.currentLevel);
-                    engine.SpawnPlayer(manager.playerStartPosX, manager.playerStartPosY);
-                    manager.currentLevel = levelCheck;
-                }
-                if (keyInput.Key == ConsoleKey.S)
-                {
-                    mapUI.currentPlayerGold = shop.StartShop(mapUI.currentPlayerGold, mapUI.currentPlayerHP, mapUI.maxPlayerHP);
-                }
-                mapUI.UILevelUpdate(manager.levelData, manager.mapHeight, manager.mapWidth, engine.currentPlayerPosX, engine.currentPlayerPosY);
-            }
+GameMechanics game = new GameMechanics();
+            game.StartGameTest();

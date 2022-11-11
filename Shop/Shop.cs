@@ -2,20 +2,18 @@ public class Shop
 {
     ShopUI UI = new ShopUI();
     ConsoleKeyInfo keyInput;
-    //Skicka in Player class här istället, skicka tillbaka player class när man ska tillbaka till spelet.
-    //Temporärt skickar jag tillbaka gold så jag kan hantera loot
-    public int StartShop(int currentPlayerGold, int currentPlayerHP, int maxPlayerHP)
+    public Player StartShop(Player player)
     {
         while (true)
         {
-            UI.DrawShopUI(currentPlayerGold, currentPlayerHP, maxPlayerHP);
+            UI.DrawShopUI(player.currentGold, player.hitpoints, player.hitpointsMax);
             keyInput = Console.ReadKey();
             if (keyInput.Key == ConsoleKey.B)
             {
-                if (CanPlayerAffordItem(currentPlayerGold, 25))
+                if (CanPlayerAffordItem(player.currentGold, 25))
                 {
-                    currentPlayerGold = SetPlayerGold(currentPlayerGold, 25);
-                    currentPlayerHP = BuyHealingPotion(currentPlayerGold, 25, currentPlayerHP, maxPlayerHP);
+                    player.currentGold = SetPlayerGold(player.currentGold, 25);
+                    player.hitpoints = BuyHealingPotion(player.currentGold, 25, player.hitpoints, player.hitpointsMax);
                     UI.DrawPlayerPurchaseUI("healing potion");
                     Console.ReadKey();
                 }
@@ -27,8 +25,7 @@ public class Shop
             }
             if (keyInput.Key == ConsoleKey.Q)
             {
-                //Skicka tillbaka Player class här med ändringarna gjorda
-                return currentPlayerGold;
+                return player;
             }
         }
     }

@@ -7,7 +7,7 @@ public class MapUI
     public int currentPlayerGold;
     public int currentPlayerHP;
     public int maxPlayerHP;
-    public void UILevelUpdate(string[,] levelData, int mapHeight, int mapWidth, int currentPlayerPosX, int currentPlayerPosY)
+    public void UILevelUpdate(string[,] levelData, int mapHeight, int mapWidth, int currentPlayerPosX, int currentPlayerPosY, Player player)
     {
         Console.OutputEncoding = System.Text.Encoding.UTF8;
         //Kommer behöva flytta denna clear ifall vi vill ha text ovanför kartan.
@@ -62,14 +62,14 @@ public class MapUI
         BackgroundColor = ConsoleColor.Black;
         WriteLine("");
         DrawShopButton();
-        DrawCharacterInfo();
+        DrawCharacterInfo(player);
     }
     public void DrawShopButton()
     {
         WriteLine("Press S to enter the shop");
     }
-    public void DrawCharacterInfo()
+    public void DrawCharacterInfo(Player player)
     {
-        WriteLine("You have : " +  currentPlayerGold + " gold.");
+        WriteLine("You have : " +  player.currentGold + " gold. Your hitpoints are : " + player.hitpoints + "/" + player.hitpointsMax);
     }
 }

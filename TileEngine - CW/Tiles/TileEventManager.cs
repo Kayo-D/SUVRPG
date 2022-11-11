@@ -1,7 +1,7 @@
 public class TileEventManager
 {
     LootHandler loot = new();
-    public void EnemyTileEvent(LevelManager manager, TileEngine engine, MapUI mapUI)
+    public void EnemyTileEvent(LevelManager manager, TileEngine engine, Player player)
     {
         engine.ChangeTileID(manager.levelData, engine.currentPlayerPosY, engine.currentPlayerPosX, manager.mapWidth, "1");
     }
@@ -10,9 +10,9 @@ public class TileEventManager
         currentLevel = currentLevel + 1;
         return currentLevel;
     }
-    public void LootTileEvent(LevelManager manager, TileEngine engine, MapUI mapUI)
+    public void LootTileEvent(LevelManager manager, TileEngine engine, Player player)
     {
         engine.ChangeTileID(manager.levelData, engine.currentPlayerPosY, engine.currentPlayerPosX, manager.mapWidth, "1");
-        mapUI.currentPlayerGold = loot.PickupLoot(manager, engine, mapUI.currentPlayerGold) + mapUI.currentPlayerGold;
+        player = loot.PickupLoot(manager, engine, player);
     }
 }

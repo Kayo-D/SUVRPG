@@ -1,6 +1,6 @@
 public class Loot
 {
-    int gold;
-    int weapon;
-    int armor;
+    public int gold;
+    public int weapon;
+    public int armor;
 }
