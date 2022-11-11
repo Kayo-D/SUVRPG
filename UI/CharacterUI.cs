@@ -7,7 +7,7 @@ namespace SUVRPG
 {
     public class CharacterUI
     {
-        public static void characterCreation()
+        public static Player characterCreation()
         {
             ConsoleKey menuKeys = ConsoleKey.NoName;
             Console.Clear();
@@ -69,6 +69,8 @@ namespace SUVRPG
             Console.WriteLine("ENTER CHARACHTER ATTRIBUTES:\n ");
             string characterDescription = Console.ReadLine();
             character.CharacterInfo(name, race, characterDescription);
+
+            return character;
         }
     }
 }
