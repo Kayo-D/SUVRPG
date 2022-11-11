@@ -8,19 +8,19 @@
     "net6.0": []
   },
   "packageFolders": {
-    "C:\\Users\\belle\\.nuget\\packages\\": {}
+    "C:\\Users\\cw94\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\belle\\Documents\\SUVNET22\\C#\\Betygsatta inlämningar\\SUVRPG\\SUVRPG\\SUVRPG.csproj",
+      "projectUniqueName": "C:\\Users\\cw94\\Desktop\\Skolarbeten\\SUVRPG\\SUVRPG.csproj",
       "projectName": "SUVRPG",
-      "projectPath": "C:\\Users\\belle\\Documents\\SUVNET22\\C#\\Betygsatta inlämningar\\SUVRPG\\SUVRPG\\SUVRPG.csproj",
-      "packagesPath": "C:\\Users\\belle\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\belle\\Documents\\SUVNET22\\C#\\Betygsatta inlämningar\\SUVRPG\\SUVRPG\\obj\\",
+      "projectPath": "C:\\Users\\cw94\\Desktop\\Skolarbeten\\SUVRPG\\SUVRPG.csproj",
+      "packagesPath": "C:\\Users\\cw94\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\cw94\\Desktop\\Skolarbeten\\SUVRPG\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\belle\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "C:\\Users\\cw94\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net6.0"
@@ -49,7 +49,8 @@
           "net47",
           "net471",
           "net472",
-          "net48"
+          "net48",
+          "net481"
         ],
         "assetTargetFallback": true,
         "warn": true,
@@ -58,7 +59,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Users\\belle\\AppData\\Roaming\\.dotnet\\sdk\\6.0.102\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.400\\RuntimeIdentifierGraph.json"
       }
     }
   }
