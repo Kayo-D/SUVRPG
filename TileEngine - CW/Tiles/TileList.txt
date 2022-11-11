@@ -13,23 +13,23 @@ Player 🚶
 //TestKod
 //TileEngine
 TileEngine engine = new TileEngine();
-            MapUI mapUI = new MapUI();
+            Player player = new Player();
             Shop shop = new Shop();
             LevelManager manager = new LevelManager();
             ConsoleKeyInfo keyInput = new ConsoleKeyInfo();
+            MapUI mapUI = new MapUI();
             manager.SelectLevel(1);
             int levelCheck = manager.currentLevel;
-            //Ta detta ifrån Player classen sen
-            mapUI.currentPlayerGold = 50;
-            mapUI.currentPlayerHP = 20;
-            mapUI.maxPlayerHP = 50;
+            player.currentGold = 20;
+            player.hitpoints = 10;
+            player.hitpointsMax = 30;
             engine.SpawnPlayer(manager.playerStartPosX, manager.playerStartPosY);
-            mapUI.UILevelUpdate(manager.levelData, manager.mapHeight, manager.mapWidth, engine.currentPlayerPosX, engine.currentPlayerPosY);
+            mapUI.UILevelUpdate(manager.levelData, manager.mapHeight, manager.mapWidth, engine.currentPlayerPosX, engine.currentPlayerPosY, player);
             while (true)
             {
                 keyInput = Console.ReadKey();
                 engine.PlayerMovement(keyInput, manager.levelData, manager.mapWidth);
-                engine.TileEvents(manager, engine, mapUI);
+                engine.TileEvents(manager, engine, player);
                 if (manager.currentLevel != levelCheck)
                 {
                     manager.SelectLevel(manager.currentLevel);
@@ -38,7 +38,7 @@ TileEngine engine = new TileEngine();
                 }
                 if (keyInput.Key == ConsoleKey.S)
                 {
-                    mapUI.currentPlayerGold = shop.StartShop(mapUI.currentPlayerGold, mapUI.currentPlayerHP, mapUI.maxPlayerHP);
+                    player = shop.StartShop(player);
                 }
-                mapUI.UILevelUpdate(manager.levelData, manager.mapHeight, manager.mapWidth, engine.currentPlayerPosX, engine.currentPlayerPosY);
+                mapUI.UILevelUpdate(manager.levelData, manager.mapHeight, manager.mapWidth, engine.currentPlayerPosX, engine.currentPlayerPosY, player);
             }

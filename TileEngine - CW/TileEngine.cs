@@ -62,16 +62,16 @@ public class TileEngine
         }
     }
     //Glöm inte att byta MapUI till Character
-    public LevelManager TileEvents(LevelManager manager, TileEngine engine, MapUI mapUI)
+    public LevelManager TileEvents(LevelManager manager, TileEngine engine, Player player)
     {
         int currenTileID = SelectTile(manager.levelData, currentPlayerPosY, currentPlayerPosX, manager.mapWidth);
         if (currenTileID == 4)
         {
-            tileEventManager.LootTileEvent(manager, engine, mapUI);
+            tileEventManager.LootTileEvent(manager, engine, player);
         }
         if (currenTileID == 5)
         {
-            tileEventManager.EnemyTileEvent(manager, engine, mapUI);
+            tileEventManager.EnemyTileEvent(manager, engine, player);
         }
         if (currenTileID == 6)
         {
