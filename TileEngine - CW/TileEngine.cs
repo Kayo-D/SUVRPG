@@ -61,7 +61,6 @@ public class TileEngine
             return false;
         }
     }
-    //Glöm inte att byta MapUI till Character
     public LevelManager TileEvents(LevelManager manager, TileEngine engine, Player player)
     {
         int currenTileID = SelectTile(manager.levelData, currentPlayerPosY, currentPlayerPosX, manager.mapWidth);

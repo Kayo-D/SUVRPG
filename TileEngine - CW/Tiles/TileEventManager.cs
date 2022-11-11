@@ -13,6 +13,6 @@ public class TileEventManager
     public void LootTileEvent(LevelManager manager, TileEngine engine, Player player)
     {
         engine.ChangeTileID(manager.levelData, engine.currentPlayerPosY, engine.currentPlayerPosX, manager.mapWidth, "1");
-        player.currentGold = loot.PickupLoot(manager, engine, player.currentGold) + player.currentGold;
+        player = loot.PickupLoot(manager, engine, player);
     }
 }

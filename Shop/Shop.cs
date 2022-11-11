@@ -2,8 +2,6 @@ public class Shop
 {
     ShopUI UI = new ShopUI();
     ConsoleKeyInfo keyInput;
-    //Skicka in Player class här istället, skicka tillbaka player class när man ska tillbaka till spelet.
-    //Temporärt skickar jag tillbaka gold så jag kan hantera loot
     public Player StartShop(Player player)
     {
         while (true)
