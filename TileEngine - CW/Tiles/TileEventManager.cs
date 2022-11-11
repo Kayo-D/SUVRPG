@@ -10,9 +10,9 @@ public class TileEventManager
         currentLevel = currentLevel + 1;
         return currentLevel;
     }
-    public void LootTileEvent(LevelManager manager, TileEngine engine, Player player)
+    public void LootTileEvent(LevelManager manager, TileEngine engine, Player player, MapUI ui)
     {
         engine.ChangeTileID(manager.levelData, engine.currentPlayerPosY, engine.currentPlayerPosX, manager.mapWidth, "1");
-        player = loot.PickupLoot(manager, engine, player);
+        player = loot.PickupLoot(manager, engine, player, ui);
     }
 }

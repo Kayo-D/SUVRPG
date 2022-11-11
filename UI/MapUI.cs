@@ -3,10 +3,6 @@ public class MapUI
 {
     TileEngine tileEngine = new TileEngine();
     LevelManager manager = new LevelManager();
-    //Ta detta ifrån Player class sen
-    public int currentPlayerGold;
-    public int currentPlayerHP;
-    public int maxPlayerHP;
     public void UILevelUpdate(string[,] levelData, int mapHeight, int mapWidth, int currentPlayerPosX, int currentPlayerPosY, Player player)
     {
         Console.OutputEncoding = System.Text.Encoding.UTF8;
@@ -70,6 +66,12 @@ public class MapUI
     }
     public void DrawCharacterInfo(Player player)
     {
-        WriteLine("You have : " +  player.currentGold + " gold. Your hitpoints are : " + player.hitpoints + "/" + player.hitpointsMax);
+        WriteLine("You have : " + player.currentGold + " gold. Your hitpoints are : " + player.hitpoints + "/" + player.hitpointsMax);
+    }
+    public void DrawPickups(Loot loot)
+    {
+        Clear();
+        WriteLine("You picked up : " + loot.gold + " gold, +" + loot.weapon + " weapon +" + loot.armor + " armor.");
+        WriteLine("Press any key to continue");
     }
 }

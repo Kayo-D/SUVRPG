@@ -61,12 +61,12 @@ public class TileEngine
             return false;
         }
     }
-    public LevelManager TileEvents(LevelManager manager, TileEngine engine, Player player)
+    public LevelManager TileEvents(LevelManager manager, TileEngine engine, Player player, MapUI ui)
     {
         int currenTileID = SelectTile(manager.levelData, currentPlayerPosY, currentPlayerPosX, manager.mapWidth);
         if (currenTileID == 4)
         {
-            tileEventManager.LootTileEvent(manager, engine, player);
+            tileEventManager.LootTileEvent(manager, engine, player, ui);
         }
         if (currenTileID == 5)
         {

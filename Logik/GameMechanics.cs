@@ -19,7 +19,7 @@ public class GameMechanics
         {
             keyInput = Console.ReadKey();
             engine.PlayerMovement(keyInput, manager.levelData, manager.mapWidth);
-            engine.TileEvents(manager, engine, player);
+            engine.TileEvents(manager, engine, player, mapUI);
             if (manager.currentLevel != levelCheck)
             {
                 manager.SelectLevel(manager.currentLevel);
