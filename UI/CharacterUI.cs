@@ -7,7 +7,7 @@ namespace SUVRPG
 {
     public class CharacterUI
     {
-        public static Player characterCreation()
+        public Player characterCreation()
         {
             ConsoleKey menuKeys = ConsoleKey.NoName;
             Console.Clear();
@@ -34,6 +34,7 @@ namespace SUVRPG
             Console.WriteLine("2# ORC");
             Console.WriteLine("3# ELF");
             Console.WriteLine("4# DWARF");
+            //Gör till en readkey
             string race = Console.ReadLine();
 
             switch (menuKeys)
@@ -42,24 +43,28 @@ namespace SUVRPG
                 Console.Clear();
                 Console.WriteLine("You chose... HUMAN! Excellent choice.");
                 Console.WriteLine("Human: Well met!");
+                //Set race
                 break;
 
                 case ConsoleKey.D2:
                 Console.Clear();
                 Console.WriteLine("You chose... ORC! I guess that will do.");
                 Console.WriteLine("Orc: Strength and honor!");
+                //Set race
                 break;
 
                 case ConsoleKey.D3:
                 Console.Clear();
                 Console.WriteLine("You chose... ELF! I guess you know something about something.");
                 Console.WriteLine("Elf: Bal'a dash, malanore.");
+                //Set race
                 break;
 
                 case ConsoleKey.D4:
                 Console.Clear();
                 Console.WriteLine("You chose... DWARF! I guess you feel short and spicy today!");
                 Console.WriteLine("Dwarf: Great tae meet ya.");
+                //Set race
                 break;
 
                 default:
