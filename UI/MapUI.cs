@@ -66,12 +66,35 @@ public class MapUI
     }
     public void DrawCharacterInfo(Player player)
     {
-        WriteLine("You have : " + player.currentGold + " gold. Your hitpoints are : " + player.hitpoints + "/" + player.hitpointsMax);
+        WriteLine("You have : " + player.currentGold + " gold. Your hitpoints are : " + player.hitpoints + "/" + player.hitpointsMax + ". You have a +" + player.attackdmg + " weapon and a +" + player.armor + " armor,");
     }
     public void DrawPickups(Loot loot)
     {
         Clear();
-        WriteLine("You picked up : " + loot.gold + " gold, +" + loot.weapon + " weapon +" + loot.armor + " armor.");
+        if (loot.gold != 0 && loot.armor != 0 && loot.weapon != 0)
+        {
+            WriteLine("You picked up : " + loot.gold + " gold, +" + loot.weapon + " weapon and +" + loot.armor + " armor.");
+        }
+        else if (loot.gold != 0 && loot.weapon != 0)
+        {
+            WriteLine("You picked up : " + loot.gold + " gold and +" + loot.armor + " armor.");
+        }
+        else if (loot.gold != 0 && loot.armor != 0)
+        {
+            WriteLine("You picked up : " + loot.gold + " gold and +" + loot.weapon + " weapon.");
+        }
+        else if (loot.armor != 0)
+        {
+            WriteLine("You picked up : +" + loot.armor + " armor.");
+        }
+        else if (loot.weapon != 0)
+        {
+            WriteLine("You picked up : +" + loot.weapon + " weapon.");
+        }
+        else if (loot.gold != 0)
+        {
+             WriteLine("You picked up : " + loot.gold + " gold");
+        }
         WriteLine("Press any key to continue");
     }
 }
