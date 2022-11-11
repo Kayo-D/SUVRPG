@@ -15,6 +15,7 @@ namespace SUVRPG
 
             Console.WriteLine("CHARACTER CREATION\n");
             Console.WriteLine("The name of your character: ");
+            //Ändra till character.
             string name = Console.ReadLine();
             
             while (true)
@@ -35,6 +36,7 @@ namespace SUVRPG
             Console.WriteLine("3# ELF");
             Console.WriteLine("4# DWARF");
             //Gör till en readkey
+            //Ändra till character.
             string race = Console.ReadLine();
 
             switch (menuKeys)
@@ -72,9 +74,10 @@ namespace SUVRPG
             }
 
             Console.WriteLine("ENTER CHARACHTER ATTRIBUTES:\n ");
+            //Ändra till character.
             string characterDescription = Console.ReadLine();
+            //Ändra till character.
             character.CharacterInfo(name, race, characterDescription);
-
             return character;
         }
     }
