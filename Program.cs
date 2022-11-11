@@ -6,10 +6,7 @@
         {
             //Vill ni testköra kod så gör det inom dessa kommentarer. Se till att ta bort allt inom dem innan ni pushar
             //Testa inom dessa
-            CharacterUI test = new();
-            Player testplayer = test.characterCreation();
-            Console.WriteLine(testplayer.name + ", " + testplayer.race + ", " + testplayer.characterDescription);
-            Console.ReadLine();
+    
             //Testa inom dessa
             //Gör detta till en metod i MenuUI. Kalla på den direkt här istället MVH Christian
             string title = "Welcome to SUVRPG!\n";

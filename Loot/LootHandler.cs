@@ -1,15 +1,15 @@
 public class LootHandler
 {
-    //Testar bara med gold först
-    public Player PickupLoot(LevelManager manager, TileEngine engine, Player player)
+    public Player PickupLoot(LevelManager manager, TileEngine engine, Player player, MapUI ui)
     {
-        //Kolla vilken treasureclass vi kan välja på vilket beror på level
-
-        //Randomiza en loot table med de treasure classes som är relevanta
-        
-        //Returnera spelaren
-        //Testa gold pickup
-        player.currentGold = player.currentGold + 5;
+        TreasureClass1 tc = new();
+        Loot addLootToPlayer = new();
+        addLootToPlayer = tc.LootTable();
+        player.armor = addLootToPlayer.armor + player.armor;
+        player.attackdmg = addLootToPlayer.weapon + player.attackdmg;
+        player.currentGold = addLootToPlayer.gold + player.currentGold;
+        ui.DrawPickups(addLootToPlayer);
+        Console.ReadKey();
         return player;
     }
 }

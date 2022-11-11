@@ -4,26 +4,59 @@ public class TreasureClass1 : TreasureClass
     public Loot LootTable()
     {
         Loot returnedLoot = new Loot();
-        int[] lootTable = new int[10];
-        int fewCoins = FewCoins();
-        int pouchOfCoins = PouchOfCoins();
-        int armorUp = 1;
-        int weaponUp = 1;
-        
-
-        returnedLoot.armor = 0;
-        returnedLoot.weapon = 0;
-        returnedLoot.gold = 0;
+        Loot[] lootTable = new Loot[10]
+        {
+        FewCoins(),
+        FewCoins(),
+        FewCoins(),
+        PouchOfCoins(),
+        PouchOfCoins(),
+        WeaponUp(),
+        WeaponUp(),
+        ArmorUp(),
+        ArmorUp(),
+        BigScore(),
+        };
+        returnedLoot = lootTable[rng.Next(10)];
         return returnedLoot;
     }
-    public int FewCoins()
+    public Loot FewCoins()
     {
-        int random = rng.Next(5) + 1;
-        return random;
+        Loot loot = new();
+        loot.gold = rng.Next(5) + 1;
+        return loot;
     }
-    public int PouchOfCoins()
+    public Loot PouchOfCoins()
     {
-        int random = rng.Next(10) + 15;
-        return random;
+        Loot loot = new();
+        loot.gold = rng.Next(10) + 15;
+        return loot;
+    }
+    public Loot ArmorUp()
+    {
+        Loot loot = new();
+        loot.armor = 1;
+        return loot;
+    }
+    public Loot WeaponUp()
+    {
+        Loot loot = new();
+        loot.weapon = 1;
+        return loot;
+    }
+    public Loot BigScore()
+    {
+        Loot loot = new();
+        loot = PouchOfCoins();
+        loot = ArmorUp();
+        loot = WeaponUp();
+        return loot;
+    }
+    public Loot EmptyLoot(Loot lootToEmpty)
+    {
+        lootToEmpty.gold = 0;
+        lootToEmpty.weapon = 0;
+        lootToEmpty.armor = 0;
+        return lootToEmpty;
     }
 }
