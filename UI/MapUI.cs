@@ -3,7 +3,7 @@ public class MapUI
 {
     TileEngine tileEngine = new TileEngine();
     LevelManager manager = new LevelManager();
-    public void UILevelUpdate(string[,] levelData, int mapHeight, int mapWidth, int currentPlayerPosX, int currentPlayerPosY, Player player)
+    public void UILevelLoad(string[,] levelData, int mapHeight, int mapWidth, int currentPlayerPosX, int currentPlayerPosY, Player player)
     {
         Console.OutputEncoding = System.Text.Encoding.UTF8;
         //Kommer behöva flytta denna clear ifall vi vill ha text ovanför kartan.
@@ -97,4 +97,11 @@ public class MapUI
         }
         WriteLine("Press any key to continue");
     }
+    public void ClearConsoleLine()
+{
+    int currentLineCursor = Console.CursorTop;
+    Console.SetCursorPosition(0, 1);
+    Console.Write(new string(' ', Console.BufferWidth)); 
+    Console.SetCursorPosition(0, currentLineCursor);
+}
 }

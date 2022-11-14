@@ -10,11 +10,11 @@ public class GameMechanics
         MapUI mapUI = new MapUI();
         manager.SelectLevel(1);
         int levelCheck = manager.currentLevel;
-        player.currentGold = 20;
-        player.hitpoints = 10;
+        player.currentGold = 0;
+        player.hitpoints = 30;
         player.hitpointsMax = 30;
         engine.SpawnPlayer(manager.playerStartPosX, manager.playerStartPosY);
-        mapUI.UILevelUpdate(manager.levelData, manager.mapHeight, manager.mapWidth, engine.currentPlayerPosX, engine.currentPlayerPosY, player);
+        mapUI.UILevelLoad(manager.levelData, manager.mapHeight, manager.mapWidth, engine.currentPlayerPosX, engine.currentPlayerPosY, player);
         while (true)
         {
             keyInput = Console.ReadKey();
@@ -30,7 +30,8 @@ public class GameMechanics
             {
                 player = shop.StartShop(player);
             }
-            mapUI.UILevelUpdate(manager.levelData, manager.mapHeight, manager.mapWidth, engine.currentPlayerPosX, engine.currentPlayerPosY, player);
+            //mapUI.UILevelLoad(manager.levelData, manager.mapHeight, manager.mapWidth, engine.currentPlayerPosX, engine.currentPlayerPosY, player);
+            mapUI.ClearConsoleLine();
         }
     }
 }
