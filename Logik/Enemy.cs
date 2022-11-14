@@ -35,5 +35,28 @@ namespace SUVRPG
 
         }
 
+
+
+        //         private List<Enemy> Enemies;
+
+        // public void EnemyTest()
+        // {
+        //     // Enemy enemy = new Enemy("", 0, 0, 0, 0, 0);
+        //     // enemy.CreateEnemy();
+        //     // enemy.EnemyInfo();
+        //     Console.Clear();
+            
+        //     Dragon dragonlord = new Dragon("Dragonlord", 200, 10, 30, 60, 5);
+        //     Bandit bandit = new Bandit("Bandit", 20, 0, 2, 5, 2);
+
+        //     Enemies = new List<Enemy>() { dragonlord, bandit };
+
+        //     foreach (Enemy enemy in Enemies)
+        //     {
+        //         System.Console.WriteLine(Enemies.Count);
+        //         enemy.EnemyInfo();
+        //     }
+        // }
+
     }
 }

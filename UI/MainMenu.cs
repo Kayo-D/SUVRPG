@@ -22,9 +22,6 @@ namespace SUVRPG
             switch (SelectedIndex)
             {
                 case 0:
-                    GameMechanics gameMechanics = new GameMechanics();
-                    gameMechanics.EnemyTest();
-
                     break;
 
                 case 1:
