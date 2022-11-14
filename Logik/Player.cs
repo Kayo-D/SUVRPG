@@ -1,6 +1,6 @@
 public class Player : Character
 {
-    string race { get; set; }
+    public string race { get; set; }
     public int currentGold;
     public int hitpointsMax;
 

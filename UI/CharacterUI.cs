@@ -7,68 +7,80 @@ namespace SUVRPG
 {
     public class CharacterUI
     {
-        public static void characterCreation()
+        public Player characterCreation()
         {
-            ConsoleKey menuKeys = ConsoleKey.NoName;
-            Console.Clear();
             Player character = new Player();
+            ConsoleKey raceMenu = ConsoleKey.NoName;
+            Console.Clear();
 
             Console.WriteLine("CHARACTER CREATION\n");
             Console.WriteLine("The name of your character: ");
-            string name = Console.ReadLine();
+            character.name = Console.ReadLine();
             
             while (true)
             {
-                if (name == "")
+                if (character.name == "")
                 {
                     Console.WriteLine("Please enter a valid character name: ");
-                    name = Console.ReadLine();
+                    character.name = Console.ReadLine();
                 }
                 else
                 {
                     break;
                 }
             }
+
+            Console.Clear();
             Console.WriteLine("PLEASE ENTER YOUR CHOICE OF CHARACTER RACE:\n");
             Console.WriteLine("1# HUMAN");
             Console.WriteLine("2# ORC");
             Console.WriteLine("3# ELF");
             Console.WriteLine("4# DWARF");
-            string race = Console.ReadLine();
+            raceMenu = Console.ReadKey(true).Key;
 
-            switch (menuKeys)
+            while (raceMenu.Equals(true))
             {
-                case ConsoleKey.D1:
-                Console.Clear();
-                Console.WriteLine("You chose... HUMAN! Excellent choice.");
-                Console.WriteLine("Human: Well met!");
-                break;
+                switch (raceMenu)
+                {
+                    case ConsoleKey.D1:
+                    Console.Clear();
+                    Console.WriteLine("You chose... HUMAN! Excellent choice.\n");
+                    Console.WriteLine("Human: Well met!");
+                    character.race = "Human";
+                    break;
 
-                case ConsoleKey.D2:
-                Console.Clear();
-                Console.WriteLine("You chose... ORC! I guess that will do.");
-                Console.WriteLine("Orc: Strength and honor!");
-                break;
+                    case ConsoleKey.D2:
+                    Console.Clear();
+                    Console.WriteLine("You chose... ORC! I guess that will do.\n");
+                    Console.WriteLine("Orc: Strength and honor!");
+                    character.race = "Orc";
+                    break;
 
-                case ConsoleKey.D3:
-                Console.Clear();
-                Console.WriteLine("You chose... ELF! I guess you know something about something.");
-                Console.WriteLine("Elf: Bal'a dash, malanore.");
-                break;
+                    case ConsoleKey.D3:
+                    Console.Clear();
+                    Console.WriteLine("You chose... ELF! I guess you know something about something.\n");
+                    Console.WriteLine("Elf: Bal'a dash, malanore.");
+                    character.race = "Elf";
+                    break;
 
-                case ConsoleKey.D4:
-                Console.Clear();
-                Console.WriteLine("You chose... DWARF! I guess you feel short and spicy today!");
-                Console.WriteLine("Dwarf: Great tae meet ya.");
-                break;
+                    case ConsoleKey.D4:
+                    Console.Clear();
+                    Console.WriteLine("You chose... DWARF! I guess you feel short and spicy today!\n");
+                    Console.WriteLine("Dwarf: Great tae meet ya.");
+                    character.race = "Dwarf";
+                    break;
 
-                default:
+                    default:
+                    Console.WriteLine("Sorry, try again.");
+                    break;
+                }
                 break;
             }
-
-            Console.WriteLine("ENTER CHARACHTER ATTRIBUTES:\n ");
-            string characterDescription = Console.ReadLine();
-            character.CharacterInfo(name, race, characterDescription);
+            
+            Console.WriteLine("ENTER CHARACTER INFO:\n ");
+            character.characterDescription = Console.ReadLine();
+            character.CharacterInfo(character.name, character.race, character.characterDescription);
+            return character;
         }
     }
 }

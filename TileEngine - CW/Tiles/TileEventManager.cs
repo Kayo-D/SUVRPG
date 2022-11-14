@@ -3,16 +3,18 @@ public class TileEventManager
     LootHandler loot = new();
     public void EnemyTileEvent(LevelManager manager, TileEngine engine, Player player)
     {
+        SUVRPG.Combat combat = new();
         engine.ChangeTileID(manager.levelData, engine.currentPlayerPosY, engine.currentPlayerPosX, manager.mapWidth, "1");
+        //player = combat.StartCombat(player);
     }
     public int ExitTileEvent(int currentLevel)
     {
         currentLevel = currentLevel + 1;
         return currentLevel;
     }
-    public void LootTileEvent(LevelManager manager, TileEngine engine, Player player)
+    public void LootTileEvent(LevelManager manager, TileEngine engine, Player player, MapUI ui)
     {
         engine.ChangeTileID(manager.levelData, engine.currentPlayerPosY, engine.currentPlayerPosX, manager.mapWidth, "1");
-        player.currentGold = loot.PickupLoot(manager, engine, player.currentGold) + player.currentGold;
+        player = loot.PickupLoot(manager, engine, player, ui);
     }
 }
