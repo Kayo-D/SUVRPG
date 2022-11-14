@@ -5,9 +5,9 @@ using System.Threading.Tasks;
 
 namespace SUVRPG
 {
-    public class MainMenu
+    public static class MainMenu
     {
-        public void Mainmenu()
+        public static void Mainmenu()
         {
             string title = "Welcome to SUVRPG!\n";
 
