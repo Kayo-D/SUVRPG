@@ -30,7 +30,13 @@ public class LevelManager
         }
         if (levelID == 3)
         {
-
+            Level3 lvl3 = new Level3();
+            levelData = lvl3.mapData;
+            playerStartPosX = lvl3.playerStartPosX;
+            playerStartPosY = lvl3.playerStartPosY;
+            mapWidth = lvl3.mapWidth;
+            mapHeight = lvl3.mapHeight;
+            currentLevel = 3;
         }
     }
 }
