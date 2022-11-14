@@ -2,24 +2,33 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using static System.Console;
 
 namespace SUVRPG
 {
     public class Enemy : Character
     {
-        public Enemy(string _name, string _characterDescription, int _hitpoints, int _armor, int _attackdmg, int _speed)
+        protected int level;
+        
+        public Enemy(string _name, int _hitpoints, int _armor, int _attackdmg, int _speed, int _level)
+            : base(_name, _hitpoints, _armor, _attackdmg, _speed, _level)
         {
-            string name = _name;
-            string characterDescription = _characterDescription;
-            int hitpoints = _hitpoints;
-            int armor = _armor;
-            int attackdmg = _attackdmg;
-            int speed = _speed;
-        }
 
+        }
         public virtual void EnemyAttack()
         {
-            Console.WriteLine("The enemy is attacking!");
+            
         }
+        // private List<Enemy> Enemies;
+
+        public void EnemyInfo()
+        {
+            Write($"--- {name} ---");
+            WriteLine($"\nLevel: {level}\n");
+            WriteLine($"Health: {hitpoints}");
+            WriteLine("---");
+
+        }
+
     }
 }
