@@ -9,11 +9,16 @@ namespace SUVRPG
     public class Enemy : Character
     {
         protected int level;
+        protected string name;
         
         public Enemy(string _name, int _hitpoints, int _armor, int _attackdmg, int _speed, int _level)
-            : base(_name, _hitpoints, _armor, _attackdmg, _speed, _level)
         {
-
+            string name = _name;
+            int hitpoints = _hitpoints;
+            int armor = _armor;
+            int attackdmg = _attackdmg;
+            int speed = _speed;
+            int level = _level;
         }
         public virtual void EnemyAttack()
         {
