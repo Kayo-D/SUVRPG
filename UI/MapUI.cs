@@ -3,6 +3,54 @@ public class MapUI
 {
     TileEngine tileEngine = new TileEngine();
     LevelManager manager = new LevelManager();
+    public void DrawWallTile()
+    {
+        BackgroundColor = ConsoleColor.DarkGray;
+        Write("  ");
+        BackgroundColor = ConsoleColor.Black;
+    }
+    public void DrawFloorTile()
+    {
+        BackgroundColor = ConsoleColor.White;
+        Write("  ");
+        BackgroundColor = ConsoleColor.Black;
+    }
+    public void DrawDoorTile()
+    {
+        BackgroundColor = ConsoleColor.DarkGray;
+        Write("🚪");
+        BackgroundColor = ConsoleColor.Black;
+    }
+    public void DrawEntryTile()
+    {
+        BackgroundColor = ConsoleColor.Blue;
+        Write("🚪");
+        BackgroundColor = ConsoleColor.Black;
+    }
+    public void DrawExitTile()
+    {
+        BackgroundColor = ConsoleColor.Green;
+        Write("🚪");
+        BackgroundColor = ConsoleColor.Black;
+    }
+    public void DrawEnemyTile()
+    {
+        BackgroundColor = ConsoleColor.Red;
+        Write("☠ ");
+        BackgroundColor = ConsoleColor.Black;
+    }
+    public void DrawLootTile()
+    {
+        BackgroundColor = ConsoleColor.Yellow;
+        Write("💸");
+        BackgroundColor = ConsoleColor.Black;
+    }
+    public void DrawPlayer()
+    {
+        BackgroundColor = ConsoleColor.White;
+        Write("\b\b🚶");
+        BackgroundColor = ConsoleColor.Black;
+    }
     public void UILevelLoad(string[,] levelData, int mapHeight, int mapWidth, int currentPlayerPosX, int currentPlayerPosY, Player player)
     {
         Console.OutputEncoding = System.Text.Encoding.UTF8;
@@ -12,48 +60,39 @@ public class MapUI
             {
                 if (tileEngine.SelectTile(levelData, i, j, mapWidth) == new WallTile().TileID)
                 {
-                    BackgroundColor = ConsoleColor.DarkGray;
-                    Write("  ");
+                    DrawWallTile();
                 }
                 if (tileEngine.SelectTile(levelData, i, j, mapWidth) == new FloorTile().TileID)
                 {
-                    BackgroundColor = ConsoleColor.White;
-                    Write("  ");
+                    DrawFloorTile();
                 }
                 if (tileEngine.SelectTile(levelData, i, j, mapWidth) == new DoorTile().TileID)
                 {
-                    BackgroundColor = ConsoleColor.DarkGray;
-                    Write("🚪");
+                    DrawDoorTile();
                 }
                 if (tileEngine.SelectTile(levelData, i, j, mapWidth) == new EntryTile().TileID)
                 {
-                    BackgroundColor = ConsoleColor.Blue;
-                    Write("🚪");
+                    DrawEntryTile();
                 }
                 if (tileEngine.SelectTile(levelData, i, j, mapWidth) == new ExitTile().TileID)
                 {
-                    BackgroundColor = ConsoleColor.Green;
-                    Write("🚪");
+                    DrawExitTile();
                 }
                 if (tileEngine.SelectTile(levelData, i, j, mapWidth) == new EnemyTile().TileID)
                 {
-                    BackgroundColor = ConsoleColor.Red;
-                    Write("☠ ");
+                    DrawEnemyTile();
                 }
                 if (tileEngine.SelectTile(levelData, i, j, mapWidth) == new LootTile().TileID)
                 {
-                    BackgroundColor = ConsoleColor.Yellow;
-                    Write("💸");
+                    DrawLootTile();
                 }
                 if (currentPlayerPosY == i && currentPlayerPosX == j)
                 {
-                    BackgroundColor = ConsoleColor.White;
-                    Write("\b\b🚶");
+                    DrawPlayer();
                 }
             }
             WriteLine("");
         }
-        BackgroundColor = ConsoleColor.Black;
         WriteLine("");
         DrawShopButton();
         DrawCharacterInfo(player);
@@ -118,45 +157,36 @@ public class MapUI
             {
                 if (tileEngine.SelectTile(levelData, currentPlayerPosY - 1 + i, j, mapWidth) == new WallTile().TileID)
                 {
-                    BackgroundColor = ConsoleColor.DarkGray;
-                    Write("  ");
+                    DrawWallTile();
                 }
                 if (tileEngine.SelectTile(levelData, currentPlayerPosY - 1 + i, j, mapWidth) == new FloorTile().TileID)
                 {
-                    BackgroundColor = ConsoleColor.White;
-                    Write("  ");
+                    DrawFloorTile();
                 }
                 if (tileEngine.SelectTile(levelData, currentPlayerPosY - 1 + i, j, mapWidth) == new DoorTile().TileID)
                 {
-                    BackgroundColor = ConsoleColor.DarkGray;
-                    Write("🚪");
+                    DrawDoorTile();
                 }
                 if (tileEngine.SelectTile(levelData, currentPlayerPosY - 1 + i, j, mapWidth) == new EntryTile().TileID)
                 {
-                    BackgroundColor = ConsoleColor.Blue;
-                    Write("🚪");
+                    DrawEntryTile();
                 }
                 if (tileEngine.SelectTile(levelData, currentPlayerPosY - 1 + i, j, mapWidth) == new ExitTile().TileID)
                 {
-                    BackgroundColor = ConsoleColor.Green;
-                    Write("🚪");
+                    DrawExitTile();
                 }
                 if (tileEngine.SelectTile(levelData, currentPlayerPosY - 1 + i, j, mapWidth) == new EnemyTile().TileID)
                 {
-                    BackgroundColor = ConsoleColor.Red;
-                    Write("☠ ");
+                    DrawEnemyTile();
                 }
                 if (tileEngine.SelectTile(levelData, currentPlayerPosY - 1 + i, j, mapWidth) == new LootTile().TileID)
                 {
-                    BackgroundColor = ConsoleColor.Yellow;
-                    Write("💸");
+                    DrawLootTile();
                 }
             }
             WriteLine("");
         }
-        Console.SetCursorPosition(currentPlayerPosX*2+2, currentPlayerPosY);
-        BackgroundColor = ConsoleColor.White;
-        Write("\b\b🚶");
-        BackgroundColor = ConsoleColor.Black;
+        Console.SetCursorPosition(currentPlayerPosX * 2 + 2, currentPlayerPosY);
+        DrawPlayer();
     }
 }

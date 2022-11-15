@@ -61,29 +61,26 @@ public class TileEngine
             return false;
         }
     }
-    public LevelManager TileEvents(LevelManager manager, TileEngine engine, Player player, MapUI ui)
+    public void TileEvents(LevelManager manager, TileEngine engine, Player player, MapUI ui)
     {
         int currenTileID = SelectTile(manager.levelData, currentPlayerPosY, currentPlayerPosX, manager.mapWidth);
-        if (currenTileID == 4)
+        if (currenTileID == new LootTile().TileID)
         {
             tileEventManager.LootTileEvent(manager, engine, player, ui);
             Console.Clear();
             ui.UILevelLoad(manager.levelData, manager.mapHeight, manager.mapWidth, engine.currentPlayerPosX, engine.currentPlayerPosY, player);
         }
-        if (currenTileID == 5)
+        if (currenTileID == new EnemyTile().TileID)
         {
             tileEventManager.EnemyTileEvent(manager, engine, player);
             Console.Clear();
             ui.UILevelLoad(manager.levelData, manager.mapHeight, manager.mapWidth, engine.currentPlayerPosX, engine.currentPlayerPosY, player);
         }
-        if (currenTileID == 6)
+        if (currenTileID == new ExitTile().TileID)
         {
             manager.currentLevel = tileEventManager.ExitTileEvent(manager.currentLevel);
             Console.Clear();
-            ui.UILevelLoad(manager.levelData, manager.mapHeight, manager.mapWidth, engine.currentPlayerPosX, engine.currentPlayerPosY, player);
-            return manager;
         }
-        return manager;
     }
     public void SpawnPlayer(int playerStartPosX, int playerStartPosY)
     {

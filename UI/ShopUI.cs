@@ -22,4 +22,10 @@ public class ShopUI
         WriteLine("Succesfully purchased a " + itemBought);
         WriteLine("Press any key to return");
     }
+    public void DrawPlayerIsAlreadyMaxHP()
+    {
+        Clear();
+        WriteLine("You are already at max hit points");
+        WriteLine("Press any key to return");
+    }
 }

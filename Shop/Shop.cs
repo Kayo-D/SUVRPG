@@ -12,10 +12,18 @@ public class Shop
             {
                 if (CanPlayerAffordItem(player.currentGold, 25))
                 {
-                    player.currentGold = SetPlayerGold(player.currentGold, 25);
-                    player.hitpoints = BuyHealingPotion(player.currentGold, 25, player.hitpoints, player.hitpointsMax);
-                    UI.DrawPlayerPurchaseUI("healing potion");
-                    Console.ReadKey();
+                    if (IsPlayerAtMaxHitPoints(player.hitpoints, player.hitpointsMax) == false)
+                    {
+                        player.currentGold = SetPlayerGold(player.currentGold, 25);
+                        player.hitpoints = BuyHealingPotion(player.currentGold, 25, player.hitpoints, player.hitpointsMax);
+                        UI.DrawPlayerPurchaseUI("healing potion");
+                        Console.ReadKey();
+                    }
+                    else
+                    {
+                        UI.DrawPlayerIsAlreadyMaxHP();
+                        Console.ReadKey();
+                    }
                 }
                 else
                 {
@@ -49,6 +57,17 @@ public class Shop
     public bool CanPlayerAffordItem(int currentPlayerGold, int cost)
     {
         if (currentPlayerGold >= cost)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
+    public bool IsPlayerAtMaxHitPoints(int currentPlayerHP, int maxPlayerHP)
+    {
+        if (currentPlayerHP == maxPlayerHP)
         {
             return true;
         }
