@@ -4,7 +4,7 @@ public class ShopUI
     public void DrawShopUI(int currentPlayerGold, int currentPlayerHP, int maxPlayerHP)
     {
         Clear();
-        WriteLine("Current gold: " + currentPlayerGold + " ");
+        WriteLine("Current gold: " + currentPlayerGold);
         WriteLine("Current HP : " + currentPlayerHP + "/" + maxPlayerHP);
         WriteLine("Press B to buy a healing potion for 25 gold");
         WriteLine("The potion will restore 20HP");
@@ -13,7 +13,7 @@ public class ShopUI
     public void DrawPlayerCantAffordUI()
     {
         Clear();
-        WriteLine("You do not have the gold for this purchase");
+        WriteLine("You do not have enough gold for this purchase");
         WriteLine("Press any key to return");
     }
     public void DrawPlayerPurchaseUI(string itemBought)

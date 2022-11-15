@@ -112,11 +112,11 @@ public class MapUI
         {
             WriteLine("You picked up : " + loot.gold + " gold, +" + loot.weapon + " weapon and +" + loot.armor + " armor.");
         }
-        else if (loot.gold != 0 && loot.weapon != 0)
+        else if (loot.gold != 0 && loot.armor != 0)
         {
             WriteLine("You picked up : " + loot.gold + " gold and +" + loot.armor + " armor.");
         }
-        else if (loot.gold != 0 && loot.armor != 0)
+        else if (loot.gold != 0 && loot.weapon != 0)
         {
             WriteLine("You picked up : " + loot.gold + " gold and +" + loot.weapon + " weapon.");
         }
