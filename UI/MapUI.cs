@@ -6,8 +6,6 @@ public class MapUI
     public void UILevelLoad(string[,] levelData, int mapHeight, int mapWidth, int currentPlayerPosX, int currentPlayerPosY, Player player)
     {
         Console.OutputEncoding = System.Text.Encoding.UTF8;
-        //Kommer behöva flytta denna clear ifall vi vill ha text ovanför kartan.
-        Clear();
         for (int i = 0; i < mapHeight; i++)
         {
             for (int j = 0; j < mapWidth; j++)
@@ -93,15 +91,72 @@ public class MapUI
         }
         else if (loot.gold != 0)
         {
-             WriteLine("You picked up : " + loot.gold + " gold");
+            WriteLine("You picked up : " + loot.gold + " gold");
         }
         WriteLine("Press any key to continue");
     }
-    public void ClearConsoleLine()
-{
-    int currentLineCursor = Console.CursorTop;
-    Console.SetCursorPosition(0, 1);
-    Console.Write(new string(' ', Console.BufferWidth)); 
-    Console.SetCursorPosition(0, currentLineCursor);
-}
+    public void ClearConsoleAroundPlayer(int currentPlayerPosY)
+    {
+        int currentLineCursor = Console.CursorTop;
+        Console.SetCursorPosition(0, currentPlayerPosY - 1);
+        Console.Write(new string(' ', Console.BufferWidth));
+        Console.SetCursorPosition(0, currentPlayerPosY);
+        Console.Write(new string(' ', Console.BufferWidth));
+        Console.SetCursorPosition(0, currentPlayerPosY + 1);
+        Console.Write(new string(' ', Console.BufferWidth));
+        Console.SetCursorPosition(0, currentLineCursor);
+    }
+    public void UIPlayerUpdate(string[,] levelData, int mapHeight, int mapWidth, int currentPlayerPosX, int currentPlayerPosY, Player player)
+    {
+        Console.CursorVisible = false;
+        ClearConsoleAroundPlayer(currentPlayerPosY);
+        Console.SetCursorPosition(0, currentPlayerPosY - 1);
+        Console.OutputEncoding = System.Text.Encoding.UTF8;
+        for (int i = 0; i < 3; i++)
+        {
+            for (int j = 0; j < mapWidth; j++)
+            {
+                if (tileEngine.SelectTile(levelData, currentPlayerPosY - 1 + i, j, mapWidth) == new WallTile().TileID)
+                {
+                    BackgroundColor = ConsoleColor.DarkGray;
+                    Write("  ");
+                }
+                if (tileEngine.SelectTile(levelData, currentPlayerPosY - 1 + i, j, mapWidth) == new FloorTile().TileID)
+                {
+                    BackgroundColor = ConsoleColor.White;
+                    Write("  ");
+                }
+                if (tileEngine.SelectTile(levelData, currentPlayerPosY - 1 + i, j, mapWidth) == new DoorTile().TileID)
+                {
+                    BackgroundColor = ConsoleColor.DarkGray;
+                    Write("🚪");
+                }
+                if (tileEngine.SelectTile(levelData, currentPlayerPosY - 1 + i, j, mapWidth) == new EntryTile().TileID)
+                {
+                    BackgroundColor = ConsoleColor.Blue;
+                    Write("🚪");
+                }
+                if (tileEngine.SelectTile(levelData, currentPlayerPosY - 1 + i, j, mapWidth) == new ExitTile().TileID)
+                {
+                    BackgroundColor = ConsoleColor.Green;
+                    Write("🚪");
+                }
+                if (tileEngine.SelectTile(levelData, currentPlayerPosY - 1 + i, j, mapWidth) == new EnemyTile().TileID)
+                {
+                    BackgroundColor = ConsoleColor.Red;
+                    Write("☠ ");
+                }
+                if (tileEngine.SelectTile(levelData, currentPlayerPosY - 1 + i, j, mapWidth) == new LootTile().TileID)
+                {
+                    BackgroundColor = ConsoleColor.Yellow;
+                    Write("💸");
+                }
+            }
+            WriteLine("");
+        }
+        Console.SetCursorPosition(currentPlayerPosX*2+2, currentPlayerPosY);
+        BackgroundColor = ConsoleColor.White;
+        Write("\b\b🚶");
+        BackgroundColor = ConsoleColor.Black;
+    }
 }

@@ -67,14 +67,20 @@ public class TileEngine
         if (currenTileID == 4)
         {
             tileEventManager.LootTileEvent(manager, engine, player, ui);
+            Console.Clear();
+            ui.UILevelLoad(manager.levelData, manager.mapHeight, manager.mapWidth, engine.currentPlayerPosX, engine.currentPlayerPosY, player);
         }
         if (currenTileID == 5)
         {
             tileEventManager.EnemyTileEvent(manager, engine, player);
+            Console.Clear();
+            ui.UILevelLoad(manager.levelData, manager.mapHeight, manager.mapWidth, engine.currentPlayerPosX, engine.currentPlayerPosY, player);
         }
         if (currenTileID == 6)
         {
             manager.currentLevel = tileEventManager.ExitTileEvent(manager.currentLevel);
+            Console.Clear();
+            ui.UILevelLoad(manager.levelData, manager.mapHeight, manager.mapWidth, engine.currentPlayerPosX, engine.currentPlayerPosY, player);
             return manager;
         }
         return manager;

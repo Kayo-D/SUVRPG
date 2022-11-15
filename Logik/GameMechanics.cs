@@ -14,6 +14,7 @@ public class GameMechanics
         player.hitpoints = 30;
         player.hitpointsMax = 30;
         engine.SpawnPlayer(manager.playerStartPosX, manager.playerStartPosY);
+        Console.Clear();
         mapUI.UILevelLoad(manager.levelData, manager.mapHeight, manager.mapWidth, engine.currentPlayerPosX, engine.currentPlayerPosY, player);
         while (true)
         {
@@ -25,13 +26,17 @@ public class GameMechanics
                 manager.SelectLevel(manager.currentLevel);
                 engine.SpawnPlayer(manager.playerStartPosX, manager.playerStartPosY);
                 manager.currentLevel = levelCheck;
+                Console.Clear();
+                mapUI.UILevelLoad(manager.levelData, manager.mapHeight, manager.mapWidth, engine.currentPlayerPosX, engine.currentPlayerPosY, player);
             }
             if (keyInput.Key == ConsoleKey.S)
             {
                 player = shop.StartShop(player);
+                Console.Clear();
+                mapUI.UILevelLoad(manager.levelData, manager.mapHeight, manager.mapWidth, engine.currentPlayerPosX, engine.currentPlayerPosY, player);
             }
             //mapUI.UILevelLoad(manager.levelData, manager.mapHeight, manager.mapWidth, engine.currentPlayerPosX, engine.currentPlayerPosY, player);
-            mapUI.ClearConsoleLine();
+            mapUI.UIPlayerUpdate(manager.levelData, manager.mapHeight, manager.mapWidth, engine.currentPlayerPosX, engine.currentPlayerPosY, player);
         }
     }
 }
