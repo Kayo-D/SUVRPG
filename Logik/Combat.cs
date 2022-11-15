@@ -2,14 +2,19 @@ namespace SUVRPG
 {
     public class Combat
     {
-        public void CalculateSpeed()
+        public void StartCombat()
+        {
+            
+        }
+        
+        public void CalculateSpeed(int speed)
         {
             // If player.Speed >= enemy.Speed ?
         }
         
-        public void Attack()
+        public void Attack(int damage)
         {
-
+            
         }
 
         public void CalculateDmg()
