@@ -47,9 +47,9 @@ public class TreasureClass1 : TreasureClass
     public Loot BigScore()
     {
         Loot loot = new();
-        loot = PouchOfCoins();
-        loot = ArmorUp();
-        loot = WeaponUp();
+        loot.gold = loot.gold = rng.Next(10) + 15;
+        loot.armor = loot.armor = 1;
+        loot.weapon = loot.weapon = 1;
         return loot;
     }
 }
