@@ -15,6 +15,13 @@ public class TileEventManager
     public void LootTileEvent(LevelManager manager, TileEngine engine, Player player, MapUI ui)
     {
         engine.ChangeTileID(manager.levelData, engine.currentPlayerPosY, engine.currentPlayerPosX, manager.mapWidth, "1");
-        player = loot.PickupLoot(manager, engine, player, ui);
+        if (manager.currentLevel == 1)
+        {
+            player = loot.PickupLootLevel1(manager, engine, player, ui);
+        }
+        else if (manager.currentLevel == 2)
+        {
+            player = loot.PickupLootLevel2(manager, engine, player, ui);
+        }
     }
 }

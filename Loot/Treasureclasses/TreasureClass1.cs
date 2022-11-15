@@ -52,11 +52,4 @@ public class TreasureClass1 : TreasureClass
         loot = WeaponUp();
         return loot;
     }
-    public Loot EmptyLoot(Loot lootToEmpty)
-    {
-        lootToEmpty.gold = 0;
-        lootToEmpty.weapon = 0;
-        lootToEmpty.armor = 0;
-        return lootToEmpty;
-    }
 }
