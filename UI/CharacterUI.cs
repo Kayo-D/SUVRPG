@@ -37,8 +37,9 @@ namespace SUVRPG
             Console.WriteLine("3# ELF");
             Console.WriteLine("4# DWARF");
             raceMenu = Console.ReadKey(true).Key;
+            bool isInputCorrect = true;
 
-            while (raceMenu.Equals(true))
+            while (isInputCorrect)
             {
                 switch (raceMenu)
                 {
@@ -71,10 +72,10 @@ namespace SUVRPG
                     break;
 
                     default:
-                    Console.WriteLine("Sorry, try again.");
-                    break;
+                    isInputCorrect = false;
+                    Console.WriteLine("Please try again.");
+                    break;                
                 }
-                break;
             }
             
             Console.WriteLine("ENTER CHARACTER INFO:\n ");
