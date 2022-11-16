@@ -20,12 +20,6 @@ public class TreasureClass2 : TreasureClass
         returnedLoot = lootTable[rng.Next(10)];
         return returnedLoot;
     }
-    public Loot FewCoins()
-    {
-        Loot loot = new();
-        loot.gold = rng.Next(5) + 1;
-        return loot;
-    }
     public Loot PouchOfCoins()
     {
         Loot loot = new();

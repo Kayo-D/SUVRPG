@@ -23,5 +23,9 @@ public class TileEventManager
         {
             player = loot.PickupLootLevel2(manager, engine, player, ui);
         }
+        else if (manager.currentLevel == 3)
+        {
+            player = loot.PickupLootLevel3(manager, engine, player, ui);
+        }
     }
 }
