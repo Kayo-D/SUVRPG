@@ -52,7 +52,7 @@ public class TileEngine
     }
     public bool CanPlayerStandOnTile(int selectedTileID)
     {
-        if (selectedTileID == 1 || selectedTileID == 2 || selectedTileID == 4 || selectedTileID == 5 || selectedTileID == 6)
+        if (selectedTileID == new FloorTile().TileID || selectedTileID == new DoorTile().TileID || selectedTileID == new LootTile().TileID || selectedTileID == new EnemyTile().TileID || selectedTileID == new ExitTile().TileID)
         {
             return true;
         }
