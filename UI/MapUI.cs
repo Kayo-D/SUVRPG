@@ -110,27 +110,27 @@ public class MapUI
         Clear();
         if (loot.gold != 0 && loot.armor != 0 && loot.weapon != 0)
         {
-            WriteLine("You picked up : " + loot.gold + " gold, +" + loot.weapon + " weapon and +" + loot.armor + " armor.");
+            WriteLine("You scored big! Found : " + loot.gold + " gold, +" + loot.weapon + " weapon and +" + loot.armor + " armor.");
         }
         else if (loot.gold != 0 && loot.armor != 0)
         {
-            WriteLine("You picked up : " + loot.gold + " gold and +" + loot.armor + " armor.");
+            WriteLine("You found : " + loot.gold + " gold and +" + loot.armor + " armor.");
         }
         else if (loot.gold != 0 && loot.weapon != 0)
         {
-            WriteLine("You picked up : " + loot.gold + " gold and +" + loot.weapon + " weapon.");
+            WriteLine("You found : " + loot.gold + " gold and +" + loot.weapon + " weapon.");
         }
         else if (loot.armor != 0)
         {
-            WriteLine("You picked up : +" + loot.armor + " armor.");
+            WriteLine("You found : +" + loot.armor + " armor.");
         }
         else if (loot.weapon != 0)
         {
-            WriteLine("You picked up : +" + loot.weapon + " weapon.");
+            WriteLine("You found : +" + loot.weapon + " weapon.");
         }
         else if (loot.gold != 0)
         {
-            WriteLine("You picked up : " + loot.gold + " gold");
+            WriteLine("You found : " + loot.gold + " gold");
         }
         WriteLine("Press any key to continue");
     }
