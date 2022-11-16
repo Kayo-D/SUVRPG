@@ -7,22 +7,29 @@ namespace SUVRPG
 {
     public class CharacterUI
     {
+        public Character CurrentPlayer { get; set; }
+        
         public Player characterCreation()
         {
-            Player character = new Player();
+            Player player = new Player();
             ConsoleKey raceMenu = ConsoleKey.NoName;
             Console.Clear();
 
             Console.WriteLine("CHARACTER CREATION\n");
             Console.WriteLine("The name of your character: ");
+<<<<<<< HEAD
             character.name = Console.ReadLine();
 
+=======
+            player.name = Console.ReadLine();
+            
+>>>>>>> ec3a22844ee14f2615efaf6e5461e79a7185ea35
             while (true)
             {
-                if (character.name == "")
+                if (player.name == "")
                 {
                     Console.WriteLine("Please enter a valid character name: ");
-                    character.name = Console.ReadLine();
+                    player.name = Console.ReadLine();
                 }
                 else
                 {
@@ -97,9 +104,9 @@ namespace SUVRPG
             }
 
             Console.WriteLine("ENTER CHARACTER INFO:\n ");
-            character.characterDescription = Console.ReadLine();
-            character.CharacterInfo(character.name, character.race, character.characterDescription);
-            return character;
+            player.characterDescription = Console.ReadLine();
+            player.CharacterInfo(player.name, player.race, player.characterDescription);
+            return player;
         }
     }
 }

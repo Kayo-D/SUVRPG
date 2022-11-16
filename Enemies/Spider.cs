@@ -5,24 +5,25 @@ using System.Threading.Tasks;
 
 namespace SUVRPG
 {
-    public class Spider : Enemy
+    public class Spider : Character
     {
+        bool hasPoisonSting;
+        
         Combat Combat = new Combat();
-        public Spider(bool _hasPoisonSting, string _name, int _hitpoints, int _armor, int _attackdmg, int _speed, int _level) 
-            : base(_name, _hitpoints, _armor, _attackdmg, _speed, _level)
+        public Spider(string _name, int _level, int _hitpoints, ConsoleColor _color, int _armor, int _attackdmg, bool _hasPoisonSting) 
+            : base(_name, _level, _hitpoints, _color, _armor, _attackdmg)
         {
-            bool HasPoisonSting = _hasPoisonSting;
+            bool hasPoisonSting = _hasPoisonSting;
         }
 
         private void SpiderBite()
         {
             System.Console.WriteLine("The spider bites you");
-            Combat.Attack(3);
+            Combat.DealDamage(3);
         }
  
-        public override void EnemyAttack()
+        public override void Attack(Character otherCharacter)
         {
-            base.EnemyAttack();
             SpiderBite();
         }
 

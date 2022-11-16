@@ -7,4 +7,12 @@ build_property.InvariantGlobalization =
 build_property.PlatformNeutralAssembly = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = SUVRPG
+<<<<<<< HEAD
 build_property.ProjectDir = c:\Users\cw94\Desktop\Skolarbeten\SUVRPG\
+=======
+<<<<<<< HEAD
+build_property.ProjectDir = C:\Users\Simon\Documents\SUVNET\SUVRPG\
+=======
+build_property.ProjectDir = C:\Users\cw94\Desktop\Skolarbeten\SUVRPG\
+>>>>>>> a3446959bf4a64d46ca1b85716d58498909b1075
+>>>>>>> ec3a22844ee14f2615efaf6e5461e79a7185ea35

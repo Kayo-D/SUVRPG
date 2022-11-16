@@ -1,8 +1,14 @@
 {
   "version": 2,
+<<<<<<< HEAD
+  "dgSpecHash": "/OepUhdxK9aJBV+lUMJa4CuA1Q3p/l4m7hTl0zs2nf355GNCch70JHpD5CZuggebfWugq78j7GrwMCZ7OjIaXg==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Simon\\Documents\\SUVNET\\SUVRPG\\SUVRPG.csproj",
+=======
   "dgSpecHash": "pk/5N3tS+O/xppQuSgzteEV6j8BZPfWOlH0skyHiKyQr2SyWcwmHu75pXKCLM+aX2qsMn5Vlo39x2Tgfro+yew==",
   "success": true,
   "projectFilePath": "C:\\Users\\cw94\\Desktop\\Skolarbeten\\SUVRPG\\SUVRPG.csproj",
+>>>>>>> a3446959bf4a64d46ca1b85716d58498909b1075
   "expectedPackageFiles": [],
   "logs": []
 }
