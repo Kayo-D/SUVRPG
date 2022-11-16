@@ -10,7 +10,7 @@ namespace SUVRPG
             LevelManager manager = new LevelManager();
             ConsoleKeyInfo keyInput = new ConsoleKeyInfo();
             MapUI mapUI = new MapUI();
-            manager.SelectLevel(2);
+            manager.SelectLevel(1);
             int levelCheck = manager.currentLevel;
             player.currentGold = 0;
             player.hitpoints = 30;

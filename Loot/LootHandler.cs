@@ -2,8 +2,6 @@ public class LootHandler
 {
     public Player PickupLootLevel1(LevelManager manager, TileEngine engine, Player player, MapUI ui)
     {
-        Console.WriteLine(manager.currentLevel);
-        Console.ReadLine();
         TreasureClass1 tc1 = new();
         TreasureClass2 tc2 = new();
         Random rng = new Random();

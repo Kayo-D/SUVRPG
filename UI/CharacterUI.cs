@@ -16,7 +16,7 @@ namespace SUVRPG
             Console.WriteLine("CHARACTER CREATION\n");
             Console.WriteLine("The name of your character: ");
             character.name = Console.ReadLine();
-            
+
             while (true)
             {
                 if (character.name == "")
@@ -37,47 +37,65 @@ namespace SUVRPG
             Console.WriteLine("3# ELF");
             Console.WriteLine("4# DWARF");
             raceMenu = Console.ReadKey(true).Key;
-            bool isInputCorrect = true;
+            bool isInputCorrect = false;
 
-            while (isInputCorrect)
+            while (isInputCorrect == false)
             {
                 switch (raceMenu)
                 {
                     case ConsoleKey.D1:
-                    Console.Clear();
-                    Console.WriteLine("You chose... HUMAN! Excellent choice.\n");
-                    Console.WriteLine("Human: Well met!");
-                    character.race = "Human";
-                    break;
+                        Console.Clear();
+                        Console.WriteLine("You chose... HUMAN! Excellent choice.\n");
+                        Console.WriteLine("Human: Well met!");
+                        Console.WriteLine("Press any key to continue");
+                        character.race = "Human";
+                        isInputCorrect = true;
+                        Console.ReadKey();
+                        break;
 
                     case ConsoleKey.D2:
-                    Console.Clear();
-                    Console.WriteLine("You chose... ORC! I guess that will do.\n");
-                    Console.WriteLine("Orc: Strength and honor!");
-                    character.race = "Orc";
-                    break;
+                        Console.Clear();
+                        Console.WriteLine("You chose... ORC! I guess that will do.\n");
+                        Console.WriteLine("Orc: Strength and honor!");
+                        Console.WriteLine("Press any key to continue");
+                        character.race = "Orc";
+                        isInputCorrect = true;
+                        Console.ReadKey();
+                        break;
 
                     case ConsoleKey.D3:
-                    Console.Clear();
-                    Console.WriteLine("You chose... ELF! I guess you know something about something.\n");
-                    Console.WriteLine("Elf: Bal'a dash, malanore.");
-                    character.race = "Elf";
-                    break;
+                        Console.Clear();
+                        Console.WriteLine("You chose... ELF! I guess you know something about something.\n");
+                        Console.WriteLine("Elf: Bal'a dash, malanore.");
+                        Console.WriteLine("Press any key to continue");
+                        character.race = "Elf";
+                        isInputCorrect = true;
+                        Console.ReadKey();
+                        break;
 
                     case ConsoleKey.D4:
-                    Console.Clear();
-                    Console.WriteLine("You chose... DWARF! I guess you feel short and spicy today!\n");
-                    Console.WriteLine("Dwarf: Great tae meet ya.");
-                    character.race = "Dwarf";
-                    break;
+                        Console.Clear();
+                        Console.WriteLine("You chose... DWARF! I guess you feel short and spicy today!\n");
+                        Console.WriteLine("Dwarf: Great tae meet ya.");
+                        Console.WriteLine("Press any key to continue");
+                        character.race = "Dwarf";
+                        isInputCorrect = true;
+                        Console.ReadKey();
+                        break;
 
                     default:
-                    isInputCorrect = false;
-                    Console.WriteLine("Please try again.");
-                    break;                
+                        Console.Clear();
+                        Console.WriteLine("Please try again.");
+                        Console.WriteLine("PLEASE ENTER YOUR CHOICE OF CHARACTER RACE:\n");
+                        Console.WriteLine("1# HUMAN");
+                        Console.WriteLine("2# ORC");
+                        Console.WriteLine("3# ELF");
+                        Console.WriteLine("4# DWARF");
+                        raceMenu = Console.ReadKey(true).Key;
+                        break;
                 }
             }
-            
+
             Console.WriteLine("ENTER CHARACTER INFO:\n ");
             character.characterDescription = Console.ReadLine();
             character.CharacterInfo(character.name, character.race, character.characterDescription);
