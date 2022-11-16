@@ -17,13 +17,8 @@ namespace SUVRPG
 
             Console.WriteLine("CHARACTER CREATION\n");
             Console.WriteLine("The name of your character: ");
-<<<<<<< HEAD
-            character.name = Console.ReadLine();
-
-=======
             player.name = Console.ReadLine();
-            
->>>>>>> ec3a22844ee14f2615efaf6e5461e79a7185ea35
+
             while (true)
             {
                 if (player.name == "")
@@ -55,7 +50,7 @@ namespace SUVRPG
                         Console.WriteLine("You chose... HUMAN! Excellent choice.\n");
                         Console.WriteLine("Human: Well met!");
                         Console.WriteLine("Press any key to continue");
-                        character.race = "Human";
+                        player.race = "Human";
                         isInputCorrect = true;
                         Console.ReadKey();
                         break;
@@ -65,7 +60,7 @@ namespace SUVRPG
                         Console.WriteLine("You chose... ORC! I guess that will do.\n");
                         Console.WriteLine("Orc: Strength and honor!");
                         Console.WriteLine("Press any key to continue");
-                        character.race = "Orc";
+                        player.race = "Orc";
                         isInputCorrect = true;
                         Console.ReadKey();
                         break;
@@ -75,7 +70,7 @@ namespace SUVRPG
                         Console.WriteLine("You chose... ELF! I guess you know something about something.\n");
                         Console.WriteLine("Elf: Bal'a dash, malanore.");
                         Console.WriteLine("Press any key to continue");
-                        character.race = "Elf";
+                        player.race = "Elf";
                         isInputCorrect = true;
                         Console.ReadKey();
                         break;
@@ -85,7 +80,7 @@ namespace SUVRPG
                         Console.WriteLine("You chose... DWARF! I guess you feel short and spicy today!\n");
                         Console.WriteLine("Dwarf: Great tae meet ya.");
                         Console.WriteLine("Press any key to continue");
-                        character.race = "Dwarf";
+                        player.race = "Dwarf";
                         isInputCorrect = true;
                         Console.ReadKey();
                         break;
