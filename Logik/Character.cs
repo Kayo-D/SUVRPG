@@ -66,26 +66,7 @@ public class Character
         }
     }
 
-    public void DisplayHealthBar()
-    {
-        ForegroundColor = color;
-        WriteLine($"{name}'s Health:");
-        ResetColor();
-        Write("[");
-        BackgroundColor = ConsoleColor.Green;
-        for (int i = 0; i < hitpoints; i++)
-        {
-            Write(" ");
-        }
-        BackgroundColor = ConsoleColor.Black;
-        for (int i = hitpoints; i < maxhitpoints; i++)
-        {
-            Write (" ");
-        }
-        ResetColor();
-        WriteLine($"] {hitpoints}/{maxhitpoints}");
-            
-    }
+    
 
 
 }

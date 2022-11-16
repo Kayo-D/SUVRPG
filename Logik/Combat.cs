@@ -4,9 +4,8 @@ namespace SUVRPG
 {
     public class Combat
     {
-        public Player CurrentPlayer;
-        public Character CurrentEnemy;
         private List<Character> Enemies;
+        public CombatUI CombatUI = new();
 
         public void CreateEnemy()
         {
@@ -14,7 +13,7 @@ namespace SUVRPG
 
             Enemies = new List<Character>() { bandit };
 
-            CurrentEnemy = bandit; // Detta ska sättas i StartCombat sen.
+            //CurrentEnemy = bandit; // Detta ska sättas i StartCombat sen.
 
         }
         
@@ -24,13 +23,13 @@ namespace SUVRPG
             // Metod som sätter CurrentEnemy. 
         }
         
-        public void Battle()
+        public void Battle(Player CurrentPlayer, Character CurrentEnemy)
         {
             while (CurrentPlayer.IsAlive && CurrentEnemy.IsAlive)
              {
                 Clear();
-                CurrentPlayer.DisplayHealthBar();
-                CurrentEnemy.DisplayHealthBar();
+                CombatUI.DisplayHealthBar(CurrentPlayer);
+                CombatUI.DisplayHealthBar(CurrentEnemy);
                 WriteLine();
 
                 CurrentPlayer.Attack(CurrentEnemy);
@@ -45,8 +44,8 @@ namespace SUVRPG
                 ReadKey(true);
 
                 Clear();
-                CurrentPlayer.DisplayHealthBar();
-                CurrentEnemy.DisplayHealthBar();
+                CombatUI.DisplayHealthBar(CurrentPlayer);
+                CombatUI.DisplayHealthBar(CurrentEnemy);
                 WriteLine();
 
                 CurrentEnemy.Attack(CurrentPlayer);

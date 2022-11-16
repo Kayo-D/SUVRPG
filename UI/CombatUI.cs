@@ -4,6 +4,7 @@ namespace SUVRPG
 {
     public class CombatUI
     {
+        public ConsoleColor color { get; set; }
         public void StartFight()
         {
             WriteLine("Fight is starting!");
@@ -18,7 +19,7 @@ namespace SUVRPG
         // public void DisplayHealthBar()
         // {
         //     Character Character = new Character();
-            
+
         //     ForegroundColor = Character.color;
         //     WriteLine($"{Character.name}'s Health:");
         //     ResetColor();
@@ -35,7 +36,7 @@ namespace SUVRPG
         //     }
         //     ResetColor();
         //     WriteLine($"] {Character.hitpoints}/{Character.maxhitpoints}");
-            
+
         // }
 
         public void YouWinScreen()
@@ -45,6 +46,26 @@ namespace SUVRPG
 
         public void YouLoseScreen()
         {
+
+        }
+        public void DisplayHealthBar(Character character)
+        {
+            ForegroundColor = color;
+            WriteLine($"{character.name}'s Health:");
+            ResetColor();
+            Write("[");
+            BackgroundColor = ConsoleColor.Green;
+            for (int i = 0; i < character.hitpoints; i++)
+            {
+                Write(" ");
+            }
+            BackgroundColor = ConsoleColor.Black;
+            for (int i = character.hitpoints; i < character.maxhitpoints; i++)
+            {
+                Write(" ");
+            }
+            ResetColor();
+            WriteLine($"] {character.hitpoints}/{character.maxhitpoints}");
 
         }
     }
