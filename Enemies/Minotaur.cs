@@ -5,11 +5,11 @@ using System.Threading.Tasks;
 
 namespace SUVRPG
 {
-    public class Minotaur : Enemy
+    public class Minotaur : Character
     {
         Combat Combat = new Combat();
-        public Minotaur(string _name, int _hitpoints, int _armor, int _attackdmg, int _speed, int _level) 
-            : base(_name, _hitpoints, _armor, _attackdmg, _speed, _level)
+        public Minotaur(string _name, int _level, int _hitpoints, ConsoleColor _color, int _armor, int _attackdmg) 
+            : base(_name, _level, _hitpoints, _color, _armor, _attackdmg)
         {
             
         }
@@ -17,12 +17,11 @@ namespace SUVRPG
         private void MinoSmash()
         {
             System.Console.WriteLine("The minotaur smashes at you!");
-            Combat.Attack(6);
+            Combat.DealDamage(6);
         }
  
-        public override void EnemyAttack()
+        public override void Attack(Character otherCharacter)
         {
-            base.EnemyAttack();
             MinoSmash();
         }
 
