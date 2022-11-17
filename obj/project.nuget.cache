@@ -1,8 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "/OepUhdxK9aJBV+lUMJa4CuA1Q3p/l4m7hTl0zs2nf355GNCch70JHpD5CZuggebfWugq78j7GrwMCZ7OjIaXg==",
+  "dgSpecHash": "wOhlsd/lSQmz1NIov0/Nh8yPAMH/yITjFcqtjAtLmaUS/OcmSTSHsp2e7MMbC+8UUjiHORVV1y8eki4XC9nj9A==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Simon\\Documents\\SUVNET\\SUVRPG\\SUVRPG.csproj",
-  "expectedPackageFiles": [],
+  "projectFilePath": "c:\\Users\\belle\\Documents\\SUVNET22\\C#\\Betygsatta inlämningar\\SUVRPG\\SUVRPG\\SUVRPG.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\belle\\.nuget\\packages\\dapper\\2.0.123\\dapper.2.0.123.nupkg.sha512",
+    "C:\\Users\\belle\\.nuget\\packages\\mysqlconnector\\2.1.13\\mysqlconnector.2.1.13.nupkg.sha512"
+  ],
   "logs": []
 }
