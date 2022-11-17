@@ -39,13 +39,13 @@ public class MapUI
     public void DrawEnemyTile()
     {
         BackgroundColor = ConsoleColor.Red;
-        Write("⚔ ");
+        Write("☠ ");
         BackgroundColor = ConsoleColor.Black;
     }
     public void DrawBossTile()
     {
         BackgroundColor = ConsoleColor.Red;
-        Write("☠ ");
+        Write("🐲");
         BackgroundColor = ConsoleColor.Black;
     }
     public void DrawLootTile()

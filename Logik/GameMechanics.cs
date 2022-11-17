@@ -5,7 +5,7 @@ namespace SUVRPG
         public LevelManager StartNewGame()
         {
             LevelManager manager = new();
-            manager.SelectLevel(1);
+            manager.SelectLevel(3);
             return manager;
         }
         public LevelManager LoadGame()
