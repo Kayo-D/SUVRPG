@@ -103,8 +103,6 @@ namespace SUVRPG
             player.CharacterInfo(player.name, player.race, player.characterDescription);
 
             //Sets starting values. Could have them in the Player class. Move if you want to //Christian
-            player.hitpoints = 30;
-            player.hitpointsMax = 30;
             return player;
         }
     }
