@@ -5,16 +5,16 @@ public class Player : Character
     private const int smallAttack = 2;
     private const int bigAttack = 4;
 
-    public Player()
-    {
-
-    }
+   public Player()
+   {
+        hitpoints = 30;
+        maxhitpoints = 30;
+   }
     
     public Player(string _name, int _hitpoints, ConsoleColor _color, int _armor, int _attackdmg)
         : base(_name, _hitpoints, _color, _armor, _attackdmg)
         {
             currentGold = 0;
-
         }
     
     public void CharacterInfo(string name, string race, string characterDescription)
