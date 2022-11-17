@@ -1,3 +1,5 @@
+//Made by Christian Vallvingskog
+
 public class LevelManager
 {
     public int playerStartPosX;

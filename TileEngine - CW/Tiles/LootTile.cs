@@ -1,3 +1,5 @@
+//Made by Christian Vallvingskog
+
 public class LootTile : Tile
 {
     public override int TileID

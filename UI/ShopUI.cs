@@ -1,3 +1,5 @@
+//Made by Christian Vallvingskog
+
 using static System.Console;
 public class ShopUI
 {

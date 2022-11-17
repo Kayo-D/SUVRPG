@@ -1,3 +1,5 @@
+//Made by Christian Vallvingskog
+
 public abstract class Level
 {
     protected string[,] _mapData = new string[,] { };

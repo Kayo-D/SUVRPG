@@ -1,3 +1,5 @@
+//Made by Christian Vallvingskog
+
 public class WallTile : Tile
 {
     public override int TileID

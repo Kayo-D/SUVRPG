@@ -1,3 +1,4 @@
+//Made by Christian Vallvingskog
 public class Loot
 {
     public int gold;

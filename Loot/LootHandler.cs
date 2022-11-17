@@ -1,5 +1,8 @@
+//Made by Christian Vallvingskog
+
 public class LootHandler
 {
+    //Make a AddLootToPlayer method in the Player class and call it here instead
     public Player PickupLootLevel1(LevelManager manager, TileEngine engine, Player player, MapUI ui)
     {
         TreasureClass1 tc1 = new();

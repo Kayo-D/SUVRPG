@@ -1,8 +1,11 @@
+//Made by Christian Vallvingskog
+
 public class TileEngine
 {
     TileEventManager tileEventManager = new();
     public int currentPlayerPosX;
     public int currentPlayerPosY;
+    //Change from string[,] to int[,]
     public int SelectTile(string[,] levelData, int selectedTileYPos, int selectedTileXPos, int mapWidth)
     {
         string xAxis;
@@ -26,6 +29,7 @@ public class TileEngine
         }
         return 0;
     }
+    //Change from string[,] to int[,]
     public string[,] ChangeTileID(string[,] levelData, int selectedTileYPos, int selectedTileXPos, int mapWidth, string newTileID)
     {
         string xAxis;
@@ -50,6 +54,7 @@ public class TileEngine
         }
         return levelData;
     }
+    //Use a bool on the tiles for this function instead.
     public bool CanPlayerStandOnTile(int selectedTileID)
     {
         if (selectedTileID == new FloorTile().TileID || selectedTileID == new DoorTile().TileID || selectedTileID == new LootTile().TileID || selectedTileID == new EnemyTile().TileID || selectedTileID == new ExitTile().TileID)
@@ -61,6 +66,7 @@ public class TileEngine
             return false;
         }
     }
+    //Change so it doesn't make a new tile just to get the TileID
     public void TileEvents(LevelManager manager, TileEngine engine, Player player, MapUI ui)
     {
         int currenTileID = SelectTile(manager.levelData, currentPlayerPosY, currentPlayerPosX, manager.mapWidth);
@@ -87,6 +93,7 @@ public class TileEngine
         currentPlayerPosX = playerStartPosX;
         currentPlayerPosY = playerStartPosY;
     }
+    //Turn into four methods to move the player. One for each direction. Call them in this method. Move this method to UI
     public void PlayerMovement(ConsoleKeyInfo keyInput, string[,] currentLevelData, int mapWidth)
     {
         int collisionDetector;

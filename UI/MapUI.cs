@@ -1,8 +1,11 @@
+//Made by Christian Vallvingskog
+
 using static System.Console;
 public class MapUI
 {
     TileEngine tileEngine = new TileEngine();
     LevelManager manager = new LevelManager();
+    //Should maybe place all DrawTile functions in their respective Tile class
     public void DrawWallTile()
     {
         BackgroundColor = ConsoleColor.DarkGray;
@@ -58,6 +61,7 @@ public class MapUI
         {
             for (int j = 0; j < mapWidth; j++)
             {
+                //Fix so it doesn't create a new tile just to get the TileID
                 if (tileEngine.SelectTile(levelData, i, j, mapWidth) == new WallTile().TileID)
                 {
                     DrawWallTile();
@@ -112,6 +116,7 @@ public class MapUI
         {
             WriteLine("You scored big! Found : " + loot.gold + " gold, +" + loot.weapon + " weapon and +" + loot.armor + " armor.");
         }
+        //These next two else if are not currently in use. Keep them for new/altered loot
         else if (loot.gold != 0 && loot.armor != 0)
         {
             WriteLine("You found : " + loot.gold + " gold and +" + loot.armor + " armor.");
@@ -134,6 +139,7 @@ public class MapUI
         }
         WriteLine("Press any key to continue");
     }
+    //Will turn obsolete with an updated UIPlayerUpdate
     public void ClearConsoleAroundPlayer(int currentPlayerPosY)
     {
         int currentLineCursor = Console.CursorTop;
@@ -145,6 +151,7 @@ public class MapUI
         Console.Write(new string(' ', Console.BufferWidth));
         Console.SetCursorPosition(0, currentLineCursor);
     }
+    //Turn it into two methods. One that removes playerIcon from the map. One that adds playerIcon to the map
     public void UIPlayerUpdate(string[,] levelData, int mapHeight, int mapWidth, int currentPlayerPosX, int currentPlayerPosY, Player player)
     {
         Console.CursorVisible = false;

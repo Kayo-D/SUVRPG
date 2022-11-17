@@ -1,3 +1,5 @@
+//Made by Christian Vallvingskog
+
 public class TileEventManager
 {
     LootHandler loot = new();

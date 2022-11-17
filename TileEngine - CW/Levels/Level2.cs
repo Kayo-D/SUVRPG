@@ -1,3 +1,5 @@
+//Made by Christian Vallvingskog
+
 public class Level2 : Level
 {
     public override string[,] mapData

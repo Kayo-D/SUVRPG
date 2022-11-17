@@ -1,3 +1,5 @@
+//Made by Christian Vallvingskog
+
 public class ExitTile : Tile
 {
     public override int TileID

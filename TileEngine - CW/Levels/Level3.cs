@@ -1,3 +1,6 @@
+//Made by Christian Vallvingskog
+
+//Might want to add an EndBossTile
 public class Level3 : Level
 {
     public override string[,] mapData
