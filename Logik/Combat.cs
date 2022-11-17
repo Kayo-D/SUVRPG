@@ -59,7 +59,11 @@ namespace SUVRPG
             else if (manager.currentLevel == 3)
             {
                 int randNum = RandGenerator.Next(0, 4);
-                CurrentEnemy = EnemiesLvl2[randNum];
+                CurrentEnemy = EnemiesLvl3[randNum];
+            }
+            else
+            {
+                CurrentEnemy = EnemiesLvl4[0]; // Tänker att detta kan vara en egen metod sen. 
             }
             Battle(player, CurrentEnemy);
         }
