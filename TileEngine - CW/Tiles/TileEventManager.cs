@@ -14,7 +14,7 @@ public class TileEventManager
     {
         SUVRPG.Combat combat = new();
         engine.ChangeTileID(manager.levelData, engine.currentPlayerPosY, engine.currentPlayerPosX, manager.mapWidth, "1");
-        //player = combat.StartBossCombat(player);
+        combat.StartCombat(player, manager);
     }
     public int ExitTileEvent(int currentLevel)
     {
