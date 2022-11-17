@@ -57,7 +57,7 @@ public class TileEngine
     //Use a bool on the tiles for this function instead.
     public bool CanPlayerStandOnTile(int selectedTileID)
     {
-        if (selectedTileID == new FloorTile().TileID || selectedTileID == new DoorTile().TileID || selectedTileID == new LootTile().TileID || selectedTileID == new EnemyTile().TileID || selectedTileID == new ExitTile().TileID)
+        if (selectedTileID == new FloorTile().TileID || selectedTileID == new DoorTile().TileID || selectedTileID == new LootTile().TileID || selectedTileID == new EnemyTile().TileID || selectedTileID == new ExitTile().TileID || selectedTileID == new BossTile().TileID)
         {
             return true;
         }
