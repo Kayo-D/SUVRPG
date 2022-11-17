@@ -8,11 +8,24 @@ namespace SUVRPG
             manager.SelectLevel(1);
             return manager;
         }
+        public LevelManager LoadGame()
+        {
+            LevelManager manager = new();
+            manager = manager.LoadLevel();
+            return manager;
+        }
         public Player CreateNewCharacter()
         {
             CharacterUI playerUI = new();
             Player player = new();
             return player = playerUI.characterCreation();
+        }
+        //Get player from database
+        public Player LoadCharacter(/* DB database */)
+        {
+            Player player = new();
+            //player = database.GetPlayerData();
+            return player;
         }
         public bool IsPlayerOnCorrectLevel(LevelManager manager, int levelCheck)
         {
@@ -46,7 +59,8 @@ namespace SUVRPG
             while (true)
             {
                 keyInput = Console.ReadKey();
-                engine.PlayerMovement(keyInput, manager.levelData, manager.mapWidth);
+                mapUI.PlayerMovement(keyInput, manager.levelData, manager.mapWidth, manager.mapHeight, engine, player);
+                mapUI.UIPlayerUpdate(manager.levelData, manager.mapHeight, manager.mapWidth, engine.currentPlayerPosX, engine.currentPlayerPosY, player);
                 engine.TileEvents(manager, engine, player, mapUI);
                 levelCheck = GoToNextLevel(manager, levelCheck, engine, mapUI,player);
                 if (keyInput.Key == ConsoleKey.S)
@@ -54,7 +68,6 @@ namespace SUVRPG
                     player = shop.StartShop(player);
                     mapUI.UILevelLoad(manager.levelData, manager.mapHeight, manager.mapWidth, engine.currentPlayerPosX, engine.currentPlayerPosY, player);
                 }
-                mapUI.UIPlayerUpdate(manager.levelData, manager.mapHeight, manager.mapWidth, engine.currentPlayerPosX, engine.currentPlayerPosY, player);
             }
         }
         public void ChangeLevel(int newLevel, LevelManager manager, TileEngine engine, MapUI mapUI, Player player)

@@ -48,11 +48,45 @@ public class MapUI
         Write("💸");
         BackgroundColor = ConsoleColor.Black;
     }
-    public void DrawPlayer()
+    public void DrawPlayer(int currentPlayerPosX, int currentPlayerPosY)
     {
+        Console.SetCursorPosition(currentPlayerPosX * 2 + 2, currentPlayerPosY);
         BackgroundColor = ConsoleColor.White;
         Write("\b\b🚶");
         BackgroundColor = ConsoleColor.Black;
+    }
+    public void ClearPlayerFromMap(string[,] levelData, int mapHeight, int mapWidth, int currentPlayerPosX, int currentPlayerPosY, Player player)
+    {
+        Console.SetCursorPosition(currentPlayerPosX * 2 + 2, currentPlayerPosY);
+        //Make a method for this
+        if (tileEngine.SelectTile(levelData, currentPlayerPosX, currentPlayerPosY, mapWidth) == new WallTile().TileID)
+        {
+            DrawWallTile();
+        }
+        if (tileEngine.SelectTile(levelData, currentPlayerPosX, currentPlayerPosY, mapWidth) == new FloorTile().TileID)
+        {
+            DrawFloorTile();
+        }
+        if (tileEngine.SelectTile(levelData, currentPlayerPosX, currentPlayerPosY, mapWidth) == new DoorTile().TileID)
+        {
+            DrawDoorTile();
+        }
+        if (tileEngine.SelectTile(levelData, currentPlayerPosX, currentPlayerPosY, mapWidth) == new EntryTile().TileID)
+        {
+            DrawEntryTile();
+        }
+        if (tileEngine.SelectTile(levelData, currentPlayerPosX, currentPlayerPosY, mapWidth) == new ExitTile().TileID)
+        {
+            DrawExitTile();
+        }
+        if (tileEngine.SelectTile(levelData, currentPlayerPosX, currentPlayerPosY, mapWidth) == new EnemyTile().TileID)
+        {
+            DrawEnemyTile();
+        }
+        if (tileEngine.SelectTile(levelData, currentPlayerPosX, currentPlayerPosY, mapWidth) == new LootTile().TileID)
+        {
+            DrawLootTile();
+        }
     }
     public void UILevelLoad(string[,] levelData, int mapHeight, int mapWidth, int currentPlayerPosX, int currentPlayerPosY, Player player)
     {
@@ -63,6 +97,7 @@ public class MapUI
             for (int j = 0; j < mapWidth; j++)
             {
                 //Fix so it doesn't create a new tile just to get the TileID
+                //Make a method for this
                 if (tileEngine.SelectTile(levelData, i, j, mapWidth) == new WallTile().TileID)
                 {
                     DrawWallTile();
@@ -93,7 +128,7 @@ public class MapUI
                 }
                 if (currentPlayerPosY == i && currentPlayerPosX == j)
                 {
-                    DrawPlayer();
+                    DrawPlayer(currentPlayerPosX, currentPlayerPosY);
                 }
             }
             WriteLine("");
@@ -140,29 +175,16 @@ public class MapUI
         }
         WriteLine("Press any key to continue");
     }
-    //Will turn obsolete with an updated UIPlayerUpdate
-    public void ClearConsoleAroundPlayer(int currentPlayerPosY)
-    {
-        int currentLineCursor = Console.CursorTop;
-        Console.SetCursorPosition(0, currentPlayerPosY - 1);
-        Console.Write(new string(' ', Console.BufferWidth));
-        Console.SetCursorPosition(0, currentPlayerPosY);
-        Console.Write(new string(' ', Console.BufferWidth));
-        Console.SetCursorPosition(0, currentPlayerPosY + 1);
-        Console.Write(new string(' ', Console.BufferWidth));
-        Console.SetCursorPosition(0, currentLineCursor);
-    }
-    //Turn it into two methods. One that removes playerIcon from the map. One that adds playerIcon to the map
     public void UIPlayerUpdate(string[,] levelData, int mapHeight, int mapWidth, int currentPlayerPosX, int currentPlayerPosY, Player player)
     {
         Console.CursorVisible = false;
-        ClearConsoleAroundPlayer(currentPlayerPosY);
         Console.SetCursorPosition(0, currentPlayerPosY - 1);
         Console.OutputEncoding = System.Text.Encoding.UTF8;
         for (int i = 0; i < 3; i++)
         {
             for (int j = 0; j < mapWidth; j++)
             {
+                //Make a method for this
                 if (tileEngine.SelectTile(levelData, currentPlayerPosY - 1 + i, j, mapWidth) == new WallTile().TileID)
                 {
                     DrawWallTile();
@@ -194,7 +216,45 @@ public class MapUI
             }
             WriteLine("");
         }
-        Console.SetCursorPosition(currentPlayerPosX * 2 + 2, currentPlayerPosY);
-        DrawPlayer();
+        DrawPlayer(currentPlayerPosX, currentPlayerPosY);
+    }
+    //Turn into four methods to move the player. One for each direction. Call them in this method.
+    public void PlayerMovement(ConsoleKeyInfo keyInput, string[,] currentLevelData, int mapWidth, int mapHeight, TileEngine engine, Player player)
+    {
+        int collisionDetector;
+        ClearPlayerFromMap(currentLevelData,mapHeight,mapWidth,engine.currentPlayerPosX,engine.currentPlayerPosY,player);
+        switch (keyInput.Key)
+        {
+            case ConsoleKey.UpArrow:
+                collisionDetector = engine.currentPlayerPosY - 1;
+                if (engine.CanPlayerStandOnTile(engine.SelectTile(currentLevelData, collisionDetector, engine.currentPlayerPosX, mapWidth)))
+                {
+                    engine.currentPlayerPosY = engine.currentPlayerPosY - 1;
+                }
+                break;
+            case ConsoleKey.LeftArrow:
+                collisionDetector = engine.currentPlayerPosX - 1;
+                if (engine.CanPlayerStandOnTile(engine.SelectTile(currentLevelData, engine.currentPlayerPosY, collisionDetector, mapWidth)))
+                {
+                    engine.currentPlayerPosX = engine.currentPlayerPosX - 1;
+                }
+                break;
+            case ConsoleKey.RightArrow:
+                collisionDetector = engine.currentPlayerPosX + 1;
+                if (engine.CanPlayerStandOnTile(engine.SelectTile(currentLevelData, engine.currentPlayerPosY, collisionDetector, mapWidth)))
+                {
+                    engine.currentPlayerPosX = engine.currentPlayerPosX + 1;
+                }
+                break;
+            case ConsoleKey.DownArrow:
+                collisionDetector = engine.currentPlayerPosY + 1;
+                if (engine.CanPlayerStandOnTile(engine.SelectTile(currentLevelData, collisionDetector, engine.currentPlayerPosX, mapWidth)))
+                {
+                    engine.currentPlayerPosY = engine.currentPlayerPosY + 1;
+                }
+                break;
+            default:
+                break;
+        }
     }
 }

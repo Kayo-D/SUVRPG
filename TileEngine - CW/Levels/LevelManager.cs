@@ -41,4 +41,11 @@ public class LevelManager
             currentLevel = 3;
         }
     }
+    //Get level from database
+    public LevelManager LoadLevel(/* DB database */)
+    {
+        LevelManager manager = new();
+        //manager.leveldata = database.GetLevelData();
+        return manager;
+    }
 }

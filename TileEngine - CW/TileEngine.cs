@@ -93,42 +93,4 @@ public class TileEngine
         currentPlayerPosX = playerStartPosX;
         currentPlayerPosY = playerStartPosY;
     }
-    //Turn into four methods to move the player. One for each direction. Call them in this method. Move this method to UI
-    public void PlayerMovement(ConsoleKeyInfo keyInput, string[,] currentLevelData, int mapWidth)
-    {
-        int collisionDetector;
-        switch (keyInput.Key)
-        {
-            case ConsoleKey.UpArrow:
-                collisionDetector = currentPlayerPosY - 1;
-                if (CanPlayerStandOnTile(SelectTile(currentLevelData, collisionDetector, currentPlayerPosX, mapWidth)))
-                {
-                    currentPlayerPosY = currentPlayerPosY - 1;
-                }
-                break;
-            case ConsoleKey.LeftArrow:
-                collisionDetector = currentPlayerPosX - 1;
-                if (CanPlayerStandOnTile(SelectTile(currentLevelData, currentPlayerPosY, collisionDetector, mapWidth)))
-                {
-                    currentPlayerPosX = currentPlayerPosX - 1;
-                }
-                break;
-            case ConsoleKey.RightArrow:
-                collisionDetector = currentPlayerPosX + 1;
-                if (CanPlayerStandOnTile(SelectTile(currentLevelData, currentPlayerPosY, collisionDetector, mapWidth)))
-                {
-                    currentPlayerPosX = currentPlayerPosX + 1;
-                }
-                break;
-            case ConsoleKey.DownArrow:
-                collisionDetector = currentPlayerPosY + 1;
-                if (CanPlayerStandOnTile(SelectTile(currentLevelData, collisionDetector, currentPlayerPosX, mapWidth)))
-                {
-                    currentPlayerPosY = currentPlayerPosY + 1;
-                }
-                break;
-            default:
-                break;
-        }
-    }
 }
