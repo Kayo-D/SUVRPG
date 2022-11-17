@@ -1,5 +1,6 @@
 using static System.Console;
 
+//Denna klassen ska egentligen vara abstrakt
 public class Character
 {
     public string name { get; set; }

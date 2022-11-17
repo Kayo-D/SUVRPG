@@ -153,7 +153,7 @@ public class MapUI
     }
     public void DrawCharacterInfo(Player player)
     {
-        WriteLine("You have : " + player.currentGold + " gold. Your hitpoints are : " + player.hitpoints + "/" + player.hitpointsMax + ". You have a +" + player.attackdmg + " weapon and a +" + player.armor + " armor,");
+        WriteLine("You have : " + player.currentGold + " gold. Your hitpoints are : " + player.hitpoints + "/" + player.maxhitpoints + ". You have a +" + player.attackdmg + " weapon and a +" + player.armor + " armor,");
     }
     public void DrawPickups(Loot loot)
     {
