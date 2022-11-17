@@ -1,3 +1,5 @@
+using static System.Console;
+
 public class Player : Character
 {
     public string race { get; set; }
@@ -22,18 +24,36 @@ public class Player : Character
 
     }
 
-    public void AttackOne(Character Enemy)
+    public void AttackOne(Character CurrentEnemy)
     {
-        Attack(attackdmg + smallAttack);
+        Write("You make a precise but light attack attack against your enemy ");
+                int randPercent = RandGenerator.Next(1, 101);
+                if (randPercent <= 90)
+                {
+                    WriteLine("and it hits!");
+                    CurrentEnemy.TakeDamage(attackdmg + smallAttack);
+                }
+                else
+                {
+                    WriteLine("but it misses. ");
+                }
+
     }
 
-    public void AttackTwo(Character Enemy)
+    public void AttackTwo(Character CurrentEnemy)
     {
-        Attack(attackdmg + bigAttack);
-    }
-
-    private void Attack(int damage)
-    {
-        // CurrentEnemy.hitpoints -= damage;
+        Write("You make a great (albeit rather ambitious) swing ");
+        int randPercent = RandGenerator.Next(1, 101);
+        if (randPercent <= 50)
+        {
+            WriteLine("and it's a perfect hit!");
+            CurrentEnemy.TakeDamage(attackdmg + bigAttack);
+        }
+        else
+        {
+            WriteLine("and it misses the target completely.");
+        }
     }
 }
+        
+    

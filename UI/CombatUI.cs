@@ -46,12 +46,12 @@ namespace SUVRPG
 
         }
 
-        public void PlayerCombatMenu()
+        public void PlayerCombatMenu(Player player, Character CurrentEnemy)
         {
             string title = "It's your turn to fight! What do you want to do?\n";
 
-            string[] options = { "ATTACK 1 (2 DMG 90% CHANCE TO HIT)",
-            "ATTACK 2 (4 DMG 50% CHANCE TO HIT)",
+            string[] options = { $"ATTACK 1 ({player.attackdmg + 2} DMG AND 90% CHANCE TO HIT)",
+            $"ATTACK 2 ({player.attackdmg + 4} DMG 50% CHANCE TO HIT)",
             "RUN AWAY"};
 
             Menu playerCombatMenu = new Menu(title, options);
@@ -61,15 +61,38 @@ namespace SUVRPG
             switch (SelectedIndex)
             {
                 case 0:
-                    break;
+                    player.AttackOne(CurrentEnemy);
+                    break;;
 
                 case 1:
+                    player.AttackTwo(CurrentEnemy);
                     break;
 
                 case 2:
+                    Console.WriteLine("You run away!");
                     break;
             }
 
+        }
+
+        public static void GameOver(Player player)
+        {
+            Clear();
+            if (player.IsDead)
+            {
+                WriteLine($"Alas! {player.name}, you have met a sad fate. ");
+                WriteLine(@"
+                
+                ");
+                CombatUI.NextRound();
+                MainMenu.Mainmenu();
+            }
+        }
+
+        public static void NextRound()
+        {
+            WriteLine("Press any key to continue to the next round! \n");
+            ReadKey(true);
         }
     }
 }
