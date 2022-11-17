@@ -9,16 +9,16 @@ public class Shop
     {
         while (true)
         {
-            UI.DrawShopUI(player.currentGold, player.hitpoints, player.hitpointsMax);
+            UI.DrawShopUI(player.currentGold, player.hitpoints, player.maxhitpoints);
             keyInput = Console.ReadKey();
             if (keyInput.Key == ConsoleKey.B)
             {
                 if (CanPlayerAffordItem(player.currentGold, 25))
                 {
-                    if (IsPlayerAtMaxHitPoints(player.hitpoints, player.hitpointsMax) == false)
+                    if (IsPlayerAtMaxHitPoints(player.hitpoints, player.maxhitpoints) == false)
                     {
                         player.currentGold = SetPlayerGold(player.currentGold, 25);
-                        player.hitpoints = BuyHealingPotion(player.currentGold, 25, player.hitpoints, player.hitpointsMax);
+                        player.hitpoints = BuyHealingPotion(player.currentGold, 25, player.hitpoints, player.maxhitpoints);
                         UI.DrawPlayerPurchaseUI("healing potion");
                         Console.ReadKey();
                     }

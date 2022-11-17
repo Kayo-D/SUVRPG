@@ -2,8 +2,6 @@ public class Player : Character
 {
     public string race { get; set; }
     public int currentGold;
-    public int hitpointsMax;
-
     private const int smallAttack = 2;
     private const int bigAttack = 4;
 
