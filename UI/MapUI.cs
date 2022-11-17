@@ -56,6 +56,7 @@ public class MapUI
     }
     public void UILevelLoad(string[,] levelData, int mapHeight, int mapWidth, int currentPlayerPosX, int currentPlayerPosY, Player player)
     {
+        Console.Clear();
         Console.OutputEncoding = System.Text.Encoding.UTF8;
         for (int i = 0; i < mapHeight; i++)
         {

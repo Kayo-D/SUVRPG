@@ -12,7 +12,7 @@ Player 🚶
 
 //TestKod Christian
 GameMechanics game = new GameMechanics();
-            game.StartGameTest();
+            game.GameLoop(game.CreateNewCharacter(), game.StartNewGame());
 
 //TestKod Isabell
 CharacterUI test = new();
