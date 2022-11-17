@@ -71,5 +71,25 @@ namespace SUVRPG
             }
 
         }
+
+        public static void GameOver(Player player)
+        {
+            Clear();
+            if (player.IsDead)
+            {
+                WriteLine($"Alas! {player.name}, you have met a sad fate. ");
+                WriteLine(@"
+                
+                ");
+                CombatUI.NextRound();
+                MainMenu.Mainmenu();
+            }
+        }
+
+        public static void NextRound()
+        {
+            WriteLine("Press any key to continue to the next round! \n");
+            ReadKey(true);
+        }
     }
 }

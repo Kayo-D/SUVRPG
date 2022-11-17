@@ -38,7 +38,7 @@ namespace SUVRPG
                 Firebreath();
                 if (randPercent <= 70)
                 {
-                    WriteLine("and burns you for 30 damage!");
+                    WriteLine("and burns you for 30 damage! Ouch, it burns!");
                     otherCharacter.TakeDamage(20 + attackdmg);
                 }
                 else

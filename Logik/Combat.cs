@@ -30,7 +30,7 @@ namespace SUVRPG
 
             // Level 4 enemies
             Spider giantSpider = new Spider ("Giant Spider", 4, 60, "It's a giant spider towering over you.", ConsoleColor.Red, 5, 25, true);
-            Minotaur minotaurChampion = new Minotaur ("Minotaur Champion", 4, 55, "The Minotaur Champion has served the Dragon Lord well and been given a special rank of Champion. No extra salary or benefits though.", ConsoleColor.Red, 10, 20);
+            Minotaur minotaurChampion = new Minotaur ("Minotaur Champion", 4, 55, "The Minotaur Champion has served the Dragon Lord well and been given a special rank of Champion. No extra salary or benefits though. Some extra overtime required.", ConsoleColor.Red, 10, 20);
             Dragon youngDrake = new Dragon ("Young Drake", 4, 50, "The Dragon Lord has many consorts and when a mommy dragon and a daddy dragon hug for a very long time they sometimes get young drakes. Don't let their smaller size fool you though, they can easily eat you up.", ConsoleColor.Red, 6, 20);
 
             // Final boss (lvl5)
@@ -50,52 +50,55 @@ namespace SUVRPG
             // Metod som sätter CurrentEnemy?
         }
         
-        public void Battle(Player CurrentPlayer, Character CurrentEnemy)
+        public void Battle(Player player, Character CurrentEnemy)
         {
-            while (CurrentPlayer.IsAlive && CurrentEnemy.IsAlive)
+            while (player.IsAlive && CurrentEnemy.IsAlive)
              {
                 Clear();
-                CombatUI.DisplayHealthBar(CurrentPlayer);
+                CombatUI.DisplayHealthBar(player);
                 CombatUI.DisplayHealthBar(CurrentEnemy);
                 WriteLine();
 
-                CurrentPlayer.Attack(CurrentEnemy);
+                player.Attack(CurrentEnemy);
 
-                if (CurrentPlayer.IsDead || CurrentEnemy.IsDead)
+                if (player.IsDead || CurrentEnemy.IsDead)
                 {
                     break;
                 }
 
                 WriteLine();                
-                WriteLine("Press any key to continue...\n");
-                ReadKey(true);
+                CombatUI.NextRound();
 
                 Clear();
-                CombatUI.DisplayHealthBar(CurrentPlayer);
+                CombatUI.DisplayHealthBar(player);
                 CombatUI.DisplayHealthBar(CurrentEnemy);
                 WriteLine();
 
-                CurrentEnemy.Attack(CurrentPlayer);
+                CurrentEnemy.Attack(player);
+
+                if (player.IsDead || CurrentEnemy.IsDead)
+                {
+                    break;
+                }
                 
-                WriteLine("Press any key to continue...\n");
-                ReadKey(true);
+                CombatUI.NextRound();
             }
         }
         
-        public void DealDamage(int damage)
-        {
-            
-        }
+        // Denna ligger i Character.cs just nu men hade nog hellre velat ha den här. Flyttar den sen.
 
-
-        public void CalculateHP()
-        {
-
-        }
+        // public void DealDamage(int damage)
+        // {
+        //     health -= damage;
+        //     if (health < 0)
+        //     {
+        //         health = 0;
+        //     }
+        // }
 
         public void EndofCOmbat()
         {
-
+            // Behövs denna? Tvek. 
         }
 
         
