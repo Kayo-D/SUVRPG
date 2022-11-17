@@ -15,29 +15,6 @@ namespace SUVRPG
 
         }
 
-        // Denna ligger just nu i Character men ska ligga här sen.
-        // public void DisplayHealthBar()
-        // {
-        //     Character Character = new Character();
-
-        //     ForegroundColor = Character.color;
-        //     WriteLine($"{Character.name}'s Health:");
-        //     ResetColor();
-        //     Write("[");
-        //     BackgroundColor = ConsoleColor.Green;
-        //     for (int i = 0; i < Character.hitpoints; i++)
-        //     {
-        //         Write(" ");
-        //     }
-        //     BackgroundColor = ConsoleColor.Black;
-        //     for (int i = Character.hitpoints; i < Character.maxhitpoints; i++)
-        //     {
-        //         Write (" ");
-        //     }
-        //     ResetColor();
-        //     WriteLine($"] {Character.hitpoints}/{Character.maxhitpoints}");
-
-        // }
 
         public void YouWinScreen()
         {
@@ -66,6 +43,32 @@ namespace SUVRPG
             }
             ResetColor();
             WriteLine($"] {character.hitpoints}/{character.maxhitpoints}");
+
+        }
+
+        public void PlayerCombatMenu()
+        {
+            string title = "It's your turn to fight! What do you want to do?\n";
+
+            string[] options = { "ATTACK 1 (2 DMG 90% CHANCE TO HIT)",
+            "ATTACK 2 (4 DMG 50% CHANCE TO HIT)",
+            "RUN AWAY"};
+
+            Menu playerCombatMenu = new Menu(title, options);
+
+            int SelectedIndex = playerCombatMenu.Run();
+
+            switch (SelectedIndex)
+            {
+                case 0:
+                    break;
+
+                case 1:
+                    break;
+
+                case 2:
+                    break;
+            }
 
         }
     }
