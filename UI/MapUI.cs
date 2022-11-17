@@ -39,6 +39,12 @@ public class MapUI
     public void DrawEnemyTile()
     {
         BackgroundColor = ConsoleColor.Red;
+        Write("⚔ ");
+        BackgroundColor = ConsoleColor.Black;
+    }
+    public void DrawBossTile()
+    {
+        BackgroundColor = ConsoleColor.Red;
         Write("☠ ");
         BackgroundColor = ConsoleColor.Black;
     }
@@ -125,6 +131,10 @@ public class MapUI
                 if (tileEngine.SelectTile(levelData, i, j, mapWidth) == new LootTile().TileID)
                 {
                     DrawLootTile();
+                }
+                if (tileEngine.SelectTile(levelData, i, j, mapWidth) == new BossTile().TileID)
+                {
+                    DrawBossTile();
                 }
                 if (currentPlayerPosY == i && currentPlayerPosX == j)
                 {
@@ -213,48 +223,72 @@ public class MapUI
                 {
                     DrawLootTile();
                 }
+                if (tileEngine.SelectTile(levelData, currentPlayerPosY - 1 + i, j, mapWidth) == new BossTile().TileID)
+                {
+                    DrawBossTile();
+                }
             }
             WriteLine("");
         }
         DrawPlayer(currentPlayerPosX, currentPlayerPosY);
     }
-    //Turn into four methods to move the player. One for each direction. Call them in this method.
+    //Move collisiondetection into its own method
     public void PlayerMovement(ConsoleKeyInfo keyInput, string[,] currentLevelData, int mapWidth, int mapHeight, TileEngine engine, Player player)
     {
         int collisionDetector;
-        ClearPlayerFromMap(currentLevelData,mapHeight,mapWidth,engine.currentPlayerPosX,engine.currentPlayerPosY,player);
+        ClearPlayerFromMap(currentLevelData, mapHeight, mapWidth, engine.currentPlayerPosX, engine.currentPlayerPosY, player);
         switch (keyInput.Key)
         {
             case ConsoleKey.UpArrow:
                 collisionDetector = engine.currentPlayerPosY - 1;
                 if (engine.CanPlayerStandOnTile(engine.SelectTile(currentLevelData, collisionDetector, engine.currentPlayerPosX, mapWidth)))
                 {
-                    engine.currentPlayerPosY = engine.currentPlayerPosY - 1;
+                    engine = MovePlayerUp(engine);
                 }
                 break;
             case ConsoleKey.LeftArrow:
                 collisionDetector = engine.currentPlayerPosX - 1;
                 if (engine.CanPlayerStandOnTile(engine.SelectTile(currentLevelData, engine.currentPlayerPosY, collisionDetector, mapWidth)))
                 {
-                    engine.currentPlayerPosX = engine.currentPlayerPosX - 1;
+                    engine = MovePlayerLeft(engine);
                 }
                 break;
             case ConsoleKey.RightArrow:
                 collisionDetector = engine.currentPlayerPosX + 1;
                 if (engine.CanPlayerStandOnTile(engine.SelectTile(currentLevelData, engine.currentPlayerPosY, collisionDetector, mapWidth)))
                 {
-                    engine.currentPlayerPosX = engine.currentPlayerPosX + 1;
+                    engine = MovePlayerRight(engine);
                 }
                 break;
             case ConsoleKey.DownArrow:
                 collisionDetector = engine.currentPlayerPosY + 1;
                 if (engine.CanPlayerStandOnTile(engine.SelectTile(currentLevelData, collisionDetector, engine.currentPlayerPosX, mapWidth)))
                 {
-                    engine.currentPlayerPosY = engine.currentPlayerPosY + 1;
+                    engine = MovePlayerDown(engine);
                 }
                 break;
             default:
                 break;
         }
+    }
+    public TileEngine MovePlayerUp(TileEngine engine)
+    {
+        engine.currentPlayerPosY = engine.currentPlayerPosY - 1;
+        return engine;
+    }
+    public TileEngine MovePlayerLeft(TileEngine engine)
+    {
+        engine.currentPlayerPosX = engine.currentPlayerPosX - 1;
+        return engine;
+    }
+    public TileEngine MovePlayerRight(TileEngine engine)
+    {
+        engine.currentPlayerPosX = engine.currentPlayerPosX + 1;
+        return engine;
+    }
+    public TileEngine MovePlayerDown(TileEngine engine)
+    {
+        engine.currentPlayerPosY = engine.currentPlayerPosY + 1;
+        return engine;
     }
 }
