@@ -1,19 +1,19 @@
 //Made by Christian Vallvingskog
 
-public class EntryTile : Tile
+public class BossTile : Tile
 {
     public override int TileID
     {
         get
         {
-            return _TileID = 3;
+            return _TileID = 7;
         }
     }
     public override bool canPlayerStandOnTile
     {
         get
         {
-            return _canPlayerStandOnTile = false;
+            return _canPlayerStandOnTile = true;
         }
     }
 }

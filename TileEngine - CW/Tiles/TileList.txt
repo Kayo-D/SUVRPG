@@ -5,14 +5,15 @@ ID  Name        Color       Icon
 2 = Door        White       🚪
 3 = EntryTile   Blue        🚪
 4 = Loot        Yellow      💸
-5 = Enemy       Red         ☠
+5 = Enemy       Red         ⚔
 6 = ExitTile    Green       🚪
+7 = BossTile    Red         ☠
 
 Player 🚶
 
 //TestKod Christian
 GameMechanics game = new GameMechanics();
-            game.StartGameTest();
+            game.GameLoop(game.CreateNewCharacter(), game.StartNewGame());
 
 //TestKod Isabell
 CharacterUI test = new();

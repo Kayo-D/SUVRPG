@@ -1,7 +1,10 @@
+//Made by Christian Vallvingskog
+
 public class Shop
 {
     ShopUI UI = new ShopUI();
     ConsoleKeyInfo keyInput;
+    //Split this. Some should go to UI
     public Player StartShop(Player player)
     {
         while (true)
@@ -49,11 +52,13 @@ public class Shop
         }
         return currentPlayerHP;
     }
+    //This should be in the Player class
     public int SetPlayerGold(int currentPlayerGold, int cost)
     {
         currentPlayerGold = currentPlayerGold - cost;
         return currentPlayerGold;
     }
+    //This should be in the Player class
     public bool CanPlayerAffordItem(int currentPlayerGold, int cost)
     {
         if (currentPlayerGold >= cost)
@@ -65,6 +70,7 @@ public class Shop
             return false;
         }
     }
+    //This should be in the Player class
     public bool IsPlayerAtMaxHitPoints(int currentPlayerHP, int maxPlayerHP)
     {
         if (currentPlayerHP == maxPlayerHP)

@@ -1,3 +1,5 @@
+//Made by Christian Vallvingskog
+
 public class LevelManager
 {
     public int playerStartPosX;
@@ -38,5 +40,12 @@ public class LevelManager
             mapHeight = lvl3.mapHeight;
             currentLevel = 3;
         }
+    }
+    //Get level from database
+    public LevelManager LoadLevel(/* DB database */)
+    {
+        LevelManager manager = new();
+        //manager.leveldata = database.GetLevelData();
+        return manager;
     }
 }

@@ -2,44 +2,79 @@ namespace SUVRPG
 {
     public class GameMechanics
     {
-        
-        public void StartGameTest()
+        public LevelManager StartNewGame()
         {
-            TileEngine engine = new TileEngine();
-            Player player = new Player("Simon", 20, ConsoleColor.Green, 0, 0); // Ta bort detta sen 
-            Shop shop = new Shop();
-            LevelManager manager = new LevelManager();
-            ConsoleKeyInfo keyInput = new ConsoleKeyInfo();
-            MapUI mapUI = new MapUI();
+            LevelManager manager = new();
             manager.SelectLevel(1);
+            return manager;
+        }
+        public LevelManager LoadGame()
+        {
+            LevelManager manager = new();
+            manager = manager.LoadLevel();
+            return manager;
+        }
+        public Player CreateNewCharacter()
+        {
+            CharacterUI playerUI = new();
+            Player player = new();
+            return player = playerUI.characterCreation();
+        }
+        //Get player from database
+        public Player LoadCharacter(/* DB database */)
+        {
+            Player player = new();
+            //player = database.GetPlayerData();
+            return player;
+        }
+        public bool IsPlayerOnCorrectLevel(LevelManager manager, int levelCheck)
+        {
+            if (manager.currentLevel != levelCheck)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+        public int GoToNextLevel(LevelManager manager, int levelCheck, TileEngine engine, MapUI mapUI, Player player)
+        {
+            if (IsPlayerOnCorrectLevel(manager, levelCheck))
+            {
+                ChangeLevel(manager.currentLevel, manager, engine, mapUI, player);
+                levelCheck = levelCheck + 1;
+            }
+            return levelCheck;
+        }
+        public void GameLoop(Player player, LevelManager manager)
+        {
+            TileEngine engine = new();
+            MapUI mapUI = new();
+            ConsoleKeyInfo keyInput = new();
+            Shop shop = new();
             int levelCheck = manager.currentLevel;
-            player.currentGold = 0;
-            player.hitpoints = 30;
-            player.hitpointsMax = 30;
             engine.SpawnPlayer(manager.playerStartPosX, manager.playerStartPosY);
-            Console.Clear();
             mapUI.UILevelLoad(manager.levelData, manager.mapHeight, manager.mapWidth, engine.currentPlayerPosX, engine.currentPlayerPosY, player);
             while (true)
             {
                 keyInput = Console.ReadKey();
-                engine.PlayerMovement(keyInput, manager.levelData, manager.mapWidth);
+                mapUI.PlayerMovement(keyInput, manager.levelData, manager.mapWidth, manager.mapHeight, engine, player);
+                mapUI.UIPlayerUpdate(manager.levelData, manager.mapHeight, manager.mapWidth, engine.currentPlayerPosX, engine.currentPlayerPosY, player);
                 engine.TileEvents(manager, engine, player, mapUI);
-                if (manager.currentLevel != levelCheck)
-                {
-                    manager.SelectLevel(manager.currentLevel);
-                    engine.SpawnPlayer(manager.playerStartPosX, manager.playerStartPosY);
-                    levelCheck = levelCheck + 1;
-                    Console.Clear();
-                    mapUI.UILevelLoad(manager.levelData, manager.mapHeight, manager.mapWidth, engine.currentPlayerPosX, engine.currentPlayerPosY, player);
-                }
+                levelCheck = GoToNextLevel(manager, levelCheck, engine, mapUI,player);
                 if (keyInput.Key == ConsoleKey.S)
                 {
                     player = shop.StartShop(player);
-                    Console.Clear();
                     mapUI.UILevelLoad(manager.levelData, manager.mapHeight, manager.mapWidth, engine.currentPlayerPosX, engine.currentPlayerPosY, player);
                 }
-                mapUI.UIPlayerUpdate(manager.levelData, manager.mapHeight, manager.mapWidth, engine.currentPlayerPosX, engine.currentPlayerPosY, player);
             }
+        }
+        public void ChangeLevel(int newLevel, LevelManager manager, TileEngine engine, MapUI mapUI, Player player)
+        {
+            manager.SelectLevel(newLevel);
+            engine.SpawnPlayer(manager.playerStartPosX, manager.playerStartPosY);
+            mapUI.UILevelLoad(manager.levelData, manager.mapHeight, manager.mapWidth, engine.currentPlayerPosX, engine.currentPlayerPosY, player);
         }
     }
 }

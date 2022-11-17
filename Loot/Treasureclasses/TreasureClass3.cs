@@ -1,3 +1,5 @@
+//Made by Christian Vallvingskog
+
 public class TreasureClass3 : TreasureClass
 {
     Random rng = new Random();
@@ -20,6 +22,7 @@ public class TreasureClass3 : TreasureClass
         returnedLoot = lootTable[rng.Next(10)];
         return returnedLoot;
     }
+    //Move into a LootDrop class
     public Loot SackOfCoins()
     {
         Loot loot = new();

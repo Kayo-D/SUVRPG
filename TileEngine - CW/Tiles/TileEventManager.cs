@@ -1,3 +1,5 @@
+//Made by Christian Vallvingskog
+
 public class TileEventManager
 {
     LootHandler loot = new();
@@ -6,6 +8,12 @@ public class TileEventManager
         SUVRPG.Combat combat = new();
         engine.ChangeTileID(manager.levelData, engine.currentPlayerPosY, engine.currentPlayerPosX, manager.mapWidth, "1");
         //player = combat.StartCombat(player);
+    }
+    public void BossTileEvent(LevelManager manager, TileEngine engine, Player player)
+    {
+        SUVRPG.Combat combat = new();
+        engine.ChangeTileID(manager.levelData, engine.currentPlayerPosY, engine.currentPlayerPosX, manager.mapWidth, "1");
+        //player = combat.StartBossCombat(player);
     }
     public int ExitTileEvent(int currentLevel)
     {
