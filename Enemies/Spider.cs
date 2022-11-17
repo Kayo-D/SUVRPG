@@ -8,7 +8,7 @@ namespace SUVRPG
 {
     public class Spider : Character
     {
-        bool hasPoisonSting;
+        bool hasPoisonSting = false;
         
         public Combat Combat = new();
 

@@ -42,8 +42,7 @@ namespace SUVRPG
             EnemiesLvl3 = new List<Character>() { minotaurGuard, banditLeader, giantSpider, minotaurChampion, youngDrake };
             EnemiesLvl4 = new List<Character>() { dragonLord };
         }
-        
-        
+
         public void StartCombat(Player player, LevelManager manager)
         {
             if (manager.currentLevel == 1)
@@ -72,7 +71,7 @@ namespace SUVRPG
         {
             while (player.IsAlive && CurrentEnemy.IsAlive)
              {
-                Clear();
+                // Clear();
                 CombatUI.DisplayHealthBar(player);
                 CombatUI.DisplayHealthBar(CurrentEnemy);
                 WriteLine();
@@ -94,10 +93,10 @@ namespace SUVRPG
 
                 CurrentEnemy.Attack(player);
 
-                if (player.IsDead || CurrentEnemy.IsDead)
-                {
-                    break;
-                }
+                // if (player.IsDead || CurrentEnemy.IsDead)
+                // {
+                //     break;
+                // }
                 
                 CombatUI.NextRound();
             }
