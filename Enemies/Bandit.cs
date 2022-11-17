@@ -8,31 +8,40 @@ namespace SUVRPG
 {
     public class Bandit : Character
     {
-        Combat Combat = new Combat();
-        public Bandit(string _name, int _level, int _hitpoints, ConsoleColor _color, int _armor, int _attackdmg) 
-            : base(_name, _level, _hitpoints, _color, _armor, _attackdmg)
+        public Combat Combat = new();
+        
+        public Bandit(string _name, int _level, int _hitpoints, string _characterDescription, ConsoleColor _color, int _armor, int _attackdmg) 
+            : base(_name, _level, _hitpoints, _characterDescription, _color, _armor, _attackdmg)
         {
             
         }
         
-        private void Charge()
+        private void MeeleStrike()
         {
-            System.Console.WriteLine("The bandit charges at you!");
-            Combat.DealDamage(4);
+            BackgroundColor = color;
+            Write($"{name} ");
+            ResetColor();
+            WriteLine($"strikes at you with his sword ");
+            ResetColor();
         }
-        private void Swordattack()
-        {
-            System.Console.WriteLine("The bandit swings his sword at you!");
-            Combat.DealDamage(8);
-        }
-        // public override void EnemyInfo()
-        // {
-        //     System.Console.WriteLine($"You've encountered a {name}! It has {hitpoints} hitpoints.");
-        // }
+
         public override void Attack(Character otherCharacter)
         {
-            Charge();
-            Swordattack();
+            ForegroundColor = color;
+            WriteLine($"{name} is fighting {otherCharacter.name}!");
+            ResetColor();
+
+            MeeleStrike();
+            int randPercent = RandGenerator.Next(1, 101);
+            if (randPercent >= 60)
+            {
+                WriteLine("and hits you!");
+                otherCharacter.TakeDamage(2 + attackdmg);
+            }
+            else 
+            {
+                WriteLine("but misses you! *phew*");
+            }
         }
     }
 }

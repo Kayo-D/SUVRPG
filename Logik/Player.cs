@@ -24,8 +24,18 @@ public class Player : Character
 
     }
 
-    public override void Attack(Character otherCharacter)
+    public void AttackOne(Character Enemy)
     {
+        Attack(attackdmg + smallAttack);
+    }
 
+    public void AttackTwo(Character Enemy)
+    {
+        Attack(attackdmg + bigAttack);
+    }
+
+    private void Attack(int damage)
+    {
+        // CurrentEnemy.hitpoints -= damage;
     }
 }

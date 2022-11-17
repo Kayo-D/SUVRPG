@@ -20,12 +20,13 @@ public class Character
     }
     
     // Enemy
-    public Character(string _name, int _level, int _hitpoints, ConsoleColor _color, int _armor, int _attackdmg)
+    public Character(string _name, int _level, int _hitpoints, string _characterDescription, ConsoleColor _color, int _armor, int _attackdmg)
     {
         string name = _name;
         int level = _level;
         int hitpoints = _hitpoints;
         int maxhitpoints = _hitpoints;
+        string characterDescription = _characterDescription;
         ConsoleColor color = _color;
         int armor = _armor;
         int attackdmg = _attackdmg;
