@@ -6,10 +6,9 @@ public class TileEngine
     public int currentPlayerPosX;
     public int currentPlayerPosY;
     //Change from string[,] to int[,]
-    public int SelectTile(string[,] levelData, int selectedTileYPos, int selectedTileXPos, int mapWidth)
+    public Tile SelectTile(string[,] levelData, int selectedTileYPos, int selectedTileXPos, int mapWidth)
     {
         string xAxis;
-        int selectedTileID;
         for (int y = 0; y < levelData.Length; y++)
         {
             xAxis = levelData[y, 0];
@@ -21,13 +20,45 @@ public class TileEngine
                 {
                     if (y == selectedTileYPos && x == selectedTileXPos)
                     {
-                        selectedTileID = int.Parse(tempArray1[x]);
-                        return selectedTileID;
+                        int selectTileID = int.Parse(tempArray1[x]);
+                        if(selectTileID == 0)
+                        {
+                            return new WallTile();
+                        }
+                        else if (selectTileID == 1)
+                        {
+                            return new FloorTile();
+                        }
+                        else if (selectTileID == 2)
+                        {
+                            return new DoorTile();
+                        }
+                        else if (selectTileID == 3)
+                        {
+                            return new EntryTile();
+                        }
+                        else if (selectTileID == 4)
+                        {
+                            return new LootTile();
+                        }
+                        else if (selectTileID == 5)
+                        {
+                            return new EnemyTile();
+                        }
+                        else if (selectTileID == 6)
+                        {
+                            return new ExitTile();
+                        }
+                        else if (selectTileID == 7)
+                        {
+                            return new BossTile();
+                        }
                     }
                 }
             }
         }
-        return 0;
+        ErrorTile error = new();
+        return error;
     }
     //Change from string[,] to int[,]
     public string[,] ChangeTileID(string[,] levelData, int selectedTileYPos, int selectedTileXPos, int mapWidth, string newTileID)
@@ -54,10 +85,9 @@ public class TileEngine
         }
         return levelData;
     }
-    //Use a bool on the tiles for this function instead.
-    public bool CanPlayerStandOnTile(int selectedTileID)
+    public bool CanPlayerStandOnTile(Tile selectedTile)
     {
-        if (selectedTileID == new FloorTile().TileID || selectedTileID == new DoorTile().TileID || selectedTileID == new LootTile().TileID || selectedTileID == new EnemyTile().TileID || selectedTileID == new ExitTile().TileID || selectedTileID == new BossTile().TileID)
+        if (selectedTile.canPlayerStandOnTile == true)
         {
             return true;
         }
@@ -66,23 +96,22 @@ public class TileEngine
             return false;
         }
     }
-    //Change so it doesn't make a new tile just to get the TileID
     public void TileEvents(LevelManager manager, TileEngine engine, Player player, MapUI ui)
     {
-        int currenTileID = SelectTile(manager.levelData, currentPlayerPosY, currentPlayerPosX, manager.mapWidth);
-        if (currenTileID == new LootTile().TileID)
+        Tile selectedTile = SelectTile(manager.levelData, currentPlayerPosY, currentPlayerPosX, manager.mapWidth);
+        if (selectedTile.TileID == 4)
         {
             tileEventManager.LootTileEvent(manager, engine, player, ui);
             Console.Clear();
             ui.UILevelLoad(manager.levelData, manager.mapHeight, manager.mapWidth, engine.currentPlayerPosX, engine.currentPlayerPosY, player);
         }
-        if (currenTileID == new EnemyTile().TileID)
+        if (selectedTile.TileID == 5)
         {
             tileEventManager.EnemyTileEvent(manager, engine, player);
             Console.Clear();
             ui.UILevelLoad(manager.levelData, manager.mapHeight, manager.mapWidth, engine.currentPlayerPosX, engine.currentPlayerPosY, player);
         }
-        if (currenTileID == new ExitTile().TileID)
+        if (selectedTile.TileID == 6)
         {
             manager.currentLevel = tileEventManager.ExitTileEvent(manager.currentLevel);
             Console.Clear();

@@ -26,6 +26,7 @@ namespace SUVRPG
             {
                 case 0:
                     game.StartNewGame();
+                    game.CreateNewCharacter();
                     break;
 
                 case 1:

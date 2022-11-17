@@ -63,36 +63,37 @@ public class MapUI
     }
     public void ClearPlayerFromMap(string[,] levelData, int mapHeight, int mapWidth, int currentPlayerPosX, int currentPlayerPosY, Player player)
     {
-        Console.SetCursorPosition(currentPlayerPosX * 2 + 2, currentPlayerPosY);
+        Console.SetCursorPosition(currentPlayerPosX*2+2, currentPlayerPosY);
         //Make a method for this
-        if (tileEngine.SelectTile(levelData, currentPlayerPosX, currentPlayerPosY, mapWidth) == new WallTile().TileID)
+        if (tileEngine.SelectTile(levelData, currentPlayerPosY, currentPlayerPosY, mapWidth).TileID == 0)
         {
             DrawWallTile();
         }
-        if (tileEngine.SelectTile(levelData, currentPlayerPosX, currentPlayerPosY, mapWidth) == new FloorTile().TileID)
+        else if (tileEngine.SelectTile(levelData, currentPlayerPosY, currentPlayerPosX, mapWidth).TileID == 1)
         {
             DrawFloorTile();
         }
-        if (tileEngine.SelectTile(levelData, currentPlayerPosX, currentPlayerPosY, mapWidth) == new DoorTile().TileID)
+        else if (tileEngine.SelectTile(levelData, currentPlayerPosY, currentPlayerPosX, mapWidth).TileID == 2)
         {
             DrawDoorTile();
         }
-        if (tileEngine.SelectTile(levelData, currentPlayerPosX, currentPlayerPosY, mapWidth) == new EntryTile().TileID)
+        else if (tileEngine.SelectTile(levelData, currentPlayerPosY, currentPlayerPosX, mapWidth).TileID == 3)
         {
             DrawEntryTile();
         }
-        if (tileEngine.SelectTile(levelData, currentPlayerPosX, currentPlayerPosY, mapWidth) == new ExitTile().TileID)
-        {
-            DrawExitTile();
-        }
-        if (tileEngine.SelectTile(levelData, currentPlayerPosX, currentPlayerPosY, mapWidth) == new EnemyTile().TileID)
-        {
-            DrawEnemyTile();
-        }
-        if (tileEngine.SelectTile(levelData, currentPlayerPosX, currentPlayerPosY, mapWidth) == new LootTile().TileID)
+        else if (tileEngine.SelectTile(levelData, currentPlayerPosY, currentPlayerPosX, mapWidth).TileID == 4)
         {
             DrawLootTile();
         }
+        else if (tileEngine.SelectTile(levelData, currentPlayerPosY, currentPlayerPosX, mapWidth).TileID == 5)
+        {
+            DrawEnemyTile();
+        }
+        else if (tileEngine.SelectTile(levelData, currentPlayerPosY, currentPlayerPosX, mapWidth).TileID == 6)
+        {
+            DrawExitTile();
+        }
+        ReadLine();
     }
     public void UILevelLoad(string[,] levelData, int mapHeight, int mapWidth, int currentPlayerPosX, int currentPlayerPosY, Player player)
     {
@@ -102,47 +103,44 @@ public class MapUI
         {
             for (int j = 0; j < mapWidth; j++)
             {
-                //Fix so it doesn't create a new tile just to get the TileID
                 //Make a method for this
-                if (tileEngine.SelectTile(levelData, i, j, mapWidth) == new WallTile().TileID)
+                if (tileEngine.SelectTile(levelData, i, j, mapWidth).TileID == 0)
                 {
                     DrawWallTile();
                 }
-                if (tileEngine.SelectTile(levelData, i, j, mapWidth) == new FloorTile().TileID)
+                if (tileEngine.SelectTile(levelData, i, j, mapWidth).TileID == 1)
                 {
                     DrawFloorTile();
                 }
-                if (tileEngine.SelectTile(levelData, i, j, mapWidth) == new DoorTile().TileID)
+                if (tileEngine.SelectTile(levelData, i, j, mapWidth).TileID == 2)
                 {
                     DrawDoorTile();
                 }
-                if (tileEngine.SelectTile(levelData, i, j, mapWidth) == new EntryTile().TileID)
+                if (tileEngine.SelectTile(levelData, i, j, mapWidth).TileID == 3)
                 {
                     DrawEntryTile();
                 }
-                if (tileEngine.SelectTile(levelData, i, j, mapWidth) == new ExitTile().TileID)
-                {
-                    DrawExitTile();
-                }
-                if (tileEngine.SelectTile(levelData, i, j, mapWidth) == new EnemyTile().TileID)
-                {
-                    DrawEnemyTile();
-                }
-                if (tileEngine.SelectTile(levelData, i, j, mapWidth) == new LootTile().TileID)
+                if (tileEngine.SelectTile(levelData, i, j, mapWidth).TileID == 4)
                 {
                     DrawLootTile();
                 }
-                if (tileEngine.SelectTile(levelData, i, j, mapWidth) == new BossTile().TileID)
+                if (tileEngine.SelectTile(levelData, i, j, mapWidth).TileID == 5)
+                {
+                    DrawEnemyTile();
+                }
+                if (tileEngine.SelectTile(levelData, i, j, mapWidth).TileID == 6)
+                {
+                    DrawExitTile();
+                }
+                if (tileEngine.SelectTile(levelData, i, j, mapWidth).TileID == 7)
                 {
                     DrawBossTile();
-                }
-                if (currentPlayerPosY == i && currentPlayerPosX == j)
-                {
-                    DrawPlayer(currentPlayerPosX, currentPlayerPosY);
                 }
             }
             WriteLine("");
         }
+        DrawPlayer(currentPlayerPosX, currentPlayerPosY);
+        Console.SetCursorPosition(0, mapHeight);
         WriteLine("");
         DrawShopButton();
         DrawCharacterInfo(player);
@@ -185,64 +183,17 @@ public class MapUI
         }
         WriteLine("Press any key to continue");
     }
-    public void UIPlayerUpdate(string[,] levelData, int mapHeight, int mapWidth, int currentPlayerPosX, int currentPlayerPosY, Player player)
-    {
-        Console.CursorVisible = false;
-        Console.SetCursorPosition(0, currentPlayerPosY - 1);
-        Console.OutputEncoding = System.Text.Encoding.UTF8;
-        for (int i = 0; i < 3; i++)
-        {
-            for (int j = 0; j < mapWidth; j++)
-            {
-                //Make a method for this
-                if (tileEngine.SelectTile(levelData, currentPlayerPosY - 1 + i, j, mapWidth) == new WallTile().TileID)
-                {
-                    DrawWallTile();
-                }
-                if (tileEngine.SelectTile(levelData, currentPlayerPosY - 1 + i, j, mapWidth) == new FloorTile().TileID)
-                {
-                    DrawFloorTile();
-                }
-                if (tileEngine.SelectTile(levelData, currentPlayerPosY - 1 + i, j, mapWidth) == new DoorTile().TileID)
-                {
-                    DrawDoorTile();
-                }
-                if (tileEngine.SelectTile(levelData, currentPlayerPosY - 1 + i, j, mapWidth) == new EntryTile().TileID)
-                {
-                    DrawEntryTile();
-                }
-                if (tileEngine.SelectTile(levelData, currentPlayerPosY - 1 + i, j, mapWidth) == new ExitTile().TileID)
-                {
-                    DrawExitTile();
-                }
-                if (tileEngine.SelectTile(levelData, currentPlayerPosY - 1 + i, j, mapWidth) == new EnemyTile().TileID)
-                {
-                    DrawEnemyTile();
-                }
-                if (tileEngine.SelectTile(levelData, currentPlayerPosY - 1 + i, j, mapWidth) == new LootTile().TileID)
-                {
-                    DrawLootTile();
-                }
-                if (tileEngine.SelectTile(levelData, currentPlayerPosY - 1 + i, j, mapWidth) == new BossTile().TileID)
-                {
-                    DrawBossTile();
-                }
-            }
-            WriteLine("");
-        }
-        DrawPlayer(currentPlayerPosX, currentPlayerPosY);
-    }
     //Move collisiondetection into its own method
     public void PlayerMovement(ConsoleKeyInfo keyInput, string[,] currentLevelData, int mapWidth, int mapHeight, TileEngine engine, Player player)
     {
         int collisionDetector;
-        ClearPlayerFromMap(currentLevelData, mapHeight, mapWidth, engine.currentPlayerPosX, engine.currentPlayerPosY, player);
         switch (keyInput.Key)
         {
             case ConsoleKey.UpArrow:
                 collisionDetector = engine.currentPlayerPosY - 1;
                 if (engine.CanPlayerStandOnTile(engine.SelectTile(currentLevelData, collisionDetector, engine.currentPlayerPosX, mapWidth)))
                 {
+                    ClearPlayerFromMap(currentLevelData, mapHeight, mapWidth, engine.currentPlayerPosX, engine.currentPlayerPosY, player);
                     engine = MovePlayerUp(engine);
                 }
                 break;
@@ -250,6 +201,7 @@ public class MapUI
                 collisionDetector = engine.currentPlayerPosX - 1;
                 if (engine.CanPlayerStandOnTile(engine.SelectTile(currentLevelData, engine.currentPlayerPosY, collisionDetector, mapWidth)))
                 {
+                    ClearPlayerFromMap(currentLevelData, mapHeight, mapWidth, engine.currentPlayerPosX, engine.currentPlayerPosY, player);
                     engine = MovePlayerLeft(engine);
                 }
                 break;
@@ -257,6 +209,7 @@ public class MapUI
                 collisionDetector = engine.currentPlayerPosX + 1;
                 if (engine.CanPlayerStandOnTile(engine.SelectTile(currentLevelData, engine.currentPlayerPosY, collisionDetector, mapWidth)))
                 {
+                    ClearPlayerFromMap(currentLevelData, mapHeight, mapWidth, engine.currentPlayerPosX, engine.currentPlayerPosY, player);
                     engine = MovePlayerRight(engine);
                 }
                 break;
@@ -264,6 +217,7 @@ public class MapUI
                 collisionDetector = engine.currentPlayerPosY + 1;
                 if (engine.CanPlayerStandOnTile(engine.SelectTile(currentLevelData, collisionDetector, engine.currentPlayerPosX, mapWidth)))
                 {
+                    ClearPlayerFromMap(currentLevelData, mapHeight, mapWidth, engine.currentPlayerPosX, engine.currentPlayerPosY, player);
                     engine = MovePlayerDown(engine);
                 }
                 break;

@@ -5,7 +5,7 @@ namespace SUVRPG
         public LevelManager StartNewGame()
         {
             LevelManager manager = new();
-            manager.SelectLevel(3);
+            manager.SelectLevel(1);
             return manager;
         }
         public LevelManager LoadGame()
@@ -58,9 +58,10 @@ namespace SUVRPG
             mapUI.UILevelLoad(manager.levelData, manager.mapHeight, manager.mapWidth, engine.currentPlayerPosX, engine.currentPlayerPosY, player);
             while (true)
             {
+                Console.CursorVisible = false;
                 keyInput = Console.ReadKey();
                 mapUI.PlayerMovement(keyInput, manager.levelData, manager.mapWidth, manager.mapHeight, engine, player);
-                mapUI.UIPlayerUpdate(manager.levelData, manager.mapHeight, manager.mapWidth, engine.currentPlayerPosX, engine.currentPlayerPosY, player);
+                mapUI.DrawPlayer(engine.currentPlayerPosX,engine.currentPlayerPosY);
                 engine.TileEvents(manager, engine, player, mapUI);
                 levelCheck = GoToNextLevel(manager, levelCheck, engine, mapUI,player);
                 if (keyInput.Key == ConsoleKey.S)
