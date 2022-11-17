@@ -33,7 +33,7 @@ public class Player : Character
                 if (randPercent <= 90)
                 {
                     WriteLine("and it hits!");
-                    Attack(attackdmg + smallAttack);
+                    CurrentEnemy.TakeDamage(attackdmg + smallAttack);
                 }
                 else
                 {
@@ -49,17 +49,13 @@ public class Player : Character
         if (randPercent <= 50)
         {
             WriteLine("and it's a perfect hit!");
-            Attack(attackdmg + bigAttack);
+            CurrentEnemy.TakeDamage(attackdmg + bigAttack);
         }
         else
         {
             WriteLine("and it misses the target completely.");
         }
-        
-    }
-
-    private void Attack(int damage)
-    {
-        // CurrentEnemy.hitpoints -= damage;
     }
 }
+        
+    

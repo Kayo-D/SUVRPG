@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using static System.Console;
 
 namespace SUVRPG
 {
@@ -9,6 +10,8 @@ namespace SUVRPG
     {
         public static void Mainmenu()
         {
+            GameMechanics game = new GameMechanics();
+            
             string title = "Welcome to SUVRPG!\n";
 
             string[] options = { "NEW GAME",
@@ -22,12 +25,15 @@ namespace SUVRPG
             switch (SelectedIndex)
             {
                 case 0:
+                    game.StartNewGame();
                     break;
 
                 case 1:
+                    game.LoadGame();
                     break;
 
                 case 2:
+                    WriteLine("Highscores yo");
                     break;
 
                 case 3:

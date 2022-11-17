@@ -98,7 +98,7 @@ namespace SUVRPG
 
         public void EndofCOmbat()
         {
-            // Behövs denna? Tvek. 
+            // Behövs denna? 
         }
 
         
