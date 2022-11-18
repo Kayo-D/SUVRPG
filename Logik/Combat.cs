@@ -13,9 +13,7 @@ namespace SUVRPG
         public Random RandGenerator { get; set; }
 
 
-        public void CreateEnemy()
-        {
-            
+ 
             // Level 1 enemies
             Bandit lostBandit = new Bandit ("Lost Bandit", 1, 10, "Poor guy seems lost and confused.", ConsoleColor.Red, 0, 2);
             Spider bigSpider = new Spider ("The Bigger-than-average Spider", 1, 10, "It's big, but you can probably still smash it with your shoe. It just takes a few more hits.", ConsoleColor.Red, 0, 2, false);
@@ -37,14 +35,14 @@ namespace SUVRPG
             Dragon dragonLord = new Dragon ("Dragon Lord", 4, 100, "The guardian of the treasure. The Dragon Lord of whatever-this-cave-is-called.", ConsoleColor.DarkRed, 15, 40);
 
             // När du skapat fienden så lägg till den här nedan i listan. 
+        
+        public void StartCombat(Player player, LevelManager manager)
+        {
             EnemiesLvl1 = new List<Character>() { lostBandit, bigSpider };
             EnemiesLvl2 = new List<Character>() { poisonSpider, battleScarredBandit, youngMinotaur };
             EnemiesLvl3 = new List<Character>() { minotaurGuard, banditLeader, giantSpider, minotaurChampion, youngDrake };
             EnemiesLvl4 = new List<Character>() { dragonLord };
-        }
-
-        public void StartCombat(Player player, LevelManager manager)
-        {
+            
             if (manager.currentLevel == 1)
             {
                 int randNum = RandGenerator.Next(0, 1);

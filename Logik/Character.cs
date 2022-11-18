@@ -15,10 +15,6 @@ public class Character
     public bool IsDead { get => hitpoints <= 0; }
     public bool IsAlive { get => hitpoints > 0; }
 
-    public Character()
-    {
-
-    }
     public void DisplayInfo()
     {
         BackgroundColor = color;
