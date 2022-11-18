@@ -63,9 +63,9 @@ public class MapUI
     }
     public void ClearPlayerFromMap(string[,] levelData, int mapHeight, int mapWidth, int currentPlayerPosX, int currentPlayerPosY, Player player)
     {
-        Console.SetCursorPosition(currentPlayerPosX * 2, currentPlayerPosY);
+        Console.SetCursorPosition(currentPlayerPosX*2, currentPlayerPosY);
         //Make a method for this
-        if (tileEngine.SelectTile(levelData, currentPlayerPosY, currentPlayerPosY, mapWidth).TileID == 0)
+        if (tileEngine.SelectTile(levelData, currentPlayerPosY, currentPlayerPosX, mapWidth).TileID == 0)
         {
             DrawWallTile();
         }
