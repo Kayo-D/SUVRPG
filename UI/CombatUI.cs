@@ -78,7 +78,7 @@ namespace SUVRPG
         public static void GameOver(Player player)
         {
             Clear();
-            if (player.IsDead)
+            if (!player.IsAlive)
             {
                 WriteLine($"Alas! {player.name}, you have met a sad fate. ");
                 WriteLine(@"

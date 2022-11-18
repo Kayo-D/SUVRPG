@@ -1,4 +1,4 @@
-using Dapper;
+/* using Dapper;
 using MySqlConnector;
 
 public class DB
@@ -55,4 +55,4 @@ public class DB
     {
         Connection().Query($"INSERT INTO leveldata (currentlevel, mapData, playerStartPosX, playerStartPosY) VALUES ({currentlevel}, '{mapData}', {playerStartPosX}, {playerStartPosY});");
     }
-}
+} */

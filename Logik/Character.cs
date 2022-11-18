@@ -12,7 +12,6 @@ public class Character
     public int attackdmg { get; set; }
     public string textArt { get; set; }
     public Random RandGenerator { get; set; }
-    public bool IsDead { get => hitpoints <= 0; }
     public bool IsAlive { get => hitpoints > 0; }
 
     public Character()
