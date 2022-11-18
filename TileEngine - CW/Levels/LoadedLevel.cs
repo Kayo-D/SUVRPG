@@ -34,7 +34,7 @@ public class LoadedLevel : Level
     {
         get
         {
-            return _mapWidth;
+            return _mapWidth = 23;
         }
     }
 }
