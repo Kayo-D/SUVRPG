@@ -26,8 +26,12 @@ namespace SUVRPG
             switch (SelectedIndex)
             {
                 case 0:
+<<<<<<< HEAD
                     game.StartNewGame();
                     charCreation.characterCreation();
+=======
+                    game.GameLoop(game.CreateNewCharacter(), game.StartNewGame());
+>>>>>>> 156e91cb4da3b5a962bf8a6958f269f0840f4ad4
                     break;
 
                 case 1:

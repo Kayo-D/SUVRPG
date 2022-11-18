@@ -39,7 +39,7 @@ namespace SUVRPG
                 return false;
             }
         }
-        public int GoToNextLevel(LevelManager manager, int levelCheck, TileEngine engine, MapUI mapUI, Player player)
+        public int LevelCheck(LevelManager manager, int levelCheck, TileEngine engine, MapUI mapUI, Player player)
         {
             if (IsPlayerOnCorrectLevel(manager, levelCheck))
             {
@@ -64,7 +64,7 @@ namespace SUVRPG
                 mapUI.PlayerMovement(keyInput, manager.levelData, manager.mapWidth, manager.mapHeight, engine, player);
                 mapUI.DrawPlayer(engine.currentPlayerPosX,engine.currentPlayerPosY);
                 engine.TileEvents(manager, engine, player, mapUI);
-                levelCheck = GoToNextLevel(manager, levelCheck, engine, mapUI,player);
+                levelCheck = LevelCheck(manager, levelCheck, engine, mapUI,player);
                 if (keyInput.Key == ConsoleKey.S)
                 {
                     player = shop.StartShop(player);
