@@ -11,7 +11,7 @@ public class DB
     }
     public Player LoadPlayer(string input)
     {
-        Player player = new Player();
+        Player player = new Player("","","",0,ConsoleColor.Green,0,0);
         var playerList = Connection().Query<Player>($"SELECT id, name, race, characterDescription, maxhitpoints, hitpoints, currentGold, attackdmg, armor FROM player;").ToList();
 
         foreach (Player p in playerList)
