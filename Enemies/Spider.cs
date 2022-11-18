@@ -13,7 +13,7 @@ namespace SUVRPG
         public Combat Combat = new();
 
         public Spider(string _name, int _level, int _hitpoints, string _characterDescription, ConsoleColor _color, int _armor, int _attackdmg, bool _hasPoisonSting) 
-            : base(_name, _level, _hitpoints, _characterDescription, _color, _armor, _attackdmg)
+            : base(_name, _level, _hitpoints, _characterDescription, _color, _armor, _attackdmg, EnemyArt.Spider)
         {
             bool hasPoisonSting = _hasPoisonSting;
         }

@@ -11,6 +11,7 @@ namespace SUVRPG
         public static void Mainmenu()
         {
             GameMechanics game = new GameMechanics();
+            CharacterUI charCreation = new CharacterUI();
             
             string title = "Welcome to SUVRPG!\n";
 
@@ -25,7 +26,8 @@ namespace SUVRPG
             switch (SelectedIndex)
             {
                 case 0:
-                    game.GameLoop(game.CreateNewCharacter(), game.StartNewGame());
+                    // game.GameLoop(game.CreateNewCharacter(), game.StartNewGame());
+
                     break;
 
                 case 1:

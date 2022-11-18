@@ -9,7 +9,7 @@ namespace SUVRPG
         private List<Character> EnemiesLvl3;
         private List<Character> EnemiesLvl4;
         public CombatUI CombatUI = new();
-        private Character CurrentEnemy;
+        public Character CurrentEnemy;
         public Random RandGenerator { get; set; }
 
 
