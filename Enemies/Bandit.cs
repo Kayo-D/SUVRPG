@@ -10,11 +10,20 @@ namespace SUVRPG
     {
         public Combat Combat = new();
         
-        public Bandit(string _name, int _level, int _hitpoints, string _characterDescription, ConsoleColor _color, int _armor, int _attackdmg) 
-            : base(_name, _level, _hitpoints, _characterDescription, _color, _armor, _attackdmg, EnemyArt.Bandit)
-        {
-            
-        }
+    public Bandit(string _name, int _level, int _hitpoints, string _characterDescription, ConsoleColor _color, int _armor, int _attackdmg)
+    {
+        string name = _name;
+        int level = _level;
+        int hitpoints = _hitpoints;
+        int maxhitpoints = _hitpoints;
+        string characterDescription = _characterDescription;
+        ConsoleColor color = _color;
+        int armor = _armor;
+        int attackdmg = _attackdmg;
+        string textArt = EnemyArt.Bandit;
+        RandGenerator = new Random();   
+        
+    }
         
         private void MeeleStrike()
         {

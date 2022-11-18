@@ -18,35 +18,6 @@ public class Character
     {
 
     }
-    
-    // Enemy
-    public Character(string _name, int _level, int _hitpoints, string _characterDescription, ConsoleColor _color, int _armor, int _attackdmg, string _textArt)
-    {
-        string name = _name;
-        int level = _level;
-        int hitpoints = _hitpoints;
-        int maxhitpoints = _hitpoints;
-        string characterDescription = _characterDescription;
-        ConsoleColor color = _color;
-        int armor = _armor;
-        int attackdmg = _attackdmg;
-        string textArt = _textArt;
-        RandGenerator = new Random();   
-    }
-
-    // Player
-    public Character(string _name, string _characterDescription, int _hitpoints, ConsoleColor _color, int _armor, int _attackdmg)
-    {
-        string name = _name;
-        string characterDescription = _characterDescription;
-        int hitpoints = _hitpoints;
-        int maxhitpoints = _hitpoints;
-        ConsoleColor color = _color;
-        int armor = _armor;
-        int attackdmg = _attackdmg;
-        RandGenerator = new Random();   
-    }
-
     public void DisplayInfo()
     {
         BackgroundColor = color;

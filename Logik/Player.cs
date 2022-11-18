@@ -6,24 +6,20 @@ public class Player : Character
     public int currentGold;
     private const int smallAttack = 2;
     private const int bigAttack = 4;
-
-   public Player()
-   {
-        
-   }
     
     public Player(string _name, string _race, string _characterDescription, int _hitpoints, ConsoleColor _color, int _armor, int _attackdmg)
         {
+            string name = _name;
+            string characterDescription = _characterDescription;
+            int hitpoints = _hitpoints;
+            int maxhitpoints = _hitpoints;
+            ConsoleColor color = _color;
+            int armor = _armor;
+            int attackdmg = _attackdmg;
+            RandGenerator = new Random();  
+            
             currentGold = 0;
             race = _race;
-            name = _name;
-            race = _race;
-            characterDescription = _characterDescription;
-            hitpoints = _hitpoints;
-            color = _color;
-            armor = _armor;
-            attackdmg = _attackdmg;
-            maxhitpoints = _hitpoints;
         }
     
     public void CharacterInfo(string name, string race, string characterDescription)
