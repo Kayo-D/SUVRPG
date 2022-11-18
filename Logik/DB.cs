@@ -51,7 +51,7 @@ public class DB
         }
         return loadedLevel;
     }
-    public void SaveLevelMap(int currentlevel, string[,] mapData, int playerStartPosX, int playerStartPosY)
+    public void SaveLevelMap(int currentLevel, string[,] mapData, int playerStartPosX, int playerStartPosY)
     {
         Connection().Query($"INSERT INTO leveldata (currentlevel, mapData, playerStartPosX, playerStartPosY) VALUES ({currentlevel}, '{mapData}', {playerStartPosX}, {playerStartPosY});");
     }
