@@ -18,7 +18,7 @@ public class LevelManager
             playerStartPosY = lvl1.playerStartPosY;
             mapWidth = lvl1.mapWidth;
             mapHeight = lvl1.mapHeight;
-            currentLevel = 1;
+            currentLevel = lvl1.currentLevel;
         }
         if (levelID == 2)
         {
@@ -28,7 +28,7 @@ public class LevelManager
             playerStartPosY = lvl2.playerStartPosY;
             mapWidth = lvl2.mapWidth;
             mapHeight = lvl2.mapHeight;
-            currentLevel = 2;
+            currentLevel = lvl2.currentLevel;
         }
         if (levelID == 3)
         {
@@ -38,7 +38,17 @@ public class LevelManager
             playerStartPosY = lvl3.playerStartPosY;
             mapWidth = lvl3.mapWidth;
             mapHeight = lvl3.mapHeight;
-            currentLevel = 3;
+            currentLevel = lvl3.currentLevel;
+        }
+        if (levelID == 4)
+        {
+            LoadedLevel loadlvl = new LoadedLevel();
+            levelData = loadlvl.mapData;
+            playerStartPosX = loadlvl.playerStartPosX;
+            playerStartPosY = loadlvl.playerStartPosY;
+            mapWidth = loadlvl.mapWidth;
+            mapHeight = loadlvl.mapHeight;
+            currentLevel = loadlvl.currentLevel;
         }
     }
     //Get level from database

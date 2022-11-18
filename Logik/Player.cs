@@ -9,14 +9,14 @@ public class Player : Character
 
    public Player()
    {
-        hitpoints = 30;
-        maxhitpoints = 30;
+        
    }
     
-    public Player(string _name, int _hitpoints, ConsoleColor _color, int _armor, int _attackdmg)
-        : base(_name, _hitpoints, _color, _armor, _attackdmg)
+    public Player(string _name, string _race, string _characterDescription, int _hitpoints, ConsoleColor _color, int _armor, int _attackdmg)
+        : base(_name, _characterDescription, _hitpoints, _color, _armor, _attackdmg)
         {
             currentGold = 0;
+            race = _race;
         }
     
     public void CharacterInfo(string name, string race, string characterDescription)

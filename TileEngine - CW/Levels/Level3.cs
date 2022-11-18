@@ -33,7 +33,9 @@ public class Level3 : Level
         {"0,5,5,5,0,4,1,0,1,0,1,1,0,4,0,4,0,4,0,4,0,0,0"},
         {"0,0,0,2,0,1,0,0,4,0,4,1,2,1,5,1,5,1,5,1,0,0,0"},
         {"0,0,0,1,0,1,4,1,1,0,4,4,0,4,0,4,0,4,0,4,0,0,0"},
-        {"0,0,0,3,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0"}};
+        {"0,0,0,3,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0"},
+        {"0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0"},
+        {"0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0"}};
         }
     }
     public override int playerStartPosY
@@ -54,7 +56,7 @@ public class Level3 : Level
     {
         get
         {
-            return _mapHeight = 27;
+            return _mapHeight = 29;
         }
     }
     public override int mapWidth 
@@ -62,6 +64,13 @@ public class Level3 : Level
         get
         {
             return _mapWidth = 23;
+        }
+    }
+    public override int currentLevel
+    {
+        get
+        {
+            return _currentLevel = 3;
         }
     }
 }

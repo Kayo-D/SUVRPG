@@ -34,6 +34,7 @@ public class Level1 : Level
         {"0,5,1,1,1,1,1,1,0,1,1,1,1,1,2,5,2,1,1,1,0,1,0"},
         {"0,1,1,4,1,1,1,1,0,1,1,1,1,1,0,0,0,0,0,0,0,1,0"},
         {"0,1,1,1,4,1,1,1,0,1,1,1,4,5,2,1,1,1,1,1,1,1,0"},
+        {"0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0"},
         {"0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0"}};
         }
     }
@@ -55,7 +56,7 @@ public class Level1 : Level
     {
         get
         {
-            return _mapHeight = 28;
+            return _mapHeight = 29;
         }
     }
     public override int mapWidth 
@@ -63,6 +64,13 @@ public class Level1 : Level
         get
         {
             return _mapWidth = 23;
+        }
+    }
+    public override int currentLevel
+    {
+        get
+        {
+            return _currentLevel = 1;
         }
     }
 }

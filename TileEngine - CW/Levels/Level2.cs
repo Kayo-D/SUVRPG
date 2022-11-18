@@ -65,5 +65,11 @@ public class Level2 : Level
         {
             return _mapWidth = 23;
         }
+    }public override int currentLevel
+    {
+        get
+        {
+            return _currentLevel = 2;
+        }
     }
 }

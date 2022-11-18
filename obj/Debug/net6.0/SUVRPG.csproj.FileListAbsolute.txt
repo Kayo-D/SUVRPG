@@ -43,6 +43,12 @@ C:\Users\cw94\Desktop\Skolarbeten\SUVRPG\obj\Debug\net6.0\refint\SUVRPG.dll
 C:\Users\cw94\Desktop\Skolarbeten\SUVRPG\obj\Debug\net6.0\SUVRPG.pdb
 C:\Users\cw94\Desktop\Skolarbeten\SUVRPG\obj\Debug\net6.0\SUVRPG.genruntimeconfig.cache
 C:\Users\cw94\Desktop\Skolarbeten\SUVRPG\obj\Debug\net6.0\ref\SUVRPG.dll
+<<<<<<< HEAD
+C:\Users\Simon\Documents\SUVNET\SUVRPG\bin\Debug\net6.0\Dapper.dll
+C:\Users\Simon\Documents\SUVNET\SUVRPG\bin\Debug\net6.0\MySqlConnector.dll
+C:\Users\Simon\Documents\SUVNET\SUVRPG\obj\Debug\net6.0\SUVRPG.csproj.CopyComplete
+=======
 C:\Users\cw94\Desktop\Skolarbeten\SUVRPG\bin\Debug\net6.0\Dapper.dll
 C:\Users\cw94\Desktop\Skolarbeten\SUVRPG\bin\Debug\net6.0\MySqlConnector.dll
 C:\Users\cw94\Desktop\Skolarbeten\SUVRPG\obj\Debug\net6.0\SUVRPG.csproj.CopyComplete
+>>>>>>> 156e91cb4da3b5a962bf8a6958f269f0840f4ad4

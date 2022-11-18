@@ -1,18 +1,18 @@
 {
   "version": 2,
-  "dgSpecHash": "awOEWY2B3mcstWudI8dpWHV+bB9Bot5aOHPQ5bAjmKqja6pPM3pWB6vwQW4il/TvxtjWfoWt3iSbnRc+aeaZyQ==",
+  "dgSpecHash": "ds/MpiQILUW/v/czjrovq5XWfYC6xKj7ZTH5isaeSxNw4OEIOsG5i/RBiB6EYUjBwiL3R30JcZogQHmrchWUGQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\cw94\\Desktop\\Skolarbeten\\SUVRPG\\SUVRPG.csproj",
+  "projectFilePath": "C:\\Users\\Simon\\Documents\\SUVNET\\SUVRPG\\SUVRPG.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\cw94\\.nuget\\packages\\dapper\\2.0.123\\dapper.2.0.123.nupkg.sha512",
-    "C:\\Users\\cw94\\.nuget\\packages\\mysqlconnector\\2.1.13\\mysqlconnector.2.1.13.nupkg.sha512"
+    "C:\\Users\\Simon\\.nuget\\packages\\dapper\\2.0.123\\dapper.2.0.123.nupkg.sha512",
+    "C:\\Users\\Simon\\.nuget\\packages\\mysqlconnector\\2.1.13\\mysqlconnector.2.1.13.nupkg.sha512"
   ],
   "logs": [
     {
       "code": "Undefined",
       "level": "Warning",
       "warningLevel": 1,
-      "message": "Problem reading the cache file C:\\Users\\cw94\\Desktop\\Skolarbeten\\SUVRPG\\obj\\project.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
+      "message": "Problem reading the cache file C:\\Users\\Simon\\Documents\\SUVNET\\SUVRPG\\obj\\project.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
     }
   ]
 }

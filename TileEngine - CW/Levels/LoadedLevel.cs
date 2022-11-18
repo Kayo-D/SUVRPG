@@ -6,7 +6,7 @@ public class LoadedLevel : Level
     {
         get
         {
-            return _mapData = new string[,] {};
+            return _mapData = new string[,] { };
         }
     }
     public override int playerStartPosY
@@ -23,18 +23,25 @@ public class LoadedLevel : Level
             return _playerStartPosX;
         }
     }
-    public override int mapHeight 
+    public override int mapHeight
     {
         get
         {
-            return _mapHeight;
+            return _mapHeight = 29;
         }
     }
-    public override int mapWidth 
+    public override int mapWidth
     {
         get
         {
             return _mapWidth = 23;
+        }
+    }
+    public override int currentLevel
+    {
+        get
+        {
+            return _currentLevel;
         }
     }
 }
