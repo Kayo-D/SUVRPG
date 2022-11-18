@@ -106,7 +106,15 @@ namespace SUVRPG
             characterDescription = Console.ReadLine();
 
             // player.CharacterInfo(player.name, player.race, player.characterDescription);
+<<<<<<< HEAD
             return game.CreateNewCharacter(name,race,characterDescription);
+=======
+
+            GameMechanics game = new GameMechanics();
+            CurrentPlayer = game.CreateNewCharacter(name, race, characterDescription);
+
+            return CurrentPlayer;
+>>>>>>> 8af1bb4ffd8670a20db23ac61c1d4f762d336525
         }
     }
 }

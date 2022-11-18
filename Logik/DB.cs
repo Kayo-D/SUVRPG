@@ -1,5 +1,6 @@
 using Dapper;
 using MySqlConnector;
+
 public class DB
 {
     public MySqlConnection Connection()
@@ -29,20 +30,29 @@ public class DB
         }
         return player;
     }
-
     public void SavePlayer(Player player)
     {
-
+        Connection().Query($"INSERT INTO player (id, name, race, characterDescription, maxhitpoints, hitpoints, currentGold, attackdmg, armor) VALUES ({id}, '{name}', '{race}', {characterDescription}', {maxhitpoints}, {hitpoints}, {currentGold}, {attackdmg}, {armor});");
     }
-
-    public Level1 LoadLevelMap()
+    public LoadedLevel LoadLevelMap(string input)
     {
-        Level1 level1 = new();
-        return level1;
+        LoadedLevel loadedLevel = new();
+        var levelMapList = Connection().Query<LoadedLevel>($"SELECT currentlevel, mapData, playerStartPosX, playerStartPosY FROM leveldata;").ToList();
+
+        foreach (LoadedLevel l in levelMapList)
+        {
+            if (input == l.currentlevel)
+            {
+                loadedLevel.currentlevel = l.currentlevel;
+                loadedLevel.mapData = l.mapData;
+                loadedLevel.playerStartPosX = l.playerStartPosX;
+                loadedLevel.playerStartPosY = l.playerStartPosY;
+            }
+        }
+        return loadedLevel;
     }
-
-    public void SaveLevelMap(Level1 level1)
+    public void SaveLevelMap(int currentLevel, string[,] mapData, int playerStartPosX, int playerStartPosY)
     {
-
+        Connection().Query($"INSERT INTO leveldata (currentlevel, mapData, playerStartPosX, playerStartPosY) VALUES ({currentlevel}, '{mapData}', {playerStartPosX}, {playerStartPosY});");
     }
 }
