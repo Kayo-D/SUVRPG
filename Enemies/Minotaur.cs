@@ -6,7 +6,7 @@ using static System.Console;
 
 namespace SUVRPG
 {
-    public class Minotaur : Character
+    public class Minotaur : Enemy
     {
         public Combat Combat = new();
 

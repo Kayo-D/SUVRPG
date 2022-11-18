@@ -6,7 +6,7 @@ using static System.Console;
 
 namespace SUVRPG
 {
-    public class Spider : Character
+    public class Spider : Enemy
     {
         bool hasPoisonSting = false;
         

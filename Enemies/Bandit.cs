@@ -6,7 +6,7 @@ using static System.Console;
 
 namespace SUVRPG
 {
-    public class Bandit : Character
+    public class Bandit : Enemy
     {
         public Combat Combat = new();
         
