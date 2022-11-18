@@ -101,8 +101,6 @@ namespace SUVRPG
             Console.WriteLine("ENTER CHARACTER INFO:\n ");
             player.characterDescription = Console.ReadLine();
             player.CharacterInfo(player.name, player.race, player.characterDescription);
-
-            //Sets starting values. Could have them in the Player class. Move if you want to //Christian
             return player;
         }
     }
