@@ -35,9 +35,10 @@ public class Character
     }
 
     // Player
-    public Character(string _name, int _hitpoints, ConsoleColor _color, int _armor, int _attackdmg)
+    public Character(string _name, string _characterDescription, int _hitpoints, ConsoleColor _color, int _armor, int _attackdmg)
     {
         string name = _name;
+        string characterDescription = _characterDescription;
         int hitpoints = _hitpoints;
         int maxhitpoints = _hitpoints;
         ConsoleColor color = _color;

@@ -14,19 +14,20 @@ namespace SUVRPG
             manager = manager.LoadLevel();
             return manager;
         }
-        public Player CreateNewCharacter()
+        public Player CreateNewCharacter(string name, string race, string characterDescription)
         {
-            CharacterUI playerUI = new();
-            Player player = new();
-            return player = playerUI.characterCreation();
+            Player player = new(name, race, characterDescription, 30, ConsoleColor.Green, 0, 0);
+            return player;
         }
-        //Get player from database
+
+        // Get player from database
         public Player LoadCharacter(/* DB database */)
         {
             Player player = new();
-            //player = database.GetPlayerData();
+            player = database.GetPlayerData();
             return player;
         }
+
         public bool IsPlayerOnCorrectLevel(LevelManager manager, int levelCheck)
         {
             if (manager.currentLevel != levelCheck)
