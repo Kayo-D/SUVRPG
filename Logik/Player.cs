@@ -6,15 +6,18 @@ public class Player : Character
     public int currentGold;
     private const int smallAttack = 2;
     private const int bigAttack = 4;
-
-   public Player()
-   {
-        
-   }
     
     public Player(string _name, string _race, string _characterDescription, int _hitpoints, ConsoleColor _color, int _armor, int _attackdmg)
-        : base(_name, _characterDescription, _hitpoints, _color, _armor, _attackdmg)
         {
+            string name = _name;
+            string characterDescription = _characterDescription;
+            int hitpoints = _hitpoints;
+            int maxhitpoints = _hitpoints;
+            ConsoleColor color = _color;
+            int armor = _armor;
+            int attackdmg = _attackdmg;
+            RandGenerator = new Random();  
+            
             currentGold = 0;
             race = _race;
         }

@@ -6,16 +6,24 @@ using static System.Console;
 
 namespace SUVRPG
 {
-    public class Dragon : Enemy
+    public class Dragon : Character
     {
         
         public Combat Combat = new();
 
-        public Dragon(string _name, int _level, int _hitpoints, string _characterDescription, ConsoleColor _color, int _armor, int _attackdmg) 
-            : base(_name, _level, _hitpoints, _characterDescription, _color, _armor, _attackdmg, EnemyArt.Dragon)
+        public Dragon(string _name, int _level, int _hitpoints, string _characterDescription, ConsoleColor _color, int _armor, int _attackdmg)
         {
-            
-        }
+        string name = _name;
+        int level = _level;
+        int hitpoints = _hitpoints;
+        int maxhitpoints = _hitpoints;
+        string characterDescription = _characterDescription;
+        ConsoleColor color = _color;
+        int armor = _armor;
+        int attackdmg = _attackdmg;
+        string textArt = EnemyArt.Dragon;
+        RandGenerator = new Random();   
+    }      
 
         private void Firebreath()
         {
