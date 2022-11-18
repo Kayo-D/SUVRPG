@@ -54,11 +54,7 @@ namespace SUVRPG
             MapUI mapUI = new();
             ConsoleKeyInfo keyInput = new();
             Shop shop = new();
-<<<<<<< HEAD
             // DB db = new();
-=======
-            //DB db = new();
->>>>>>> ab4cc3037d15c783335de2f653beafcbfe53accc
             int levelCheck = manager.currentLevel;
             engine.SpawnPlayer(manager.playerStartPosX, manager.playerStartPosY);
             mapUI.UILevelLoad(manager.levelData, manager.mapHeight, manager.mapWidth, engine.currentPlayerPosX, engine.currentPlayerPosY, player);
