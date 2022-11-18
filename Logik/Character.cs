@@ -11,6 +11,7 @@ public class Character
     public ConsoleColor color { get; set; }
     public int armor { get; set; }
     public int attackdmg { get; set; }
+    public string textArt { get; set; }
     public Random RandGenerator { get; set; }
     public bool IsDead { get => hitpoints <= 0; }
     public bool IsAlive { get => hitpoints > 0; }
@@ -21,7 +22,7 @@ public class Character
     }
     
     // Enemy
-    public Character(string _name, int _level, int _hitpoints, string _characterDescription, ConsoleColor _color, int _armor, int _attackdmg)
+    public Character(string _name, int _level, int _hitpoints, string _characterDescription, ConsoleColor _color, int _armor, int _attackdmg, string _textArt)
     {
         string name = _name;
         int level = _level;
@@ -31,6 +32,7 @@ public class Character
         ConsoleColor color = _color;
         int armor = _armor;
         int attackdmg = _attackdmg;
+        string textArt = _textArt;
         RandGenerator = new Random();   
     }
 
@@ -49,10 +51,15 @@ public class Character
 
     public void DisplayInfo()
     {
-        Write($"--- {name} ---");
+        BackgroundColor = color;
+        Write($">>> {name} <<<");
         WriteLine($"\nLevel: {level}\n");
+        ResetColor();
+        ForegroundColor = color;
+        WriteLine($"{textArt}");
         WriteLine($"Health: {hitpoints}");
         WriteLine("---");
+        ResetColor();
     }
 
     public virtual void Attack(Character otherCharacter)

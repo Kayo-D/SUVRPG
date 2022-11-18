@@ -1,11 +1,7 @@
 {
   "format": 1,
   "restore": {
-<<<<<<< HEAD
     "C:\\Users\\Simon\\Documents\\SUVNET\\SUVRPG\\SUVRPG.csproj": {}
-=======
-    "C:\\Users\\cw94\\Desktop\\Skolarbeten\\SUVRPG\\SUVRPG.csproj": {}
->>>>>>> 156e91cb4da3b5a962bf8a6958f269f0840f4ad4
   },
   "projects": {
     "C:\\Users\\Simon\\Documents\\SUVNET\\SUVRPG\\SUVRPG.csproj": {
@@ -18,12 +14,8 @@
         "outputPath": "C:\\Users\\Simon\\Documents\\SUVNET\\SUVRPG\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-<<<<<<< HEAD
           "C:\\Users\\Simon\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
-=======
-          "C:\\Users\\cw94\\AppData\\Roaming\\NuGet\\NuGet.Config"
->>>>>>> 156e91cb4da3b5a962bf8a6958f269f0840f4ad4
         ],
         "originalTargetFrameworks": [
           "net6.0"
@@ -72,11 +64,7 @@
               "privateAssets": "all"
             }
           },
-<<<<<<< HEAD
           "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.201\\RuntimeIdentifierGraph.json"
-=======
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.400\\RuntimeIdentifierGraph.json"
->>>>>>> 156e91cb4da3b5a962bf8a6958f269f0840f4ad4
         }
       }
     }

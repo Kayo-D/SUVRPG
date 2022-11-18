@@ -21,12 +21,12 @@ namespace SUVRPG
         }
 
         // Get player from database
-        public Player LoadCharacter(/* DB database */)
-        {
-            Player player = new();
-            player = database.GetPlayerData();
-            return player;
-        }
+        // public Player LoadCharacter(/* DB database */)
+        // {
+        //     Player player = new();
+        //     player = database.GetPlayerData();
+        //     return player;
+        // }
 
         public bool IsPlayerOnCorrectLevel(LevelManager manager, int levelCheck)
         {
