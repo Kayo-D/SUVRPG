@@ -146,7 +146,7 @@ public class MapUI
     }
     public void DrawShopButton()
     {
-        WriteLine("Press S to enter the shop");
+        WriteLine("Press S to enter the shop, M to save game, Q to quit to main menu.");
     }
     public void DrawCharacterInfo(Player player)
     {

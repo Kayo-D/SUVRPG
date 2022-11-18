@@ -54,6 +54,7 @@ namespace SUVRPG
             MapUI mapUI = new();
             ConsoleKeyInfo keyInput = new();
             Shop shop = new();
+            DB db = new();
             int levelCheck = manager.currentLevel;
             engine.SpawnPlayer(manager.playerStartPosX, manager.playerStartPosY);
             mapUI.UILevelLoad(manager.levelData, manager.mapHeight, manager.mapWidth, engine.currentPlayerPosX, engine.currentPlayerPosY, player);
@@ -69,6 +70,17 @@ namespace SUVRPG
                 {
                     player = shop.StartShop(player);
                     mapUI.UILevelLoad(manager.levelData, manager.mapHeight, manager.mapWidth, engine.currentPlayerPosX, engine.currentPlayerPosY, player);
+                }
+                if (keyInput.Key == ConsoleKey.M)
+                {
+                    //SaveGameUI saveGameUI = new();
+                    //db.SavePlayer(player);
+                    //db.SaveLevelMap();
+                    //saveGameUI.OpenSaveGameUI();
+                }
+                if(keyInput.Key == ConsoleKey.Q)
+                {
+                    return;
                 }
             }
         }
