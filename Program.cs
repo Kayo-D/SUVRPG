@@ -14,7 +14,7 @@
             //Testa inom dessa
 
 
-            //MainMenu.Mainmenu();
+            MainMenu.Mainmenu();
         }
     }
 }

@@ -13,10 +13,17 @@ public class Player : Character
    }
     
     public Player(string _name, string _race, string _characterDescription, int _hitpoints, ConsoleColor _color, int _armor, int _attackdmg)
-        : base(_name, _characterDescription, _hitpoints, _color, _armor, _attackdmg)
         {
             currentGold = 0;
             race = _race;
+            name = _name;
+            race = _race;
+            characterDescription = _characterDescription;
+            hitpoints = _hitpoints;
+            color = _color;
+            armor = _armor;
+            attackdmg = _attackdmg;
+            maxhitpoints = _hitpoints;
         }
     
     public void CharacterInfo(string name, string race, string characterDescription)

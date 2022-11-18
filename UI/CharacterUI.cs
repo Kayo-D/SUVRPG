@@ -7,7 +7,7 @@ namespace SUVRPG
 {
     public class CharacterUI
     {
-        public Player CurrentPlayer { get; set; }
+        GameMechanics game = new();
 
         private string name;
         private string race;
@@ -106,12 +106,7 @@ namespace SUVRPG
             characterDescription = Console.ReadLine();
 
             // player.CharacterInfo(player.name, player.race, player.characterDescription);
-
-            GameMechanics game = new GameMechanics();
-            CurrentPlayer = game.CreateNewCharacter(name, race, characterDescription);
-
-            //Sets starting values. Could have them in the Player class. Move if you want to //Christian
-            return CurrentPlayer;
+            return game.CreateNewCharacter(name,race,characterDescription);
         }
     }
 }
