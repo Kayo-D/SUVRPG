@@ -56,14 +56,14 @@ public class MapUI
     }
     public void DrawPlayer(int currentPlayerPosX, int currentPlayerPosY)
     {
-        Console.SetCursorPosition(currentPlayerPosX * 2 + 2, currentPlayerPosY);
+        Console.SetCursorPosition(currentPlayerPosX * 2, currentPlayerPosY);
         BackgroundColor = ConsoleColor.White;
-        Write("\b\b🚶");
+        Write("🚶");
         BackgroundColor = ConsoleColor.Black;
     }
     public void ClearPlayerFromMap(string[,] levelData, int mapHeight, int mapWidth, int currentPlayerPosX, int currentPlayerPosY, Player player)
     {
-        Console.SetCursorPosition(currentPlayerPosX*2+2, currentPlayerPosY);
+        Console.SetCursorPosition(currentPlayerPosX * 2, currentPlayerPosY);
         //Make a method for this
         if (tileEngine.SelectTile(levelData, currentPlayerPosY, currentPlayerPosY, mapWidth).TileID == 0)
         {
@@ -93,7 +93,6 @@ public class MapUI
         {
             DrawExitTile();
         }
-        ReadLine();
     }
     public void UILevelLoad(string[,] levelData, int mapHeight, int mapWidth, int currentPlayerPosX, int currentPlayerPosY, Player player)
     {
