@@ -52,3 +52,21 @@ C:\Users\cw94\Desktop\Skolarbeten\SUVRPG\bin\Debug\net6.0\Dapper.dll
 C:\Users\cw94\Desktop\Skolarbeten\SUVRPG\bin\Debug\net6.0\MySqlConnector.dll
 C:\Users\cw94\Desktop\Skolarbeten\SUVRPG\obj\Debug\net6.0\SUVRPG.csproj.CopyComplete
 >>>>>>> 156e91cb4da3b5a962bf8a6958f269f0840f4ad4
+C:\Users\cw94\Desktop\Projects\SUVRPG\bin\Debug\net6.0\SUVRPG.exe
+C:\Users\cw94\Desktop\Projects\SUVRPG\bin\Debug\net6.0\SUVRPG.deps.json
+C:\Users\cw94\Desktop\Projects\SUVRPG\bin\Debug\net6.0\SUVRPG.runtimeconfig.json
+C:\Users\cw94\Desktop\Projects\SUVRPG\bin\Debug\net6.0\SUVRPG.dll
+C:\Users\cw94\Desktop\Projects\SUVRPG\bin\Debug\net6.0\SUVRPG.pdb
+C:\Users\cw94\Desktop\Projects\SUVRPG\bin\Debug\net6.0\Dapper.dll
+C:\Users\cw94\Desktop\Projects\SUVRPG\bin\Debug\net6.0\MySqlConnector.dll
+C:\Users\cw94\Desktop\Projects\SUVRPG\obj\Debug\net6.0\SUVRPG.csproj.AssemblyReference.cache
+C:\Users\cw94\Desktop\Projects\SUVRPG\obj\Debug\net6.0\SUVRPG.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\cw94\Desktop\Projects\SUVRPG\obj\Debug\net6.0\SUVRPG.AssemblyInfoInputs.cache
+C:\Users\cw94\Desktop\Projects\SUVRPG\obj\Debug\net6.0\SUVRPG.AssemblyInfo.cs
+C:\Users\cw94\Desktop\Projects\SUVRPG\obj\Debug\net6.0\SUVRPG.csproj.CoreCompileInputs.cache
+C:\Users\cw94\Desktop\Projects\SUVRPG\obj\Debug\net6.0\SUVRPG.csproj.CopyComplete
+C:\Users\cw94\Desktop\Projects\SUVRPG\obj\Debug\net6.0\SUVRPG.dll
+C:\Users\cw94\Desktop\Projects\SUVRPG\obj\Debug\net6.0\refint\SUVRPG.dll
+C:\Users\cw94\Desktop\Projects\SUVRPG\obj\Debug\net6.0\SUVRPG.pdb
+C:\Users\cw94\Desktop\Projects\SUVRPG\obj\Debug\net6.0\SUVRPG.genruntimeconfig.cache
+C:\Users\cw94\Desktop\Projects\SUVRPG\obj\Debug\net6.0\ref\SUVRPG.dll
