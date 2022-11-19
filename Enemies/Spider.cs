@@ -21,7 +21,7 @@ namespace SUVRPG
             BackgroundColor = Color;
             Write($"{Name} ");
             ResetColor();
-            WriteLine($"bites you ");
+            Write($"bites you ");
             ResetColor();
         }
  

@@ -61,6 +61,10 @@ namespace SUVRPG
             {
                 Health = 0;
             }
+            if (damageAmount <= 0)
+            {
+                damageAmount = 1;
+            }
         }
 
         public void DisplayHealthBar()
