@@ -20,7 +20,7 @@ namespace SUVRPG
             BackgroundColor = Color;
             Write($"{Name} ");
             ResetColor();
-            WriteLine($"viciously chomps down!");
+            Write($"viciously chomps down ");
         }
 
         public override void Fight(Character otherCharacter)
@@ -29,15 +29,15 @@ namespace SUVRPG
             WriteLine($"{Name} is fighting {otherCharacter.Name}!");
             
             int randPercent = RandGenerator.Next(1, 101);
-            Write($"{Name} bites at {otherCharacter.Name} and ");
-            if (randPercent <= 50)
+            Bite();
+            if (randPercent <= 80)
             {
-                WriteLine("hits for 4 damage!");
-                otherCharacter.TakeDamage(4);
+                WriteLine($"and bites you for {4 - otherCharacter.Armor} damage!");
+                otherCharacter.TakeDamage(4 - otherCharacter.Armor);
             }
             else
             {
-                WriteLine("misses...");
+                WriteLine("but misses you...");
             }
             ResetColor();
             

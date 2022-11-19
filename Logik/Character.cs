@@ -56,7 +56,7 @@ namespace SUVRPG
 
         public void TakeDamage(int damageAmount)
         {
-            Health -= damageAmount - Armor;
+            Health -= damageAmount;
             if (Health < 0)
             {
                 Health = 0;
