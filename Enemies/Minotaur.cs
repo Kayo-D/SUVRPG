@@ -9,7 +9,7 @@ namespace SUVRPG
     public class Minotaur : Character
     {
         public Minotaur(string name, string characterDescription, int health, int attackDmg, ConsoleColor color)
-            : base(name, characterDescription, health, attackDmg, color, ArtAssets.Minotaur)
+            : base(name, characterDescription, health, attackDmg, 0, color, ArtAssets.Minotaur)
         {
             
         }

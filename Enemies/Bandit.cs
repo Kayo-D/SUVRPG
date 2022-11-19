@@ -9,7 +9,7 @@ namespace SUVRPG
     public class Bandit : Character
     {
         public Bandit(string name, string characterDescription, int health, int attackDmg, ConsoleColor color)
-            : base(name, characterDescription, health, attackDmg, color, ArtAssets.Bandit)
+            : base(name, characterDescription, health, attackDmg, 0, color, ArtAssets.Bandit)
         {
             
         }

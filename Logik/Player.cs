@@ -9,13 +9,12 @@ namespace SUVRPG
     public class Player : Character
     {
         public int CurrentGold { get; set; }
-        public int Armor { get; set; }
 
         private const int smallAttack = 2;
         private const int bigAttack = 4;
         
         public Player(string name, string characterDescription, int health, int attackDmg, int armor, ConsoleColor color)
-            : base(name, characterDescription, health, attackDmg, color, ArtAssets.Player)
+            : base(name, characterDescription, health, attackDmg, armor, color, ArtAssets.Player)
             {
                 Armor = armor;
                 CurrentGold = 0;

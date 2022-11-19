@@ -11,7 +11,7 @@ namespace SUVRPG
         bool HasPoisonSting;
 
         public Spider(string name, string characterDescription, int health, int attackDmg, ConsoleColor color, bool hasPoisonSting)
-            : base(name, characterDescription, health, attackDmg, color, ArtAssets.Spider)
+            : base(name, characterDescription, health, attackDmg, 0, color, ArtAssets.Spider)
         {
             HasPoisonSting = hasPoisonSting;
         }

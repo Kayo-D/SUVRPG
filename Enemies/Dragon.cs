@@ -10,7 +10,7 @@ namespace SUVRPG
     {
 
         public Dragon(string name, string characterDescription, int health, int attackDmg, ConsoleColor color)
-            : base(name, characterDescription, health, attackDmg, color, ArtAssets.Dragon)
+            : base(name, characterDescription, health, attackDmg, 0, color, ArtAssets.Dragon)
         {
             
         }
