@@ -105,8 +105,10 @@ namespace SUVRPG
             Console.WriteLine("ENTER CHARACTER INFO:\n ");
             characterDescription = Console.ReadLine();
 
+            GameMechanics.CurrentPlayer = new Player (name, race, characterDescription, 20, ConsoleColor.Green, 0, 0);
+
             // player.CharacterInfo(player.name, player.race, player.characterDescription);
-            return game.CreateNewCharacter(name,race,characterDescription);
+            return GameMechanics.CurrentPlayer = new Player (name, race, characterDescription, 20, ConsoleColor.Green, 0, 0);
         }
     }
 }

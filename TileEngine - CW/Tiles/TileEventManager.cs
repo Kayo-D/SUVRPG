@@ -6,13 +6,14 @@ public class TileEventManager
     
     public void EnemyTileEvent(LevelManager manager, TileEngine engine, Player player)
     {
-        SUVRPG.Combat combat = new();
         engine.ChangeTileID(manager.levelData, engine.currentPlayerPosY, engine.currentPlayerPosX, manager.mapWidth, "1");
-        combat.StartCombat(player, manager);
+        SUVRPG.Combat.StartCombat(player, manager);
+        
+        
+
     }
     public void BossTileEvent(LevelManager manager, TileEngine engine, Player player)
     {
-        SUVRPG.Combat combat = new();
         engine.ChangeTileID(manager.levelData, engine.currentPlayerPosY, engine.currentPlayerPosX, manager.mapWidth, "1");
         //combat.StartCombat(player, manager);
     }

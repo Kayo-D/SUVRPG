@@ -4,13 +4,19 @@ namespace SUVRPG
 {
     public class Combat
     {
-        private List<Character> EnemiesLvl1 = new();
-        private List<Character> EnemiesLvl2 = new();
-        private List<Character> EnemiesLvl3 = new();
-        private List<Character> EnemiesLvl4 = new();
-        public CombatUI CombatUI = new();
-        public Character CurrentEnemy = new();
+        private static List<Character> EnemiesLvl1 = new();
+        private static List<Character> EnemiesLvl2 = new();
+        private static List<Character> EnemiesLvl3 = new();
+        private static List<Character> EnemiesLvl4 = new();
+        public static Character CurrentEnemy;
         public Random RandGenerator { get; set; } = new();
+
+        // public void RunCombat()
+        // {
+        //     CreateEnemy();
+        //     StartCombat(player, manager);
+
+        // }
 
 
         public void CreateEnemy()
@@ -39,28 +45,28 @@ namespace SUVRPG
             // När du skapat fienden så lägg till den här nedan i listan. 
         
 
-            EnemiesLvl1 = new List<Character>() { lostBandit, bigSpider };
-            EnemiesLvl2 = new List<Character>() { poisonSpider, battleScarredBandit, youngMinotaur };
-            EnemiesLvl3 = new List<Character>() { minotaurGuard, banditLeader, giantSpider, minotaurChampion, youngDrake };
+            EnemiesLvl1 = new List<Character>() { lostBandit, lostBandit, bigSpider };
+            EnemiesLvl2 = new List<Character>() { poisonSpider, poisonSpider, battleScarredBandit, youngMinotaur };
+            EnemiesLvl3 = new List<Character>() { minotaurGuard, minotaurGuard, banditLeader, giantSpider, minotaurChampion, youngDrake };
             EnemiesLvl4 = new List<Character>() { dragonLord };
         }
 
-        public void StartCombat(Player player, LevelManager manager)
+        public static void StartCombat(Player player, LevelManager manager)
         {
             if (manager.currentLevel == 1)
             {
-                int randNum = RandGenerator.Next(0, 1);
-                CurrentEnemy = EnemiesLvl1[randNum];
+                // int randNum = RandGenerator.Next(1, 2);
+                CurrentEnemy = EnemiesLvl1[1];
             }
             else if (manager.currentLevel == 2)
             {
-                int randNum = RandGenerator.Next(0, 2);
-                CurrentEnemy = EnemiesLvl2[randNum];
+                // int randNum = RandGenerator.Next(1, 3);
+                CurrentEnemy = EnemiesLvl2[2];
             }
             else if (manager.currentLevel == 3)
             {
-                int randNum = RandGenerator.Next(0, 4);
-                CurrentEnemy = EnemiesLvl3[randNum];
+                // int randNum = RandGenerator.Next(1, 5);
+                CurrentEnemy = EnemiesLvl3[3];
             }
             else
             {
@@ -69,7 +75,7 @@ namespace SUVRPG
             Battle(player, CurrentEnemy);
         }
 
-        public void Battle(Player player, Character CurrentEnemy)
+        public static void Battle(Player player, Character CurrentEnemy)
         {
             while (player.IsAlive && CurrentEnemy.IsAlive)
             {

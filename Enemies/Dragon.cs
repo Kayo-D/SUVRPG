@@ -8,8 +8,6 @@ namespace SUVRPG
 {
     public class Dragon : Character
     {
-        
-        public Combat Combat = new();
 
         public Dragon(string _name, int _level, int _hitpoints, string _characterDescription, ConsoleColor _color, int _armor, int _attackdmg)
         {

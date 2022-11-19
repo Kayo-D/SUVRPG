@@ -2,6 +2,8 @@ namespace SUVRPG
 {
     public class GameMechanics
     {
+        public static Player CurrentPlayer;
+
         public LevelManager StartNewGame()
         {
             LevelManager manager = new();
@@ -14,11 +16,11 @@ namespace SUVRPG
             manager = manager.LoadLevel();
             return manager;
         }
-        public Player CreateNewCharacter(string name, string race, string characterDescription)
-        {
-            Player player = new(name, race, characterDescription, 30, ConsoleColor.Green, 0, 0);
-            return player;
-        }
+        // public Player CreateNewCharacter(string name, string race, string characterDescription)
+        // {
+        //     Player player = new(name, race, characterDescription, 30, ConsoleColor.Green, 0, 0);
+        //     return player;
+        // }
 
         // Get player from database
         // public Player LoadCharacter(/* DB database */)

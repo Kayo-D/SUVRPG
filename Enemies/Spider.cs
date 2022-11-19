@@ -9,8 +9,6 @@ namespace SUVRPG
     public class Spider : Character
     {
         bool hasPoisonSting = false;
-        
-        public Combat Combat = new();
 
         public Spider(string _name, int _level, int _hitpoints, string _characterDescription, ConsoleColor _color, int _armor, int _attackdmg, bool _hasPoisonSting)
         {

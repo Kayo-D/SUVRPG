@@ -2,32 +2,32 @@ using static System.Console;
 
 namespace SUVRPG
 {
-    public class CombatUI
+    public static class CombatUI
     {
-        public ConsoleColor color { get; set; }
-        public void StartFight()
+
+        public static void StartFight()
         {
             WriteLine("Fight is starting!");
         }
 
-        public void CombatScreen()
+        // public void CombatScreen()
+        // {
+
+        // }
+
+
+        // public void YouWinScreen()
+        // {
+
+        // }
+
+        // public void YouLoseScreen()
+        // {
+
+        // }
+        public static void DisplayHealthBar(Character character)
         {
-
-        }
-
-
-        public void YouWinScreen()
-        {
-
-        }
-
-        public void YouLoseScreen()
-        {
-
-        }
-        public void DisplayHealthBar(Character character)
-        {
-            ForegroundColor = color;
+            ForegroundColor = character.color;
             WriteLine($"{character.name}'s Health:");
             ResetColor();
             Write("[");
@@ -46,7 +46,7 @@ namespace SUVRPG
 
         }
 
-        public void PlayerCombatMenu(Player player, Character CurrentEnemy)
+        public static void PlayerCombatMenu(Player player, Character CurrentEnemy)
         {
             string title = "It's your turn to fight! What do you want to do?\n";
 
