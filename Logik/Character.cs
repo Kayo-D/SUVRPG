@@ -1,47 +1,86 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
 using static System.Console;
 
-public class Character
+namespace SUVRPG
 {
-    public string name { get; set; }
-    public int level { get; set; }
-    public string characterDescription { get; set; }
-    public int hitpoints { get; set; }
-    public int maxhitpoints { get; set; }
-    public ConsoleColor color { get; set; }
-    public int armor { get; set; }
-    public int attackdmg { get; set; }
-    public string textArt { get; set; }
-    public Random RandGenerator { get; set; }
-    public bool IsAlive { get => hitpoints > 0; }
-
-    public void DisplayInfo()
+    public class Character
     {
-        BackgroundColor = color;
-        Write($">>> {name} <<<");
-        WriteLine($"\nLevel: {level}\n");
-        ResetColor();
-        ForegroundColor = color;
-        WriteLine($"{textArt}");
-        WriteLine($"Health: {hitpoints}");
-        WriteLine("---");
-        ResetColor();
-    }
+        public string Name { get; protected set; }
+        public string CharacterDescription { get; protected set; }
+        public int Health { get; set; }
+        public int MaxHealth { get; set; }
+        public int AttackDmg { get; set; }
+        public string TextArt { get; protected set; }
+        public ConsoleColor Color { get; protected set; }
+        public Random RandGenerator { get; protected set; }
+        public bool IsDead { get => Health <= 0; }
+        public bool IsAlive { get => Health > 0; }
 
-    public virtual void Attack(Character otherCharacter)
-    {
 
-    }
-
-    public void TakeDamage(int damageAmount)
-    {
-        hitpoints -= damageAmount;
-        if (hitpoints < 0)
+        public Character(string name, string characterDescription, int health, int attackDmg, ConsoleColor color, string textArt)
         {
-            hitpoints = 0;
+            Name = name;
+            CharacterDescription = characterDescription;
+            Health = health;
+            MaxHealth = health;
+            AttackDmg = attackDmg;
+            Color = color;
+            TextArt = textArt;
+            RandGenerator = new Random();            
+        }
+
+        public void DisplayInfo()
+        {
+            
+            BackgroundColor = Color;
+            WriteLine($"--- {Name} ---");
+            ResetColor();
+            ForegroundColor = Color; 
+            Write($"{CharacterDescription}\n");
+            ForegroundColor = Color;
+            WriteLine($"\n{TextArt}\n");
+            WriteLine($"Health: {Health}");
+            WriteLine("---");
+            ResetColor();
+        }
+
+        public virtual void Fight(Character otherCharacter)
+        {
+            WriteLine("Enemy is fighting!");
+        }
+
+        public void TakeDamage(int damageAmount)
+        {
+            Health -= damageAmount;
+            if (Health < 0)
+            {
+                Health = 0;
+            }
+        }
+
+        public void DisplayHealthBar()
+        {
+
+            ForegroundColor = Color;
+            WriteLine($"{Name}'s Health:");
+            ResetColor();
+            Write("[");
+            BackgroundColor = ConsoleColor.Green;
+            for (int i = 0; i < Health; i++)
+            {
+                Write(" ");
+            }
+            BackgroundColor = ConsoleColor.Black;
+            for (int i = Health; i < MaxHealth; i++)
+            {
+                Write (" ");
+            }
+            ResetColor();
+            WriteLine($"] {Health}/{MaxHealth}");
+            
         }
     }
-
-    
-
-
 }

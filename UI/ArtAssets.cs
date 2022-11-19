@@ -1,12 +1,16 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text;
 using System.Threading.Tasks;
 
 namespace SUVRPG
 {
-    static class EnemyArt
+    static class ArtAssets
     {
+        public static string Player = @"";
+        
+        
         public static string Dragon = @"                 ___====-_  _-====___
            _--^^^#####//      \\#####^^^--_
         _-^##########// (    ) \\##########^-_
@@ -97,3 +101,4 @@ _/                                          \
                         
     }
 }
+

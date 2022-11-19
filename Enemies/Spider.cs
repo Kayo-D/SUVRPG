@@ -8,36 +8,27 @@ namespace SUVRPG
 {
     public class Spider : Character
     {
-        bool hasPoisonSting = false;
+        bool HasPoisonSting;
 
-        public Spider(string _name, int _level, int _hitpoints, string _characterDescription, ConsoleColor _color, int _armor, int _attackdmg, bool _hasPoisonSting)
+        public Spider(string name, string characterDescription, int health, int attackDmg, ConsoleColor color, bool hasPoisonSting)
+            : base(name, characterDescription, health, attackDmg, color, ArtAssets.Spider)
         {
-        string name = _name;
-        int level = _level;
-        int hitpoints = _hitpoints;
-        int maxhitpoints = _hitpoints;
-        string characterDescription = _characterDescription;
-        ConsoleColor color = _color;
-        int armor = _armor;
-        int attackdmg = _attackdmg;
-        string textArt = EnemyArt.Spider;
-        RandGenerator = new Random();  
-        bool hasPoisonSting = _hasPoisonSting; 
+            HasPoisonSting = hasPoisonSting;
         }
 
         private void SpiderBite()
         {
-            BackgroundColor = color;
-            Write($"{name} ");
+            BackgroundColor = Color;
+            Write($"{Name} ");
             ResetColor();
             WriteLine($"bites you ");
             ResetColor();
         }
  
-        public override void Attack(Character otherCharacter)
+        public override void Fight(Character otherCharacter)
         {
-            ForegroundColor = color;
-            WriteLine($"{name} is fighting {otherCharacter.name}!");
+            ForegroundColor = Color;
+            WriteLine($"{Name} is fighting {otherCharacter.Name}!");
             ResetColor();
 
             SpiderBite();
@@ -45,8 +36,8 @@ namespace SUVRPG
             if (randPercent >= 40)
             {
                 WriteLine("and hits you!");
-                otherCharacter.TakeDamage(2 + attackdmg);
-                if (hasPoisonSting == true)
+                otherCharacter.TakeDamage(2 + AttackDmg);
+                if (HasPoisonSting == true)
                 {
                     WriteLine("The spider had a poison sting. You are poisoned and take 2 extra damage");
                     otherCharacter.TakeDamage(2);

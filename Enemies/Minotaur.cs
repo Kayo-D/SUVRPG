@@ -8,33 +8,25 @@ namespace SUVRPG
 {
     public class Minotaur : Character
     {
-        public Minotaur(string _name, int _level, int _hitpoints, string _characterDescription, ConsoleColor _color, int _armor, int _attackdmg)
-        {   
-        string name = _name;
-        int level = _level;
-        int hitpoints = _hitpoints;
-        int maxhitpoints = _hitpoints;
-        string characterDescription = _characterDescription;
-        ConsoleColor color = _color;
-        int armor = _armor;
-        int attackdmg = _attackdmg;
-        string textArt = EnemyArt.Minotaur;
-        RandGenerator = new Random();   
+        public Minotaur(string name, string characterDescription, int health, int attackDmg, ConsoleColor color)
+            : base(name, characterDescription, health, attackDmg, color, ArtAssets.Minotaur)
+        {
+            
         }
 
         private void MinoSmash()
         {
-            BackgroundColor = color;
-            Write($"{name} ");
+            BackgroundColor = Color;
+            Write($"{Name} ");
             ResetColor();
             WriteLine($"smashes at you ");
             ResetColor();
         }
  
-        public override void Attack(Character otherCharacter)
+        public override void Fight(Character otherCharacter)
         {
-            ForegroundColor = color;
-            WriteLine($"{name} is fighting {otherCharacter.name}!");
+            ForegroundColor = Color;
+            WriteLine($"{Name} is fighting {otherCharacter.Name}!");
             ResetColor();
 
             MinoSmash();
@@ -42,7 +34,7 @@ namespace SUVRPG
             if (randPercent >= 60)
             {
                 WriteLine("and hits you hard!");
-                otherCharacter.TakeDamage(5 + attackdmg);
+                otherCharacter.TakeDamage(5 + AttackDmg);
             }
             else 
             {

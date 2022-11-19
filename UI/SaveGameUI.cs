@@ -1,13 +1,15 @@
-
 using static System.Console;
-public class SaveGameUI
+namespace SUVRPG
 {
-    public void OpenSaveGameUI(Player player)
+    public class SaveGameUI
     {
-        Clear();
-        WriteLine("Succesfully saved game");
-        WriteLine("In order to load game search for your characters name: " + player.name);
-        WriteLine("Press any key to go back");
-        ReadKey();
+        public void OpenSaveGameUI(Player player)
+        {
+            Clear();
+            WriteLine("Succesfully saved game");
+            WriteLine("In order to load game search for your characters name: " + player.Name);
+            WriteLine("Press any key to go back");
+            ReadKey();
+        }
     }
 }

@@ -8,34 +8,25 @@ namespace SUVRPG
 {
     public class Bandit : Character
     {
-    public Bandit(string _name, int _level, int _hitpoints, string _characterDescription, ConsoleColor _color, int _armor, int _attackdmg)
-    {
-        string name = _name;
-        int level = _level;
-        int hitpoints = _hitpoints;
-        int maxhitpoints = _hitpoints;
-        string characterDescription = _characterDescription;
-        ConsoleColor color = _color;
-        int armor = _armor;
-        int attackdmg = _attackdmg;
-        string textArt = EnemyArt.Bandit;
-        RandGenerator = new Random();   
-        
-    }
+        public Bandit(string name, string characterDescription, int health, int attackDmg, ConsoleColor color)
+            : base(name, characterDescription, health, attackDmg, color, ArtAssets.Bandit)
+        {
+            
+        }
         
         private void MeeleStrike()
         {
-            BackgroundColor = color;
-            Write($"{name} ");
+            BackgroundColor = Color;
+            Write($"{Name} ");
             ResetColor();
-            WriteLine($"strikes at you with his sword ");
+            Write($"strikes at you with his sword ");
             ResetColor();
         }
 
-        public override void Attack(Character otherCharacter)
+        public override void Fight(Character otherCharacter)
         {
-            ForegroundColor = color;
-            WriteLine($"{name} is fighting {otherCharacter.name}!");
+            ForegroundColor = Color;
+            WriteLine($"{Name} is fighting {otherCharacter.Name}!");
             ResetColor();
 
             MeeleStrike();
@@ -43,7 +34,7 @@ namespace SUVRPG
             if (randPercent >= 60)
             {
                 WriteLine("and hits you!");
-                otherCharacter.TakeDamage(2 + attackdmg);
+                otherCharacter.TakeDamage(2 + AttackDmg);
             }
             else 
             {

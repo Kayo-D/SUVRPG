@@ -1,61 +1,64 @@
 //Made by Christian Vallvingskog
 
-public class LootHandler
+namespace SUVRPG
 {
-    //Make a AddLootToPlayer method in the Player class and call it here instead
-    public Player PickupLootLevel1(LevelManager manager, TileEngine engine, Player player, MapUI ui)
+    public class LootHandler
     {
-        TreasureClass1 tc1 = new();
-        TreasureClass2 tc2 = new();
-        Random rng = new Random();
-        Loot addLootToPlayer = new();
-        if (rng.Next(10) > 8)
+        //Make a AddLootToPlayer method in the Player class and call it here instead
+        public Player PickupLootLevel1(LevelManager manager, TileEngine engine, Player CurrentPlayer, MapUI ui)
         {
-            addLootToPlayer = tc2.LootTable();
+            TreasureClass1 tc1 = new();
+            TreasureClass2 tc2 = new();
+            Random rng = new Random();
+            Loot addLootToPlayer = new();
+            if (rng.Next(10) > 8)
+            {
+                addLootToPlayer = tc2.LootTable();
+            }
+            else
+            {
+                addLootToPlayer = tc1.LootTable();
+            }
+            CurrentPlayer.Armor = addLootToPlayer.armor + CurrentPlayer.Armor;
+            CurrentPlayer.AttackDmg = addLootToPlayer.weapon + CurrentPlayer.AttackDmg;
+            CurrentPlayer.CurrentGold = addLootToPlayer.gold + CurrentPlayer.CurrentGold;
+            ui.DrawPickups(addLootToPlayer);
+            Console.ReadKey();
+            return CurrentPlayer;
         }
-        else
+        public Player PickupLootLevel2(LevelManager manager, TileEngine engine, Player CurrentPlayer, MapUI ui)
         {
-            addLootToPlayer = tc1.LootTable();
+            TreasureClass2 tc2 = new();
+            TreasureClass3 tc3 = new();
+            Random rng = new Random();
+            Loot addLootToPlayer = new();
+            if (rng.Next(10) > 8)
+            {
+                addLootToPlayer = tc3.LootTable();
+            }
+            else
+            {
+                addLootToPlayer = tc2.LootTable();
+            }
+            CurrentPlayer.Armor = addLootToPlayer.armor + CurrentPlayer.Armor;
+            CurrentPlayer.AttackDmg = addLootToPlayer.weapon + CurrentPlayer.AttackDmg;
+            CurrentPlayer.CurrentGold = addLootToPlayer.gold + CurrentPlayer.CurrentGold;
+            ui.DrawPickups(addLootToPlayer);
+            Console.ReadKey();
+            return CurrentPlayer;
         }
-        player.armor = addLootToPlayer.armor + player.armor;
-        player.attackdmg = addLootToPlayer.weapon + player.attackdmg;
-        player.currentGold = addLootToPlayer.gold + player.currentGold;
-        ui.DrawPickups(addLootToPlayer);
-        Console.ReadKey();
-        return player;
-    }
-    public Player PickupLootLevel2(LevelManager manager, TileEngine engine, Player player, MapUI ui)
-    {
-        TreasureClass2 tc2 = new();
-        TreasureClass3 tc3 = new();
-        Random rng = new Random();
-        Loot addLootToPlayer = new();
-        if (rng.Next(10) > 8)
+        public Player PickupLootLevel3(LevelManager manager, TileEngine engine, Player CurrentPlayer, MapUI ui)
         {
+            TreasureClass3 tc3 = new();
+            Random rng = new Random();
+            Loot addLootToPlayer = new();
             addLootToPlayer = tc3.LootTable();
+            CurrentPlayer.Armor = addLootToPlayer.armor + CurrentPlayer.Armor;
+            CurrentPlayer.AttackDmg = addLootToPlayer.weapon + CurrentPlayer.AttackDmg;
+            CurrentPlayer.CurrentGold = addLootToPlayer.gold + CurrentPlayer.CurrentGold;
+            ui.DrawPickups(addLootToPlayer);
+            Console.ReadKey();
+            return CurrentPlayer;
         }
-        else
-        {
-            addLootToPlayer = tc2.LootTable();
-        }
-        player.armor = addLootToPlayer.armor + player.armor;
-        player.attackdmg = addLootToPlayer.weapon + player.attackdmg;
-        player.currentGold = addLootToPlayer.gold + player.currentGold;
-        ui.DrawPickups(addLootToPlayer);
-        Console.ReadKey();
-        return player;
-    }
-    public Player PickupLootLevel3(LevelManager manager, TileEngine engine, Player player, MapUI ui)
-    {
-        TreasureClass3 tc3 = new();
-        Random rng = new Random();
-        Loot addLootToPlayer = new();
-        addLootToPlayer = tc3.LootTable();
-        player.armor = addLootToPlayer.armor + player.armor;
-        player.attackdmg = addLootToPlayer.weapon + player.attackdmg;
-        player.currentGold = addLootToPlayer.gold + player.currentGold;
-        ui.DrawPickups(addLootToPlayer);
-        Console.ReadKey();
-        return player;
     }
 }

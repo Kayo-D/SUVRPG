@@ -1,35 +1,21 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using static System.Console;
+
 namespace SUVRPG
 {
-    public class GameMechanics
+    class Game
     {
-        public static Player CurrentPlayer;
-
         public LevelManager StartNewGame()
         {
             LevelManager manager = new();
             manager.SelectLevel(1);
             return manager;
         }
-        public LevelManager LoadGame()
-        {
-            LevelManager manager = new();
-            manager = manager.LoadLevel();
-            return manager;
-        }
-        // public Player CreateNewCharacter(string name, string race, string characterDescription)
-        // {
-        //     Player player = new(name, race, characterDescription, 30, ConsoleColor.Green, 0, 0);
-        //     return player;
-        // }
-
-        // Get player from database
-        // public Player LoadCharacter(/* DB database */)
-        // {
-        //     Player player = new();
-        //     player = database.GetPlayerData();
-        //     return player;
-        // }
-
+        
         public bool IsPlayerOnCorrectLevel(LevelManager manager, int levelCheck)
         {
             if (manager.currentLevel != levelCheck)
@@ -41,15 +27,24 @@ namespace SUVRPG
                 return false;
             }
         }
-        public int LevelCheck(LevelManager manager, int levelCheck, TileEngine engine, MapUI mapUI, Player player)
+
+        public int LevelCheck(LevelManager manager, int levelCheck, TileEngine engine, MapUI mapUI, Player CurrentPlayer)
         {
             if (IsPlayerOnCorrectLevel(manager, levelCheck))
             {
-                ChangeLevel(manager.currentLevel, manager, engine, mapUI, player);
+                ChangeLevel(manager.currentLevel, manager, engine, mapUI, CurrentPlayer);
                 levelCheck = levelCheck + 1;
             }
             return levelCheck;
         }
+
+        public void ChangeLevel(int newLevel, LevelManager manager, TileEngine engine, MapUI mapUI, Player CurrentPlayer)
+        {
+            manager.SelectLevel(newLevel);
+            engine.SpawnPlayer(manager.playerStartPosX, manager.playerStartPosY);
+            mapUI.UILevelLoad(manager.levelData, manager.mapHeight, manager.mapWidth, engine.currentPlayerPosX, engine.currentPlayerPosY, CurrentPlayer);
+        }
+
         public void GameLoop(Player player, LevelManager manager)
         {
             TileEngine engine = new();
@@ -86,12 +81,12 @@ namespace SUVRPG
                 }
             }
         }
-        public void ChangeLevel(int newLevel, LevelManager manager, TileEngine engine, MapUI mapUI, Player player)
+
+        public static void WaitForKey()
         {
-            manager.SelectLevel(newLevel);
-            engine.SpawnPlayer(manager.playerStartPosX, manager.playerStartPosY);
-            mapUI.UILevelLoad(manager.levelData, manager.mapHeight, manager.mapWidth, engine.currentPlayerPosX, engine.currentPlayerPosY, player);
+            WriteLine("Press any key to continue...\n");
+            ReadKey(true);
         }
+
     }
 }
-
