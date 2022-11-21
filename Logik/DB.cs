@@ -37,13 +37,13 @@ public class DB
     public LoadedLevel LoadLevelMap(string input)
     {
         LoadedLevel loadedLevel = new();
-        var levelMapList = Connection().Query<LoadedLevel>($"SELECT currentlevel, mapData, playerStartPosX, playerStartPosY FROM leveldata;").ToList();
+        var levelMapList = Connection().Query<LoadedLevel>($"SELECT currentLevel, mapData, playerStartPosX, playerStartPosY FROM leveldata;").ToList();
 
         foreach (LoadedLevel l in levelMapList)
         {
-            if (input == l.currentlevel)
+            if (input == l.currentLevel)
             {
-                loadedLevel.currentlevel = l.currentlevel;
+                loadedLevel.currentLevel = l.currentLevel;
                 loadedLevel.mapData = l.mapData;
                 loadedLevel.playerStartPosX = l.playerStartPosX;
                 loadedLevel.playerStartPosY = l.playerStartPosY;
@@ -53,6 +53,6 @@ public class DB
     }
     public void SaveLevelMap(int currentLevel, string[,] mapData, int playerStartPosX, int playerStartPosY)
     {
-        Connection().Query($"INSERT INTO leveldata (currentlevel, mapData, playerStartPosX, playerStartPosY) VALUES ({currentlevel}, '{mapData}', {playerStartPosX}, {playerStartPosY});");
+        Connection().Query($"INSERT INTO leveldata (currentLevel, mapData, playerStartPosX, playerStartPosY) VALUES ({currentLevel}, '{mapData}', {playerStartPosX}, {playerStartPosY});");
     }
 }
