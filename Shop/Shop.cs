@@ -1,85 +1,88 @@
 //Made by Christian Vallvingskog
 
-public class Shop
+namespace SUVRPG
 {
-    ShopUI UI = new ShopUI();
-    ConsoleKeyInfo keyInput;
-    //Split this. Some should go to UI
-    public Player StartShop(Player player)
+    public class Shop
     {
-        while (true)
+        ShopUI UI = new ShopUI();
+        ConsoleKeyInfo keyInput;
+        //Split this. Some should go to UI
+        public Player StartShop(Player CurrentPlayer)
         {
-            UI.DrawShopUI(player.currentGold, player.hitpoints, player.maxhitpoints);
-            keyInput = Console.ReadKey();
-            if (keyInput.Key == ConsoleKey.B)
+            while (true)
             {
-                if (CanPlayerAffordItem(player.currentGold, 25))
+                UI.DrawShopUI(CurrentPlayer.CurrentGold, CurrentPlayer.Health, CurrentPlayer.MaxHealth);
+                keyInput = Console.ReadKey();
+                if (keyInput.Key == ConsoleKey.B)
                 {
-                    if (IsPlayerAtMaxHitPoints(player.hitpoints, player.maxhitpoints) == false)
+                    if (CanPlayerAffordItem(CurrentPlayer.CurrentGold, 25))
                     {
-                        player.currentGold = SetPlayerGold(player.currentGold, 25);
-                        player.hitpoints = BuyHealingPotion(player.currentGold, 25, player.hitpoints, player.maxhitpoints);
-                        UI.DrawPlayerPurchaseUI("healing potion");
-                        Console.ReadKey();
+                        if (IsPlayerAtMaxHitPoints(CurrentPlayer.Health, CurrentPlayer.MaxHealth) == false)
+                        {
+                            CurrentPlayer.CurrentGold = SetPlayerGold(CurrentPlayer.CurrentGold, 25);
+                            CurrentPlayer.Health = BuyHealingPotion(CurrentPlayer.CurrentGold, 25, CurrentPlayer.Health, CurrentPlayer.MaxHealth);
+                            UI.DrawPlayerPurchaseUI("healing potion");
+                            Console.ReadKey();
+                        }
+                        else
+                        {
+                            UI.DrawPlayerIsAlreadyMaxHP();
+                            Console.ReadKey();
+                        }
                     }
                     else
                     {
-                        UI.DrawPlayerIsAlreadyMaxHP();
+                        UI.DrawPlayerCantAffordUI();
                         Console.ReadKey();
                     }
                 }
-                else
+                if (keyInput.Key == ConsoleKey.Q)
                 {
-                    UI.DrawPlayerCantAffordUI();
-                    Console.ReadKey();
+                    return CurrentPlayer;
                 }
             }
-            if (keyInput.Key == ConsoleKey.Q)
+        }
+        public int BuyHealingPotion(int currentPlayerGold, int cost, int currentPlayerHP, int maxPlayerHP)
+        {
+            if (currentPlayerHP <= maxPlayerHP)
             {
-                return player;
+                currentPlayerHP = currentPlayerHP + 20;
+                if (currentPlayerHP > maxPlayerHP)
+                {
+                    currentPlayerHP = maxPlayerHP;
+                }
+            }
+            return currentPlayerHP;
+        }
+        //This should be in the Player class
+        public int SetPlayerGold(int currentPlayerGold, int cost)
+        {
+            currentPlayerGold = currentPlayerGold - cost;
+            return currentPlayerGold;
+        }
+        //This should be in the Player class
+        public bool CanPlayerAffordItem(int currentPlayerGold, int cost)
+        {
+            if (currentPlayerGold >= cost)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
             }
         }
-    }
-    public int BuyHealingPotion(int currentPlayerGold, int cost, int currentPlayerHP, int maxPlayerHP)
-    {
-        if (currentPlayerHP <= maxPlayerHP)
+        //This should be in the Player class
+        public bool IsPlayerAtMaxHitPoints(int currentPlayerHP, int maxPlayerHP)
         {
-            currentPlayerHP = currentPlayerHP + 20;
-            if (currentPlayerHP > maxPlayerHP)
+            if (currentPlayerHP == maxPlayerHP)
             {
-                currentPlayerHP = maxPlayerHP;
+                return true;
             }
-        }
-        return currentPlayerHP;
-    }
-    //This should be in the Player class
-    public int SetPlayerGold(int currentPlayerGold, int cost)
-    {
-        currentPlayerGold = currentPlayerGold - cost;
-        return currentPlayerGold;
-    }
-    //This should be in the Player class
-    public bool CanPlayerAffordItem(int currentPlayerGold, int cost)
-    {
-        if (currentPlayerGold >= cost)
-        {
-            return true;
-        }
-        else
-        {
-            return false;
-        }
-    }
-    //This should be in the Player class
-    public bool IsPlayerAtMaxHitPoints(int currentPlayerHP, int maxPlayerHP)
-    {
-        if (currentPlayerHP == maxPlayerHP)
-        {
-            return true;
-        }
-        else
-        {
-            return false;
+            else
+            {
+                return false;
+            }
         }
     }
 }

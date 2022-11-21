@@ -2,17 +2,13 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using static System.Console;
 
 namespace SUVRPG
 {
-    public static class MainMenu
+public static class MainMenu
     {
         public static void Mainmenu()
         {
-            GameMechanics game = new GameMechanics();
-            CharacterUI charCreation = new CharacterUI();
-            
             string title = "Welcome to SUVRPG!\n";
 
             string[] options = { "NEW GAME",
@@ -26,16 +22,15 @@ namespace SUVRPG
             switch (SelectedIndex)
             {
                 case 0:
-                    //game.GameLoop(game.CreateNewCharacter(), game.StartNewGame());
-
+                    Game myGame = new Game();
+                    
+                    myGame.GameLoop(CreateCharacter.RunIntro(), myGame.StartNewGame());
                     break;
 
                 case 1:
-                    game.LoadGame();
                     break;
 
                 case 2:
-                    WriteLine("Highscores yo");
                     break;
 
                 case 3:

@@ -8,29 +8,27 @@ namespace SUVRPG
 {
     public class Spider : Character
     {
-        bool hasPoisonSting = false;
-        
-        public Combat Combat = new();
+        bool HasPoisonSting;
 
-        public Spider(string _name, int _level, int _hitpoints, string _characterDescription, ConsoleColor _color, int _armor, int _attackdmg, bool _hasPoisonSting) 
-            : base(_name, _level, _hitpoints, _characterDescription, _color, _armor, _attackdmg, EnemyArt.Spider)
+        public Spider(string name, string characterDescription, int health, int attackDmg, ConsoleColor color, bool hasPoisonSting)
+            : base(name, characterDescription, health, attackDmg, 0, color, ArtAssets.Spider)
         {
-            bool hasPoisonSting = _hasPoisonSting;
+            HasPoisonSting = hasPoisonSting;
         }
 
         private void SpiderBite()
         {
-            BackgroundColor = color;
-            Write($"{name} ");
+            BackgroundColor = Color;
+            Write($"{Name} ");
             ResetColor();
-            WriteLine($"bites you ");
+            Write($"bites you ");
             ResetColor();
         }
  
-        public override void Attack(Character otherCharacter)
+        public override void Fight(Character otherCharacter)
         {
-            ForegroundColor = color;
-            WriteLine($"{name} is fighting {otherCharacter.name}!");
+            ForegroundColor = Color;
+            WriteLine($"{Name} is fighting {otherCharacter.Name}!");
             ResetColor();
 
             SpiderBite();
@@ -38,8 +36,8 @@ namespace SUVRPG
             if (randPercent >= 40)
             {
                 WriteLine("and hits you!");
-                otherCharacter.TakeDamage(2 + attackdmg);
-                if (hasPoisonSting == true)
+                otherCharacter.TakeDamage(2 + AttackDmg);
+                if (HasPoisonSting == true)
                 {
                     WriteLine("The spider had a poison sting. You are poisoned and take 2 extra damage");
                     otherCharacter.TakeDamage(2);

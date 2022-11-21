@@ -1,82 +1,92 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
 using static System.Console;
 
-//Denna klassen ska egentligen vara abstrakt
-public class Character
+namespace SUVRPG
 {
-    public string name { get; set; }
-    public int level { get; set; }
-    public string characterDescription { get; set; }
-    public int hitpoints { get; set; }
-    public int maxhitpoints { get; set; }
-    public ConsoleColor color { get; set; }
-    public int armor { get; set; }
-    public int attackdmg { get; set; }
-    public string textArt { get; set; }
-    public Random RandGenerator { get; set; }
-    public bool IsDead { get => hitpoints <= 0; }
-    public bool IsAlive { get => hitpoints > 0; }
-
-    public Character()
+    public class Character
     {
+        public string Name { get; protected set; }
+        public string CharacterDescription { get; set; }
+        public int Health { get; set; }
+        public int MaxHealth { get; set; }
+        public int AttackDmg { get; set; }
+        public int Armor { get; set; }
+        public string TextArt { get; protected set; }
+        public ConsoleColor Color { get; protected set; }
+        public Random RandGenerator { get; protected set; }
+        public bool IsDead { get => Health <= 0; }
+        public bool IsAlive { get => Health > 0; }
 
-    }
-    
-    // Enemy
-    public Character(string _name, int _level, int _hitpoints, string _characterDescription, ConsoleColor _color, int _armor, int _attackdmg, string _textArt)
-    {
-        string name = _name;
-        int level = _level;
-        int hitpoints = _hitpoints;
-        int maxhitpoints = _hitpoints;
-        string characterDescription = _characterDescription;
-        ConsoleColor color = _color;
-        int armor = _armor;
-        int attackdmg = _attackdmg;
-        string textArt = _textArt;
-        RandGenerator = new Random();   
-    }
 
-    // Player
-    public Character(string _name, string _characterDescription, int _hitpoints, ConsoleColor _color, int _armor, int _attackdmg)
-    {
-        string name = _name;
-        string characterDescription = _characterDescription;
-        int hitpoints = _hitpoints;
-        int maxhitpoints = _hitpoints;
-        ConsoleColor color = _color;
-        int armor = _armor;
-        int attackdmg = _attackdmg;
-        RandGenerator = new Random();   
-    }
-
-    public void DisplayInfo()
-    {
-        BackgroundColor = color;
-        Write($">>> {name} <<<");
-        WriteLine($"\nLevel: {level}\n");
-        ResetColor();
-        ForegroundColor = color;
-        WriteLine($"{textArt}");
-        WriteLine($"Health: {hitpoints}");
-        WriteLine("---");
-        ResetColor();
-    }
-
-    public virtual void Attack(Character otherCharacter)
-    {
-
-    }
-
-    public void TakeDamage(int damageAmount)
-    {
-        hitpoints -= damageAmount;
-        if (hitpoints < 0)
+        public Character(string name, string characterDescription, int health, int attackDmg, int armor, ConsoleColor color, string textArt)
         {
-            hitpoints = 0;
+            Name = name;
+            CharacterDescription = characterDescription;
+            Health = health;
+            MaxHealth = health;
+            AttackDmg = attackDmg;
+            Armor = armor;
+            Color = color;
+            TextArt = textArt;
+            RandGenerator = new Random();            
+        }
+
+        public void DisplayInfo()
+        {
+            
+            BackgroundColor = Color;
+            WriteLine($"--- {Name} ---");
+            ResetColor();
+            ForegroundColor = Color; 
+            Write($"{CharacterDescription}\n");
+            ForegroundColor = Color;
+            WriteLine($"\n{TextArt}\n");
+            WriteLine($"Health: {Health}");
+            WriteLine("---");
+            ResetColor();
+        }
+
+        public virtual void Fight(Character otherCharacter)
+        {
+            WriteLine("Enemy is fighting!");
+        }
+
+        public void TakeDamage(int damageAmount)
+        {
+            Health -= damageAmount;
+            if (Health < 0)
+            {
+                Health = 0;
+            }
+            if (damageAmount <= 0)
+            {
+                damageAmount = 1;
+            }
+        }
+
+        public void DisplayHealthBar()
+        {
+
+            ForegroundColor = Color;
+            WriteLine($"{Name}'s Health:");
+            ResetColor();
+            Write("[");
+            BackgroundColor = ConsoleColor.Green;
+            for (int i = 0; i < Health; i++)
+            {
+                Write(" ");
+            }
+            BackgroundColor = ConsoleColor.Black;
+            for (int i = Health; i < MaxHealth; i++)
+            {
+                Write (" ");
+            }
+            ResetColor();
+            WriteLine($"] {Health}/{MaxHealth}");
+            
         }
     }
-
-    
-
-
 }

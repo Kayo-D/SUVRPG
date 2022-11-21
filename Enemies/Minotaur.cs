@@ -8,27 +8,25 @@ namespace SUVRPG
 {
     public class Minotaur : Character
     {
-        public Combat Combat = new();
-
-        public Minotaur(string _name, int _level, int _hitpoints, string _characterDescription, ConsoleColor _color, int _armor, int _attackdmg) 
-            : base(_name, _level, _hitpoints, _characterDescription, _color, _armor, _attackdmg, EnemyArt.Minotaur)
+        public Minotaur(string name, string characterDescription, int health, int attackDmg, ConsoleColor color)
+            : base(name, characterDescription, health, attackDmg, 0, color, ArtAssets.Minotaur)
         {
             
         }
 
         private void MinoSmash()
         {
-            BackgroundColor = color;
-            Write($"{name} ");
+            BackgroundColor = Color;
+            Write($"{Name} ");
             ResetColor();
-            WriteLine($"smashes at you ");
+            Write($"smashes at you ");
             ResetColor();
         }
  
-        public override void Attack(Character otherCharacter)
+        public override void Fight(Character otherCharacter)
         {
-            ForegroundColor = color;
-            WriteLine($"{name} is fighting {otherCharacter.name}!");
+            ForegroundColor = Color;
+            WriteLine($"{Name} is fighting {otherCharacter.Name}!");
             ResetColor();
 
             MinoSmash();
@@ -36,7 +34,7 @@ namespace SUVRPG
             if (randPercent >= 60)
             {
                 WriteLine("and hits you hard!");
-                otherCharacter.TakeDamage(5 + attackdmg);
+                otherCharacter.TakeDamage(5 + AttackDmg);
             }
             else 
             {

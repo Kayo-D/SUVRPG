@@ -6,60 +6,41 @@ using static System.Console;
 
 namespace SUVRPG
 {
-    public class Dragon : Character
+    class Dragon : Character
     {
-        
-        public Combat Combat = new();
 
-        public Dragon(string _name, int _level, int _hitpoints, string _characterDescription, ConsoleColor _color, int _armor, int _attackdmg) 
-            : base(_name, _level, _hitpoints, _characterDescription, _color, _armor, _attackdmg, EnemyArt.Dragon)
+        public Dragon(string name, string characterDescription, int health, int attackDmg, ConsoleColor color)
+            : base(name, characterDescription, health, attackDmg, 0, color, ArtAssets.Dragon)
         {
             
         }
 
-        private void Firebreath()
+        public void Bite()
         {
-            Console.Write("The dragon breathes fire on you ");
+            BackgroundColor = Color;
+            Write($"{Name} ");
+            ResetColor();
+            Write($"viciously chomps down ");
         }
 
-        private void TailWhip()
+        public override void Fight(Character otherCharacter)
         {
-            System.Console.WriteLine("The dragon whips his spiky tail at you ");
-        }
- 
-        public override void Attack(Character otherCharacter)
-        {
-            ForegroundColor = color;
-            WriteLine($"{name} is fighting {otherCharacter.name}!");
+            ForegroundColor = Color;
+            WriteLine($"{Name} is fighting {otherCharacter.Name}!");
             
             int randPercent = RandGenerator.Next(1, 101);
-            if (randPercent <= 40)
+            Bite();
+            if (randPercent <= 80)
             {
-                Firebreath();
-                if (randPercent <= 70)
-                {
-                    WriteLine("and burns you for 30 damage! Ouch, it burns!");
-                    otherCharacter.TakeDamage(20 + attackdmg);
-                }
-                else
-                {
-                    WriteLine("but misses the attack!");
-                }
+                WriteLine($"and bites you for {4 - otherCharacter.Armor} damage!");
+                otherCharacter.TakeDamage(4 - otherCharacter.Armor);
             }
             else
             {
-                TailWhip();
-                if (randPercent <= 70)
-                {
-                    WriteLine("and wounds you for 10 damage.");
-                    otherCharacter.TakeDamage(10 + attackdmg);
-                }
-                else
-                {
-                    WriteLine("but misses the attack!");
-                }
+                WriteLine("but misses you...");
             }
             ResetColor();
+            
         }
     }
 }

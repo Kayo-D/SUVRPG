@@ -1,123 +1,90 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
 using static System.Console;
 
 namespace SUVRPG
 {
     public class Combat
     {
-        private List<Character> EnemiesLvl1;
-        private List<Character> EnemiesLvl2;
-        private List<Character> EnemiesLvl3;
-        private List<Character> EnemiesLvl4;
-        public CombatUI CombatUI = new();
-        public Character CurrentEnemy;
-        public Random RandGenerator { get; set; }
-
-
-        public void CreateEnemy()
+        public static Player CurrentPlayer;
+        public static Character CurrentEnemy;
+        private static List<Character> EnemiesAtLvl1;
+        private static List<Character> EnemiesAtLvl2;
+        private static List<Character> EnemiesAtLvl3;
+        
+        public Combat()
         {
-            
-            // Level 1 enemies
-            Bandit lostBandit = new Bandit ("Lost Bandit", 1, 10, "Poor guy seems lost and confused.", ConsoleColor.Red, 0, 2);
-            Spider bigSpider = new Spider ("The Bigger-than-average Spider", 1, 10, "It's big, but you can probably still smash it with your shoe. It just takes a few more hits.", ConsoleColor.Red, 0, 2, false);
+            Bandit lostBandit = new Bandit("Lost Adventurer", "Poor guy seems lost and confused. He thinks you're a monster!", 15, 0, ConsoleColor.DarkBlue);
+            Spider bigSpider = new Spider ("Bigger-Than-Average Spider", "Size do matters when it comes to hideous disgusting spiders that are staring hungrily at you.", 10, 0, ConsoleColor.DarkGreen, false);
+            Minotaur youngMinotaur = new Minotaur("Young Minotaur", "A minotaur is part man and part bull. Well, this one is more part teenager, part bull. 'It's not a phase, mooooh-m.'", 20, 2, ConsoleColor.Magenta);
+
+            Spider poisonSpider = new Spider ("Poison Spider", "This one looks angry... And hungry.", 20, 2, ConsoleColor.DarkGreen, true);
+            Bandit battleScarredBandit = new Bandit ("Battle-scarred Bandit", "You see what you assume are battle scars all over his face. This one must have been in a lot of fights!", 30, 4, ConsoleColor.DarkGray);
+            Minotaur minotaurGuard = new Minotaur("Minotaur Guard", "These mythical creatures guard the treasure of the cave. Real beef cakes.", 45, 7, ConsoleColor.Red);
 
 
-            // Level 2 enemies
-            Spider poisonSpider = new Spider ("Poison Spider", 2, 20, "Oh gods, this one looks angry!", ConsoleColor.Red, 2, 4, true);
-            Bandit battleScarredBandit = new Bandit ("Battle-Scarred Bandit", 2, 25, "He seems to have been in many fights before.", ConsoleColor.Red, 4, 6);
-            Minotaur youngMinotaur = new Minotaur ("Young Minotaur", 2, 25, "The Minotaur is part man and part bull. Well, this one is young so part teenager, part bull. 'It's not a phase, Moooh-m!'", ConsoleColor.Red, 5, 5);
+            Bandit banditLeader = new Bandit ("Bandit-Leader", "It takes a lof of strength to become the leader of such a hideous group of bandits", 50, 10, ConsoleColor.DarkYellow);
+            Minotaur minotaurChampion = new Minotaur("Minotaur Champion", "The Minotaur Champion has served the Dragon Lord well and been given a special rank of Champion. No extra salary or benefits though. Some extra overtime required. They should perhaps be in touch with a muu-union.", 70, 15, ConsoleColor.DarkBlue);
+            Spider giantSpider = new Spider ("Giant freakin' Spider", "It's a huge freakin' spider and he's about to smash you with all of his eight legs", 80, 20, ConsoleColor.DarkGreen, true);
 
-            // Level 3 enemies
-            Minotaur minotaurGuard = new Minotaur ("Minotaur Guard", 3, 45, "These mythical creatures guard the treasure of the cave", ConsoleColor.Red, 6, 15);
-            Bandit banditLeader = new Bandit ("Bandit Leader", 3, 40, "It takes a lof of strength to become the leader of such a hideous group of bandits", ConsoleColor.Red, 4, 10);
-            Spider giantSpider = new Spider ("Giant Spider", 3, 60, "It's a giant spider towering over you.", ConsoleColor.Red, 5, 25, true);
-            Minotaur minotaurChampion = new Minotaur ("Minotaur Champion", 3, 55, "The Minotaur Champion has served the Dragon Lord well and been given a special rank of Champion. No extra salary or benefits though. Some extra overtime required.", ConsoleColor.Red, 10, 20);
-            Dragon youngDrake = new Dragon ("Young Drake", 3, 50, "The Dragon Lord has many consorts and when a mommy dragon and a daddy dragon hug for a very long time they sometimes get young drakes. Don't let their smaller size fool you though, they can easily eat you up.", ConsoleColor.Red, 6, 20);
-
-            // Final boss (lvl 4)
-            Dragon dragonLord = new Dragon ("Dragon Lord", 4, 100, "The guardian of the treasure. The Dragon Lord of whatever-this-cave-is-called.", ConsoleColor.DarkRed, 15, 40);
-
-            // När du skapat fienden så lägg till den här nedan i listan. 
-            EnemiesLvl1 = new List<Character>() { lostBandit, bigSpider };
-            EnemiesLvl2 = new List<Character>() { poisonSpider, battleScarredBandit, youngMinotaur };
-            EnemiesLvl3 = new List<Character>() { minotaurGuard, banditLeader, giantSpider, minotaurChampion, youngDrake };
-            EnemiesLvl4 = new List<Character>() { dragonLord };
+            EnemiesAtLvl1 = new List<Character>() { lostBandit, bigSpider, youngMinotaur };
+            EnemiesAtLvl2 = new List<Character>() { poisonSpider, battleScarredBandit, minotaurGuard };
+            EnemiesAtLvl3 = new List<Character>() { banditLeader, minotaurChampion, giantSpider };
         }
 
-        public void StartCombat(Player player, LevelManager manager)
+        public static void RunCombat()
         {
-            if (manager.currentLevel == 1)
+            Clear();
+            Random random = new Random();
+            int randomNumber = random.Next(0, EnemiesAtLvl1.Count);
+            CurrentEnemy = EnemiesAtLvl1[randomNumber]; 
+            CombatUI.IntroCurrentEnemy();
+            BattleCurrentEnemy();
+
+            if (CurrentPlayer.IsDead)
             {
-                int randNum = RandGenerator.Next(0, 1);
-                CurrentEnemy = EnemiesLvl1[randNum];
-            }
-            else if (manager.currentLevel == 2)
-            {
-                int randNum = RandGenerator.Next(0, 2);
-                CurrentEnemy = EnemiesLvl2[randNum];
-            }
-            else if (manager.currentLevel == 3)
-            {
-                int randNum = RandGenerator.Next(0, 4);
-                CurrentEnemy = EnemiesLvl3[randNum];
+                CombatUI.RunGameOver();
             }
             else
             {
-                CurrentEnemy = EnemiesLvl4[0]; // Tänker att detta kan vara en egen metod sen. 
+                // Loota något?
+                WriteLine($"You defeated {CurrentEnemy.Name}! ");
+                Game.WaitForKey();
             }
-            Battle(player, CurrentEnemy);
+            
         }
-        
-        public void Battle(Player player, Character CurrentEnemy)
+
+        public static void BattleCurrentEnemy()
         {
-            while (player.IsAlive && CurrentEnemy.IsAlive)
-             {
-                // Clear();
-                CombatUI.DisplayHealthBar(player);
-                CombatUI.DisplayHealthBar(CurrentEnemy);
+            while (CurrentPlayer.IsAlive && CurrentEnemy.IsAlive)
+            {
+                Clear();
+                CurrentPlayer.DisplayHealthBar();
+                CurrentEnemy.DisplayHealthBar();
                 WriteLine();
 
-                player.Attack(CurrentEnemy);
+                CurrentPlayer.Fight(CurrentEnemy);
 
-                if (player.IsDead || CurrentEnemy.IsDead)
+                if (CurrentPlayer.IsDead || CurrentEnemy.IsDead)
                 {
+                    CurrentEnemy.Health = CurrentEnemy.MaxHealth;
                     break;
                 }
 
                 WriteLine();                
-                CombatUI.NextRound();
+                Game.WaitForKey();
 
                 Clear();
-                CombatUI.DisplayHealthBar(player);
-                CombatUI.DisplayHealthBar(CurrentEnemy);
+                CurrentPlayer.DisplayHealthBar();
+                CurrentEnemy.DisplayHealthBar();
                 WriteLine();
 
-                CurrentEnemy.Attack(player);
-
-                // if (player.IsDead || CurrentEnemy.IsDead)
-                // {
-                //     break;
-                // }
+                CurrentEnemy.Fight(CurrentPlayer);
                 
-                CombatUI.NextRound();
+                Game.WaitForKey();
             }
         }
-        
-        // Denna ligger i Character.cs just nu men hade nog hellre velat ha den här. Flyttar den sen.
-
-        // public void DealDamage(int damage)
-        // {
-        //     health -= damage;
-        //     if (health < 0)
-        //     {
-        //         health = 0;
-        //     }
-        // }
-
-        public void EndofCOmbat()
-        {
-            // Behövs denna? 
-        }
-
-        
     }
 }

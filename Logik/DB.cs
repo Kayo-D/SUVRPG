@@ -9,12 +9,11 @@ public class DB
         connection = new MySqlConnection("Server=localhost;Database=suvrpg;Uid=root;");
         return connection;
     }
-    public Player LoadPlayer(string input)
+    /* public SUVRPG.Player LoadPlayer(string input)
     {
-        Player player = new Player();
-        var playerList = Connection().Query<Player>($"SELECT id, name, race, characterDescription, maxhitpoints, hitpoints, currentGold, attackdmg, armor FROM player;").ToList();
-
-        foreach (Player p in playerList)
+        SUVRPG.Player player = new SUVRPG.Player("","",0,0,0,ConsoleColor.Green);
+        var playerList = Connection().Query<SUVRPG.Player>($"SELECT id, name, race, characterDescription, maxhitpoints, hitpoints, currentGold, attackdmg, armor FROM player;").ToList();
+        foreach (SUVRPG.Player p in playerList)
         {
             if (input == p.name)
             {
@@ -29,16 +28,15 @@ public class DB
             }
         }
         return player;
-    }
-    public void SavePlayer(Player player)
+    } */
+    /* public void SavePlayer(SUVRPG.Player player)
     {
         Connection().Query($"INSERT INTO player (id, name, race, characterDescription, maxhitpoints, hitpoints, currentGold, attackdmg, armor) VALUES ({id}, '{name}', '{race}', {characterDescription}', {maxhitpoints}, {hitpoints}, {currentGold}, {attackdmg}, {armor});");
-    }
-    public LoadedLevel LoadLevelMap(string input)
+    } */
+    /* public LoadedLevel LoadLevelMap(string input)
     {
         LoadedLevel loadedLevel = new();
         var levelMapList = Connection().Query<LoadedLevel>($"SELECT currentLevel, mapData, playerStartPosX, playerStartPosY FROM leveldata;").ToList();
-
         foreach (LoadedLevel l in levelMapList)
         {
             if (input == l.currentLevel)
@@ -50,9 +48,9 @@ public class DB
             }
         }
         return loadedLevel;
-    }
-    public void SaveLevelMap(int currentLevel, string[,] mapData, int playerStartPosX, int playerStartPosY)
+    } */
+    /* public void SaveLevelMap(int currentLevel, string[,] mapData, int playerStartPosX, int playerStartPosY)
     {
-        Connection().Query($"INSERT INTO leveldata (currentLevel, mapData, playerStartPosX, playerStartPosY) VALUES ({currentLevel}, '{mapData}', {playerStartPosX}, {playerStartPosY});");
-    }
+        Connection().Query($"INSERT INTO leveldata (currentlevel, mapData, playerStartPosX, playerStartPosY) VALUES ({currentlevel}, '{mapData}', {playerStartPosX}, {playerStartPosY});");
+    } */
 }
