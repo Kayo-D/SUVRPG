@@ -69,9 +69,7 @@ namespace SUVRPG
             }
             else
             {
-                // Loota något?
-                WriteLine($"You defeated {CurrentEnemy.Name}! ");
-                Game.WaitForKey();
+                CombatUI.WonBattle();
             }
         }
 
@@ -91,20 +89,17 @@ namespace SUVRPG
             }
             else
             {
-                // Loota något?
-                WriteLine($"You defeated {CurrentEnemy.Name}! ");
-                Game.WaitForKey();
+                CombatUI.WonBattle();
             }
         }
 
         public static void BattleCurrentEnemy()
         {
-            while (CurrentPlayer.IsAlive && CurrentEnemy.IsAlive)
+            while (!CurrentPlayer.IsDead && !CurrentEnemy.IsDead)
             {
                 Clear();
                 CurrentPlayer.DisplayHealthBar();
                 CurrentEnemy.DisplayHealthBar();
-                WriteLine();
 
                 CurrentPlayer.Fight(CurrentEnemy);
 
@@ -114,13 +109,11 @@ namespace SUVRPG
                     break;
                 }
 
-                WriteLine();                
                 Game.WaitForKey();
-
                 Clear();
+                
                 CurrentPlayer.DisplayHealthBar();
-                CurrentEnemy.DisplayHealthBar();
-                WriteLine();
+                CurrentEnemy.DisplayHealthBar();   
 
                 CurrentEnemy.Fight(CurrentPlayer);
                 

@@ -26,19 +26,19 @@ namespace SUVRPG
         public override void Fight(Character otherCharacter)
         {
             ForegroundColor = Color;
-            WriteLine($"{Name} is fighting {otherCharacter.Name}!");
+            WriteLine($"{Name} is fighting {otherCharacter.Name}! \n");
             ResetColor();
 
             MeeleStrike();
             int randPercent = RandGenerator.Next(1, 101);
             if (randPercent >= 60)
             {
-                WriteLine("and hits you!");
+                WriteLine("and HITS YOU!\n");
                 otherCharacter.TakeDamage(2 + AttackDmg);
             }
             else 
             {
-                WriteLine("but misses you! *phew*");
+                WriteLine("but MISSES you! *phew*\n");
             }
         }
     }

@@ -26,18 +26,18 @@ namespace SUVRPG
         public override void Fight(Character otherCharacter)
         {
             ForegroundColor = Color;
-            WriteLine($"{Name} is fighting {otherCharacter.Name}!");
+            WriteLine($"{Name} is fighting {otherCharacter.Name}!\n");
             
             int randPercent = RandGenerator.Next(1, 101);
             Bite();
             if (randPercent <= 80)
             {
-                WriteLine($"and bites you for {4 + AttackDmg} damage!");
+                WriteLine($"and TAKES A BITE OF YOU!\n");
                 otherCharacter.TakeDamage(4 + AttackDmg);
             }
             else
             {
-                WriteLine("but misses you...");
+                WriteLine("but MISS...");
             }
             ResetColor();
             

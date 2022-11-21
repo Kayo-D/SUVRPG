@@ -112,5 +112,7 @@ namespace SUVRPG
             return Combat.CurrentPlayer = new Player(name, characterDescription, 20, 0, 0, ConsoleColor.Green);
 
         }
+
+        
     }
 }

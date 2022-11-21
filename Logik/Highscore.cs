@@ -7,6 +7,6 @@ namespace SUVRPG
 {
     public class Highscore
     {
-        
+        private int Score { get; set; }
     }
 }
