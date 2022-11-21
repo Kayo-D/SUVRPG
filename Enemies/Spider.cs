@@ -28,24 +28,24 @@ namespace SUVRPG
         public override void Fight(Character otherCharacter)
         {
             ForegroundColor = Color;
-            WriteLine($"{Name} is fighting {otherCharacter.Name}!");
+            WriteLine($"{Name} is fighting {otherCharacter.Name}!\n");
             ResetColor();
 
             SpiderBite();
             int randPercent = RandGenerator.Next(1, 101);
             if (randPercent >= 40)
             {
-                WriteLine("and hits you!");
+                WriteLine("and HITS YOU!\n");
                 otherCharacter.TakeDamage(2 + AttackDmg);
                 if (HasPoisonSting == true)
                 {
-                    WriteLine("The spider had a poison sting. You are poisoned and take 2 extra damage");
+                    WriteLine("The spider had a poison sting. You are POISONED and take 2 EXTRA DAMAGE!! \n");
                     otherCharacter.TakeDamage(2);
                 }
             }
             else 
             {
-                WriteLine("but it just tickles!");
+                WriteLine("but it's just a tickle!!\n");
             }
         }
 

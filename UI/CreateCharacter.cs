@@ -113,5 +113,7 @@ namespace SUVRPG
             return Combat.CurrentPlayer;
 
         }
+
+        
     }
 }

@@ -8,8 +8,7 @@ namespace SUVRPG
 {
     public class Character
     {
-        public string Name { get; protected set; }
-        public string Race { get; protected set; }
+        public string Name { get; set; }
         public string CharacterDescription { get; set; }
         public int Health { get; set; }
         public int MaxHealth { get; set; }
@@ -19,9 +18,6 @@ namespace SUVRPG
         public ConsoleColor Color { get; protected set; }
         public Random RandGenerator { get; protected set; }
         public bool IsDead { get => Health <= 0; }
-        public bool IsAlive { get => Health > 0; }
-
-        public Character(){}
 
         public Character(string name, string characterDescription, int health, int attackDmg, int armor, ConsoleColor color, string textArt)
         {
@@ -50,7 +46,9 @@ namespace SUVRPG
             ResetColor();
         }
 
-        public virtual void Fight(Character otherCharacter){}
+        public virtual void Fight(Character otherCharacter)
+        {
+        }
 
         public void TakeDamage(int damageAmount)
         {
@@ -89,8 +87,7 @@ namespace SUVRPG
                 Write (" ");
             }
             ResetColor();
-            WriteLine($"] {Health}/{MaxHealth}");
-            
+            WriteLine($"] {Health}/{MaxHealth}\n");            
         }
     }
 }

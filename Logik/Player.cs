@@ -11,7 +11,7 @@ namespace SUVRPG
         public int CurrentGold { get; set; }
 
         private const int smallAttack = 2;
-        private const int bigAttack = 4;
+        private const int bigAttack = 5;
         
         public Player(){}
         public Player(string name, string race, string characterDescription, int maxhitpoints, int currentGold, int health, int attackDmg, int armor, ConsoleColor color)
@@ -42,65 +42,48 @@ namespace SUVRPG
                 int randPercent = RandGenerator.Next(1, 101);
                 if (randPercent <= 50)
                 {
-                    WriteLine("and it's a perfect hit!");
+                    WriteLine("and it's A PERFECT HIT! \n");
                     otherCharacter.TakeDamage(AttackDmg + bigAttack);
                 }
                 else
                 {
-                    WriteLine("and it misses the target completely.");
+                    WriteLine("but it MISSES the target completely.\n");
                 }
             }
     
             public override void Fight(Character otherCharacter)
             {
-//                 ForegroundColor = Color;
-//                 string title = $@"--- It's YOUR turn to FIGHT!!  ---
-
-// You are facing a {otherCharacter.Name}! What do you want to do?
-//                  ";
-                
-//                 string[] options = { $"ATTACK 1 ({AttackDmg + smallAttack} DMG AND 90% CHANCE TO HIT)",
-//                 $"ATTACK 2 ({AttackDmg + bigAttack} DMG 50% CHANCE TO HIT)",
-//                 "RUN AWAY"};
-
-//                 Menu playerCombatMenu = new Menu(title, options);
-                
-//                 int SelectedIndex = playerCombatMenu.Run();
-
-//                 switch (SelectedIndex)
-//             {
-//                 case 0:
-//                     Attack1(otherCharacter);
-//                     break;;
-
-//                 case 1:
-//                     Attack2(otherCharacter);
-//                     break;
-
-//                 case 2:
-//                     Console.WriteLine("You run away!");
-//                     break;
-//             }
-
-//             ResetColor();
-                
+                WriteLine("----------------------------\n");
                 ForegroundColor = Color;
-                WriteLine("------- YOUR TURN -------");
-                WriteLine($@"You are facing a {otherCharacter.Name}. What would you like to do?
-                
-                (1) First attack (90% chance for {2 + AttackDmg} dmg)
-                (2) Second attack (50% chance for {4 + AttackDmg} dmg)");
+                WriteLine($"       ----- It's YOUR turn to FIGHT!!  ----- \n");
+
+                WriteLine($"   You are facing a {otherCharacter.Name}! What would you like to do? \n");
+                WriteLine($"   [1] Light attack (90% chance for {2 + AttackDmg} dmg)");
+                WriteLine($"   [2] Heavy attack (50% chance for {5 + AttackDmg} dmg)");
+                // WriteLine($"[3] Run away (And lose your chance to fight this monster)");
                 ResetColor();
                 
                 ConsoleKeyInfo keyInfo = ReadKey(true);
                 if (keyInfo.Key == ConsoleKey.D1)
                 {
+                    Clear();
+                    Combat.CurrentPlayer.DisplayHealthBar();
+                    Combat.CurrentEnemy.DisplayHealthBar();
+                    WriteLine("---------------------------------\n");
                     Attack1(otherCharacter);
                 }
                 else if (keyInfo.Key == ConsoleKey.D2)
                 {
+                    Clear();
+                    Combat.CurrentPlayer.DisplayHealthBar();
+                    Combat.CurrentEnemy.DisplayHealthBar();
+                    WriteLine("--------------------\n");
                     Attack2(otherCharacter);
                 }
+                // else if (keyInfo.Key == ConsoleKey.D3)
+                // {
+                //     return;
+                // }
                 else
                 {
                     WriteLine("That's not a valid move! Try again!");
