@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace SUVRPG
 {
-public static class MainMenu
+    public static class MainMenu
     {
         public static void Mainmenu()
         {
@@ -18,16 +18,17 @@ public static class MainMenu
 
             Menu mainMenu = new Menu(title, options);
             int SelectedIndex = mainMenu.Run();
-
             switch (SelectedIndex)
             {
                 case 0:
                     Game myGame = new Game();
-                    
+
                     myGame.GameLoop(CreateCharacter.RunIntro(), myGame.StartNewGame());
                     break;
 
                 case 1:
+                    LoadGameUI loadUI = new();
+                    loadUI.OpenLoadGameUI();
                     break;
 
                 case 2:

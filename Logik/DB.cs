@@ -36,12 +36,12 @@ public class DB
     /* public LoadedLevel LoadLevelMap(string input)
     {
         LoadedLevel loadedLevel = new();
-        var levelMapList = Connection().Query<LoadedLevel>($"SELECT currentlevel, mapData, playerStartPosX, playerStartPosY FROM leveldata;").ToList();
+        var levelMapList = Connection().Query<LoadedLevel>($"SELECT currentLevel, mapData, playerStartPosX, playerStartPosY FROM leveldata;").ToList();
         foreach (LoadedLevel l in levelMapList)
         {
-            if (input == l.currentlevel)
+            if (input == l.currentLevel)
             {
-                loadedLevel.currentlevel = l.currentlevel;
+                loadedLevel.currentLevel = l.currentLevel;
                 loadedLevel.mapData = l.mapData;
                 loadedLevel.playerStartPosX = l.playerStartPosX;
                 loadedLevel.playerStartPosY = l.playerStartPosY;
