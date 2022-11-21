@@ -9,6 +9,7 @@ namespace SUVRPG
     public class Character
     {
         public string Name { get; set; }
+        public string Race { get; set; }
         public string CharacterDescription { get; set; }
         public int Health { get; set; }
         public int MaxHealth { get; set; }
@@ -19,6 +20,7 @@ namespace SUVRPG
         public Random RandGenerator { get; protected set; }
         public bool IsDead { get => Health <= 0; }
 
+        public Character(){}
         public Character(string name, string characterDescription, int health, int attackDmg, int armor, ConsoleColor color, string textArt)
         {
             Name = name;
