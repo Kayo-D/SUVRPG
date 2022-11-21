@@ -31,10 +31,10 @@ namespace SUVRPG
 
             MinoSmash();
             int randPercent = RandGenerator.Next(1, 101);
-            if (randPercent >= 60)
+            if (randPercent >= 50)
             {
                 WriteLine("and hits you hard!");
-                otherCharacter.TakeDamage(5 + AttackDmg);
+                otherCharacter.TakeDamage(3 + AttackDmg);
             }
             else 
             {

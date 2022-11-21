@@ -34,7 +34,7 @@ namespace SUVRPG
             if (randPercent >= 60)
             {
                 WriteLine("and hits you!");
-                otherCharacter.TakeDamage(2 + AttackDmg - otherCharacter.Armor);
+                otherCharacter.TakeDamage(2 + AttackDmg);
             }
             else 
             {

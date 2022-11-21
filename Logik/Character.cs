@@ -42,28 +42,30 @@ namespace SUVRPG
             ResetColor();
             ForegroundColor = Color; 
             Write($"{CharacterDescription}\n");
-            ForegroundColor = Color;
             WriteLine($"\n{TextArt}\n");
             WriteLine($"Health: {Health}");
             WriteLine("---");
             ResetColor();
         }
 
-        public virtual void Fight(Character otherCharacter)
-        {
-            WriteLine("Enemy is fighting!");
-        }
+        public virtual void Fight(Character otherCharacter){}
 
         public void TakeDamage(int damageAmount)
         {
-            Health -= damageAmount;
-            if (Health < 0)
+            damageAmount = damageAmount - Armor;
+            
+            if (damageAmount < 0)
             {
-                Health = 0;
+                damageAmount = 0;
             }
-            if (damageAmount <= 0)
+            else 
             {
-                damageAmount = 1;
+                Health -= damageAmount;
+
+                if (Health < 0)
+                {
+                    Health = 0;
+                }
             }
         }
 

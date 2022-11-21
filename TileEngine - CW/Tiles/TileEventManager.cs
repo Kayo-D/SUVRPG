@@ -10,9 +10,7 @@ namespace SUVRPG
         {
             Combat combat = new Combat();
             engine.ChangeTileID(manager.levelData, engine.currentPlayerPosY, engine.currentPlayerPosX, manager.mapWidth, "1");
-            Combat.RunCombat();
-
-            // combat.StartCombat(player, manager);
+            Combat.RunCombat(manager);
         }
         public void BossTileEvent(LevelManager manager, TileEngine engine, Player player)
         {

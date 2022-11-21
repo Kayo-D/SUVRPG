@@ -32,8 +32,8 @@ namespace SUVRPG
             Bite();
             if (randPercent <= 80)
             {
-                WriteLine($"and bites you for {4 - otherCharacter.Armor} damage!");
-                otherCharacter.TakeDamage(4 - otherCharacter.Armor);
+                WriteLine($"and bites you for {4 + AttackDmg} damage!");
+                otherCharacter.TakeDamage(4 + AttackDmg);
             }
             else
             {
