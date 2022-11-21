@@ -9,7 +9,7 @@ public class DB
         connection = new MySqlConnection("Server=localhost;Database=suvrpg;Uid=root;");
         return connection;
     }
-    /* public SUVRPG.Player LoadPlayer(string input)
+    public SUVRPG.Player LoadPlayer(string input)
     {
         SUVRPG.Player player = new SUVRPG.Player("","",0,0,0,ConsoleColor.Green);
         var playerList = Connection().Query<SUVRPG.Player>($"SELECT id, name, race, characterDescription, maxhitpoints, hitpoints, currentGold, attackdmg, armor FROM player;").ToList();
@@ -28,7 +28,7 @@ public class DB
             }
         }
         return player;
-    } */
+    } 
     /* public void SavePlayer(SUVRPG.Player player)
     {
         Connection().Query($"INSERT INTO player (id, name, race, characterDescription, maxhitpoints, hitpoints, currentGold, attackdmg, armor) VALUES ({id}, '{name}', '{race}', {characterDescription}', {maxhitpoints}, {hitpoints}, {currentGold}, {attackdmg}, {armor});");
