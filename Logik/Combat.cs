@@ -13,6 +13,7 @@ namespace SUVRPG
         private static List<Character> EnemiesAtLvl1;
         private static List<Character> EnemiesAtLvl2;
         private static List<Character> EnemiesAtLvl3;
+        private static List<Character> EnemyBoss;
         
         public Combat()
         {
@@ -30,9 +31,12 @@ namespace SUVRPG
             Spider giantSpider = new Spider ("Giant freakin' Spider", "It's a huge freakin' spider and he's about to smash you with all of his eight legs", 80, 20, ConsoleColor.DarkGreen, true);
             Dragon youngDragon = new Dragon ("Young Dragon", "When a mommy drake and daddy drake love each other very much, they hug very hard and, uhm, well, here it is.", 50, 30, ConsoleColor.DarkCyan);
 
+            Dragon dragonLord = new Dragon ("Dragon Lord", "The guardian of the treasure. The final boss. Also known as 'OPie - the not-so-friendly dragon'", 100, 50, ConsoleColor.DarkCyan);
+
             EnemiesAtLvl1 = new List<Character>() { lostBandit, bigSpider, youngMinotaur };
             EnemiesAtLvl2 = new List<Character>() { poisonSpider, battleScarredBandit, minotaurGuard };
             EnemiesAtLvl3 = new List<Character>() { banditLeader, minotaurChampion, giantSpider };
+            EnemyBoss = new List <Character>() { dragonLord };
         }
 
         public static void RunCombat(LevelManager manager)
@@ -56,6 +60,28 @@ namespace SUVRPG
                 CurrentEnemy = EnemiesAtLvl3[randomNumber];   
             }
             
+            CombatUI.IntroCurrentEnemy();
+            BattleCurrentEnemy();
+
+            if (CurrentPlayer.IsDead)
+            {
+                CombatUI.RunGameOver();
+            }
+            else
+            {
+                // Loota något?
+                WriteLine($"You defeated {CurrentEnemy.Name}! ");
+                Game.WaitForKey();
+            }
+        }
+
+        public void BattleFinalBoss()
+        {
+            Clear();
+            Random random = new Random();
+
+            CurrentEnemy = EnemyBoss[0];
+
             CombatUI.IntroCurrentEnemy();
             BattleCurrentEnemy();
 
