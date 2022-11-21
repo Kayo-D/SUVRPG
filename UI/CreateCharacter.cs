@@ -10,6 +10,7 @@ namespace SUVRPG
     {
         public static Player RunIntro()
         {
+            string race = "";
             ConsoleKey raceMenu = ConsoleKey.NoName;
             Console.Clear();
 
@@ -50,7 +51,7 @@ namespace SUVRPG
                         Console.WriteLine("You chose... HUMAN! Excellent choice.\n");
                         Console.WriteLine("Human: Well met!");
                         Console.WriteLine("Press any key to continue");
-                        // string race = "Human";
+                        race = "Human";
                         isInputCorrect = true;
                         Console.ReadKey();
                         break;
@@ -60,7 +61,7 @@ namespace SUVRPG
                         Console.WriteLine("You chose... ORC! I guess that will do.\n");
                         Console.WriteLine("Orc: Strength and honor!");
                         Console.WriteLine("Press any key to continue");
-                        // string race = "Orc";
+                        race = "Orc";
                         isInputCorrect = true;
                         Console.ReadKey();
                         break;
@@ -70,7 +71,7 @@ namespace SUVRPG
                         Console.WriteLine("You chose... ELF! I guess you know something about something.\n");
                         Console.WriteLine("Elf: Bal'a dash, malanore.");
                         Console.WriteLine("Press any key to continue");
-                        // string race = "Elf";
+                        race = "Elf";
                         isInputCorrect = true;
                         Console.ReadKey();
                         break;
@@ -80,7 +81,7 @@ namespace SUVRPG
                         Console.WriteLine("You chose... DWARF! I guess you feel short and spicy today!\n");
                         Console.WriteLine("Dwarf: Great tae meet ya.");
                         Console.WriteLine("Press any key to continue");
-                        // string race = "Dwarf";
+                        race = "Dwarf";
                         isInputCorrect = true;
                         Console.ReadKey();
                         break;
@@ -102,14 +103,14 @@ namespace SUVRPG
             string characterDescription = Console.ReadLine();
             Clear();
 
-            Combat.CurrentPlayer = new Player(name, characterDescription, 20, 0, 0, ConsoleColor.Green);
+            Combat.CurrentPlayer = new Player(name, race, characterDescription, 20, 0, 30, 0, 0, ConsoleColor.Green);
 
             Write("Greetings, ");
             Combat.CurrentPlayer.DisplayInfo();
             Write("Click any key to start your adventure...");
             ReadKey(true);
 
-            return Combat.CurrentPlayer = new Player(name, characterDescription, 20, 0, 0, ConsoleColor.Green);
+            return Combat.CurrentPlayer;
 
         }
     }

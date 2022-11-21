@@ -11,14 +11,14 @@ namespace SUVRPG
         }
         public void SearchForLoadGame()
         {
-            //DB db = new();
+            DB db = new();
             string input;
-            Player player = new("", "", 0, 0, 0, ConsoleColor.Black);
+            Player player = new("", "", "", 0, 0, 0, 0, 0, ConsoleColor.Black);
             LoadedLevel loadedLevel = new();
             while (player.Name == "")
             {
                 input = ReadLine();
-                //player = db.LoadPlayer(input);
+                player = db.LoadPlayer(input);
                 //loadedLevel = db.LoadLevelMap(input);
                 if (input.ToLower() == "q")
                 {
