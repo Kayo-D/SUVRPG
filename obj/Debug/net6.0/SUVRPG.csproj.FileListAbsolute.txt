@@ -86,3 +86,9 @@ C:\Users\belle\Documents\SUVNET22\C#\Betygsatta inlämningar\SUVRPG\SUVRPG\bin\D
 C:\Users\belle\Documents\SUVNET22\C#\Betygsatta inlämningar\SUVRPG\SUVRPG\bin\Debug\net6.0\runtimes\win\lib\net6.0\Microsoft.Win32.SystemEvents.dll
 C:\Users\belle\Documents\SUVNET22\C#\Betygsatta inlämningar\SUVRPG\SUVRPG\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Drawing.Common.dll
 C:\Users\belle\Documents\SUVNET22\C#\Betygsatta inlämningar\SUVRPG\SUVRPG\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Windows.Extensions.dll
+C:\Users\cw94\Desktop\Skolarbeten\SUVRPG\bin\Debug\net6.0\Microsoft.Win32.SystemEvents.dll
+C:\Users\cw94\Desktop\Skolarbeten\SUVRPG\bin\Debug\net6.0\System.Drawing.Common.dll
+C:\Users\cw94\Desktop\Skolarbeten\SUVRPG\bin\Debug\net6.0\System.Windows.Extensions.dll
+C:\Users\cw94\Desktop\Skolarbeten\SUVRPG\bin\Debug\net6.0\runtimes\win\lib\net6.0\Microsoft.Win32.SystemEvents.dll
+C:\Users\cw94\Desktop\Skolarbeten\SUVRPG\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Drawing.Common.dll
+C:\Users\cw94\Desktop\Skolarbeten\SUVRPG\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Windows.Extensions.dll
