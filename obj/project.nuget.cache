@@ -1,6 +1,7 @@
 {
   "version": 2,
 <<<<<<< HEAD
+<<<<<<< HEAD
   "dgSpecHash": "g1d3uEKWNne0Ca8WGzCrwfDtZy9SRMbRZbnYWSGDMSnXFDUZDI2AN0T5nCrKiB74vg4FJo/SW0kZDxGDvisCmw==",
   "success": true,
   "projectFilePath": "C:\\Users\\belle\\Documents\\SUVNET22\\C#\\Betygsatta inlämningar\\SUVRPG\\SUVRPG\\SUVRPG.csproj",
@@ -12,6 +13,9 @@
     "C:\\Users\\belle\\.nuget\\packages\\system.windows.extensions\\7.0.0\\system.windows.extensions.7.0.0.nupkg.sha512"
 =======
   "dgSpecHash": "G/yaeGWtf9JogJgSMaqOtrlBROV/1nyI7KY8dFC7DJwQ+96AIFIT3WV6eOSBANQqAmxCHNB5SKSV55CyMVECgQ==",
+=======
+  "dgSpecHash": "y3dWvxkZQEYiKLF2Es8lbKOmvMXWskZEf7jbjKzmSEKGf4Rr8LWqFWbO+DRWiDe2TweMjl2mpO0qsmBOFRLfkw==",
+>>>>>>> 5bd7350dd49ec1c79e8dac0ce6433f84f6fd08d8
   "success": true,
   "projectFilePath": "C:\\Users\\Simon\\Documents\\SUVNET\\SUVRPG\\SUVRPG.csproj",
   "expectedPackageFiles": [
@@ -22,6 +26,7 @@
     "C:\\Users\\Simon\\.nuget\\packages\\system.windows.extensions\\7.0.0\\system.windows.extensions.7.0.0.nupkg.sha512"
 >>>>>>> bd19c832503d265a2a9a2967ab4c96695b6be7be
   ],
+<<<<<<< HEAD
   "logs": [
     {
       "code": "Undefined",
@@ -34,4 +39,7 @@
 >>>>>>> bd19c832503d265a2a9a2967ab4c96695b6be7be
     }
   ]
+=======
+  "logs": []
+>>>>>>> 5bd7350dd49ec1c79e8dac0ce6433f84f6fd08d8
 }

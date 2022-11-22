@@ -221,6 +221,7 @@
   },
   "projectFileDependencyGroups": {
     "net6.0": [
+      "System.Drawing.Common >= 7.0.0",
       "System.Windows.Extensions >= 7.0.0",
       "dapper >= 2.0.123",
       "mysqlconnector >= 2.1.13"
@@ -263,6 +264,10 @@
       "net6.0": {
         "targetAlias": "net6.0",
         "dependencies": {
+          "System.Drawing.Common": {
+            "target": "Package",
+            "version": "[7.0.0, )"
+          },
           "System.Windows.Extensions": {
             "target": "Package",
             "version": "[7.0.0, )"
@@ -294,6 +299,7 @@
         "runtimeIdentifierGraphPath": "C:\\Users\\belle\\AppData\\Roaming\\.dotnet\\sdk\\6.0.102\\RuntimeIdentifierGraph.json"
       }
     }
+<<<<<<< HEAD
   },
   "logs": [
     {
@@ -303,4 +309,7 @@
       "message": "Problem reading the cache file C:\\Users\\belle\\Documents\\SUVNET22\\C#\\Betygsatta inlämningar\\SUVRPG\\SUVRPG\\obj\\project.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
     }
   ]
+=======
+  }
+>>>>>>> 5bd7350dd49ec1c79e8dac0ce6433f84f6fd08d8
 }
