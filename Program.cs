@@ -4,14 +4,9 @@
     {
         private static void Main(string[] args)
         {     
+            // Projektarbete SUVNET22 - Av Christian, Isabell och Simon. 
 
-            //Testa inom dessa
-
-            //DB dB = new DB();
-            //dB.LoadLevelMap(dB.LoadPlayer("Belle"));
-            
-            //Testa inom dessa 
-
+            System.Console.Title = "SUVRPG";
             MainMenu.Mainmenu();
 
         }

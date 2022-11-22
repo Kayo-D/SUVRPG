@@ -228,19 +228,44 @@
     ]
   },
   "packageFolders": {
+<<<<<<< HEAD
     "C:\\Users\\belle\\.nuget\\packages\\": {}
+=======
+<<<<<<< HEAD
+    "C:\\Users\\cw94\\.nuget\\packages\\": {}
+=======
+    "C:\\Users\\Simon\\.nuget\\packages\\": {}
+>>>>>>> fc8a93a8284c1058a9d256db3019d43e179997a7
+>>>>>>> 13bc650cfabc466b1aabe586119ccfb409eb00f9
   },
   "project": {
     "version": "1.0.0",
     "restore": {
+<<<<<<< HEAD
       "projectUniqueName": "C:\\Users\\belle\\Documents\\SUVNET22\\C#\\Betygsatta inlämningar\\SUVRPG\\SUVRPG\\SUVRPG.csproj",
+=======
+<<<<<<< HEAD
+      "projectUniqueName": "C:\\Users\\cw94\\Desktop\\Skolarbeten\\SUVRPG\\SUVRPG.csproj",
+=======
+      "projectUniqueName": "C:\\Users\\Simon\\Documents\\SUVNET\\SUVRPG\\SUVRPG.csproj",
+>>>>>>> fc8a93a8284c1058a9d256db3019d43e179997a7
+>>>>>>> 13bc650cfabc466b1aabe586119ccfb409eb00f9
       "projectName": "SUVRPG",
       "projectPath": "C:\\Users\\belle\\Documents\\SUVNET22\\C#\\Betygsatta inlämningar\\SUVRPG\\SUVRPG\\SUVRPG.csproj",
       "packagesPath": "C:\\Users\\belle\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\belle\\Documents\\SUVNET22\\C#\\Betygsatta inlämningar\\SUVRPG\\SUVRPG\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
+<<<<<<< HEAD
         "C:\\Users\\belle\\AppData\\Roaming\\NuGet\\NuGet.Config"
+=======
+<<<<<<< HEAD
+        "C:\\Users\\cw94\\AppData\\Roaming\\NuGet\\NuGet.Config"
+=======
+        "C:\\Users\\Simon\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+>>>>>>> fc8a93a8284c1058a9d256db3019d43e179997a7
+>>>>>>> 13bc650cfabc466b1aabe586119ccfb409eb00f9
       ],
       "originalTargetFrameworks": [
         "net6.0"
@@ -296,7 +321,15 @@
             "privateAssets": "all"
           }
         },
+<<<<<<< HEAD
         "runtimeIdentifierGraphPath": "C:\\Users\\belle\\AppData\\Roaming\\.dotnet\\sdk\\6.0.102\\RuntimeIdentifierGraph.json"
+=======
+<<<<<<< HEAD
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.400\\RuntimeIdentifierGraph.json"
+=======
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.201\\RuntimeIdentifierGraph.json"
+>>>>>>> fc8a93a8284c1058a9d256db3019d43e179997a7
+>>>>>>> 13bc650cfabc466b1aabe586119ccfb409eb00f9
       }
     }
   },
@@ -305,7 +338,15 @@
       "code": "Undefined",
       "level": "Warning",
       "warningLevel": 1,
+<<<<<<< HEAD
       "message": "Problem reading the cache file C:\\Users\\belle\\Documents\\SUVNET22\\C#\\Betygsatta inlämningar\\SUVRPG\\SUVRPG\\obj\\project.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
+=======
+<<<<<<< HEAD
+      "message": "Problem reading the cache file C:\\Users\\cw94\\Desktop\\Skolarbeten\\SUVRPG\\obj\\project.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
+=======
+      "message": "Problem reading the cache file C:\\Users\\Simon\\Documents\\SUVNET\\SUVRPG\\obj\\project.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
+>>>>>>> fc8a93a8284c1058a9d256db3019d43e179997a7
+>>>>>>> 13bc650cfabc466b1aabe586119ccfb409eb00f9
     }
   ]
 }
