@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Värd: 127.0.0.1
--- Tid vid skapande: 18 nov 2022 kl 14:16
+-- Tid vid skapande: 21 nov 2022 kl 20:23
 -- Serverversion: 10.4.25-MariaDB
 -- PHP-version: 8.1.10
 
@@ -58,16 +58,17 @@ CREATE TABLE `player` (
   `armor` int(11) NOT NULL,
   `attackdmg` int(11) NOT NULL,
   `race` varchar(32) NOT NULL,
-  `currentGold` int(11) NOT NULL
+  `currentGold` int(11) NOT NULL,
+  `highscore` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumpning av Data i tabell `player`
 --
 
-INSERT INTO `player` (`id`, `name`, `characterDescription`, `hitpoints`, `maxhitpoints`, `armor`, `attackdmg`, `race`, `currentGold`) VALUES
-(1, 'Belle', 'Gillar fisk', 26, 30, 4, 5, 'Human', 48),
-(2, 'Christian', 'Gillar Fiskmås', 5, 30, 3, 3, 'Dwarf', 4);
+INSERT INTO `player` (`id`, `name`, `characterDescription`, `hitpoints`, `maxhitpoints`, `armor`, `attackdmg`, `race`, `currentGold`, `highscore`) VALUES
+(1, 'Belle', 'Gillar fisk', 26, 30, 4, 5, 'Human', 48, 0),
+(2, 'Christian', 'Gillar Fiskmås', 5, 30, 3, 3, 'Dwarf', 4, 0);
 
 --
 -- Index för dumpade tabeller

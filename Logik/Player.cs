@@ -13,7 +13,8 @@ namespace SUVRPG
         private const int smallAttack = 2;
         private const int bigAttack = 5;
         
-        public Player(string name, string characterDescription, int health, int attackDmg, int armor, ConsoleColor color)
+        public Player(){}
+        public Player(string name, string race, string characterDescription, int maxhitpoints, int currentGold, int health, int attackDmg, int armor, ConsoleColor color)
             : base(name, characterDescription, health, attackDmg, armor, color, ArtAssets.Player)
             {
                 Armor = armor;
