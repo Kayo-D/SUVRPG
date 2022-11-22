@@ -20,7 +20,7 @@ namespace SUVRPG
             BackgroundColor = Color;
             Write($"{Name} ");
             ResetColor();
-            Write($"viciously chomps down ");
+            Write($"viciously bites down ");
         }
 
         public override void Fight(Character otherCharacter)
@@ -37,7 +37,7 @@ namespace SUVRPG
             }
             else
             {
-                WriteLine("but MISS...");
+                WriteLine("but MISS you...");
             }
             ResetColor();
             

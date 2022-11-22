@@ -7,7 +7,7 @@ using static System.Console;
 namespace SUVRPG
 {
     public class CreateCharacter
-    {
+    {        
         public static Player RunIntro()
         {
             ConsoleKey raceMenu = ConsoleKey.NoName;
@@ -33,7 +33,7 @@ namespace SUVRPG
             WriteLine("\n--------------------\n");
             // Console.Clear();
             WriteLine($"{name}, huh? What a .... Lovely name!\n");
-            Console.WriteLine("Now pick what race you identify as:\n");
+            Console.WriteLine("And finally, pick what race you identify as:\n");
             Console.WriteLine("[1] HUMAN");
             Console.WriteLine("[2] ORC");
             Console.WriteLine("[3] ELF");
@@ -98,21 +98,59 @@ namespace SUVRPG
                 }
             }
 
-            Console.WriteLine("ENTER CHARACTER INFO:\n "); // Behöver vi verkligen denna?
-            string characterDescription = Console.ReadLine();
+            // Console.WriteLine("ENTER CHARACTER INFO:\n "); //
+            // string characterDescription = Console.ReadLine();
             Clear();
 
-            Combat.CurrentPlayer = new Player(name, characterDescription, 20, 0, 0, ConsoleColor.Green);
+            Combat.CurrentPlayer = new Player(name, "", 20, 0, 0, ConsoleColor.Green);
 
-            Write("Greetings, ");
-            Combat.CurrentPlayer.DisplayInfo();
-            Write("Click any key to start your adventure...");
-            ReadKey(true);
+            // Write("Greetings, ");
+            // Combat.CurrentPlayer.DisplayInfo();
+            // Write("Click any key to start your adventure...");
+            // ReadKey(true);
 
-            return Combat.CurrentPlayer = new Player(name, characterDescription, 20, 0, 0, ConsoleColor.Green);
+            TextPrologue(name);
+
+
+            return Combat.CurrentPlayer = new Player(name, "", 20, 0, 0, ConsoleColor.Green);
+
 
         }
+    
 
-        
+        public static void TextPrologue(string name)
+        {
+                    string introText = @$"You've waited for this moment your whole life, {name}! ...
+
+Since you were young you've been told about the treasures below whatever-it's-called-mountain. 
+
+You scoff at the legends about the ancient dragon lord that guards the treasure room or how the mountain is supposedly home to an army of minotaurs. 
+
+The only thing that matters to you...
+
+Is the loot.
+
+
+";
+            
+
+            for (int i = 0; i < introText.Length; i++)
+            {
+                Write(introText[i]);
+                Thread.Sleep(30);
+                if (KeyAvailable)
+                {
+                    ConsoleKeyInfo keyInfo = ReadKey(true);
+                    if (keyInfo.Key == ConsoleKey.Spacebar || keyInfo.Key == ConsoleKey.Enter)
+                    {
+                        Write(introText.Substring(i + 1));
+                        break;
+                    }
+                }
+            }
+
+            Game.WaitForKey();
+        }
     }
+
 }

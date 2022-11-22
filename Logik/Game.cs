@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using static System.Console;
+using System.Media;
 
 namespace SUVRPG
 {
@@ -54,6 +55,12 @@ namespace SUVRPG
             int levelCheck = manager.currentLevel;
             engine.SpawnPlayer(manager.playerStartPosX, manager.playerStartPosY);
             mapUI.UILevelLoad(manager.levelData, manager.mapHeight, manager.mapWidth, engine.currentPlayerPosX, engine.currentPlayerPosY, player);
+            if (OperatingSystem.IsWindows())
+                {           
+                    SoundPlayer Caveloop = new SoundPlayer(@"UI\Sound\Caveloop.wav");
+                    Caveloop.Load();
+                    Caveloop.PlayLooping();
+                }
             while (true)
             {
                 Console.CursorVisible = false;
@@ -69,8 +76,8 @@ namespace SUVRPG
                 }
                 if (keyInput.Key == ConsoleKey.M)
                 {
-                    SaveGameUI saveGameUI = new();
-                    saveGameUI.OpenSaveGameUI(player,manager,engine);
+                    // SaveGameUI saveGameUI = new();
+                    // saveGameUI.OpenSaveGameUI(player,manager,engine);
                     mapUI.UILevelLoad(manager.levelData, manager.mapHeight, manager.mapWidth, engine.currentPlayerPosX, engine.currentPlayerPosY, player);
                 }
                 if(keyInput.Key == ConsoleKey.Q)
@@ -80,7 +87,7 @@ namespace SUVRPG
             }
         }
 
-        public static void WaitForKey()
+        public static void WaitForKey() // Flytta till CombatUI(?)
         {
             WriteLine("Press any key to continue...\n");
             ReadKey(true);

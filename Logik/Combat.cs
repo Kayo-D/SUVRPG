@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using static System.Console;
+using System.Media;
 
 namespace SUVRPG
 {
@@ -41,6 +42,13 @@ namespace SUVRPG
 
         public static void RunCombat(LevelManager manager)
         {
+            SoundPlayer Battleloop = new SoundPlayer(@"UI\Sound\Battleloop.wav");
+
+            if (OperatingSystem.IsWindows())
+            {           
+                Battleloop.Load();
+                Battleloop.PlayLooping();
+            }
             Clear();
             Random random = new Random();
 
@@ -66,10 +74,12 @@ namespace SUVRPG
             if (CurrentPlayer.IsDead)
             {
                 CombatUI.RunGameOver();
+                Battleloop.Stop();
             }
             else
             {
                 CombatUI.WonBattle();
+                Battleloop.Stop();
             }
         }
 
