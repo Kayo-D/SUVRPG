@@ -24,11 +24,11 @@ namespace SUVRPG
                 {
                     break;
                 }
-                if (player.Name != input)
+                if (player.Name == "")
                 {
                     WriteLine("Search didn't match anything in the database. Are you sure you entered correctly?");
                 }
-                if (player.Name == input)
+                else if (player.Name == input)
                 {
                     WriteLine("Found player! Press any key to enter game.");
                     Console.ReadKey();
