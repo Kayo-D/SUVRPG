@@ -45,8 +45,8 @@ namespace SUVRPG
                     break;
 
                 case 1:
-                    // LoadGameUI loadUI = new();
-                    // loadUI.OpenLoadGameUI();
+                    LoadGameUI loadUI = new();
+                    loadUI.OpenLoadGameUI();
                     break;
 
                 case 2:

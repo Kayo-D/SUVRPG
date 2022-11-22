@@ -24,9 +24,23 @@ namespace SUVRPG
                 {
                     break;
                 }
-                if (player.Name == "")
+                if (player.Name != input)
                 {
                     WriteLine("Search didn't match anything in the database. Are you sure you entered correctly?");
+                }
+                if (player.Name == input)
+                {
+                    WriteLine("Found player! Press any key to enter game.");
+                    Console.ReadKey();
+                    Game game = new();
+                    LevelManager manager = new();
+                    manager.currentLevel = loadedLevel.currentLevel;
+                    manager.levelData = loadedLevel.mapData;
+                    manager.mapHeight = loadedLevel.mapHeight;
+                    manager.mapWidth = loadedLevel.mapWidth;
+                    manager.playerStartPosX = loadedLevel.playerStartPosX;
+                    manager.playerStartPosY = loadedLevel.playerStartPosY;
+                    game.GameLoop(player, manager);
                 }
             }
         }
