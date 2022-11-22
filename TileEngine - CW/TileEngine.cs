@@ -118,6 +118,11 @@ namespace SUVRPG
                 manager.currentLevel = tileEventManager.ExitTileEvent(manager.currentLevel);
                 Console.Clear();
             }
+            if(selectedTile.TileID ==7)
+            {
+                tileEventManager.BossTileEvent(manager,engine,player);
+                Console.Clear();
+            }
         }
         public void SpawnPlayer(int playerStartPosX, int playerStartPosY)
         {
