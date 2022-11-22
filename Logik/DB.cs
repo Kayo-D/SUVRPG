@@ -35,7 +35,10 @@ public class DB
         
         foreach (var item in mapDataList)
         {
-           // loadedLevel.currentLevel = item.currentLevel;
+           loadedLevel.currentLevel = item.currentLevel;
+           loadedLevel.mapData = item.mapData;
+           loadedLevel.playerStartPosX = item.playerStartPosX;
+           loadedLevel.playerStartPosY = item.playerStartPosY;
         }
         return loadedLevel;
     } 
