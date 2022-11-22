@@ -20,10 +20,10 @@ namespace SUVRPG
         {
             Bandit lostBandit = new Bandit("Lost Adventurer", "Poor guy seems lost and confused. He thinks you're a monster!", 15, 0, ConsoleColor.DarkBlue);
             Spider bigSpider = new Spider ("Bigger-Than-Average Spider", "Size do matters when it comes to hideous disgusting spiders that are staring hungrily at you.", 10, 0, ConsoleColor.DarkGreen, false);
-            Minotaur youngMinotaur = new Minotaur("Young Minotaur", "A minotaur is part man and part bull. Well, this one is more part teenager, part bull. 'It's not a phase, mooooh-m.'", 6, 3, ConsoleColor.Magenta);
+            Minotaur youngMinotaur = new Minotaur("Young Minotaur", "A minotaur is part man and part bull. Well, this one is more part teenager, part bull. 'It's not a phase, mooooh-m.'", 12, 3, ConsoleColor.Magenta);
 
-            Spider poisonSpider = new Spider ("Poison Spider", "This one looks angry... And hungry.", 40, 10, ConsoleColor.DarkGreen, true);
-            Bandit battleScarredBandit = new Bandit ("Battle-scarred Bandit", "You see what you assume are battle scars all over his face. This one must have been in a lot of fights!", 60, 15, ConsoleColor.DarkGray);
+            Spider poisonSpider = new Spider ("Poison Spider", "This one looks angry... And hungry.", 50, 10, ConsoleColor.DarkGreen, true);
+            Bandit battleScarredBandit = new Bandit ("Battle-scarred Bandit", "You see what you assume are battle scars all over his face. This one must have been in a lot of fights!", 65, 15, ConsoleColor.DarkGray);
             Minotaur minotaurGuard = new Minotaur("Minotaur Guard", "These mythical creatures guard the treasure of the cave. Real beef cakes.", 70, 20, ConsoleColor.Red);
 
 
@@ -32,7 +32,7 @@ namespace SUVRPG
             Spider giantSpider = new Spider ("Giant freakin' Spider", "It's a huge freakin' spider and he's about to smash you with all of his eight legs", 160, 60, ConsoleColor.DarkGreen, true);
             Dragon youngDragon = new Dragon ("Young Dragon", "When a mommy drake and daddy drake love each other very much, they hug very hard and, uhm, well, here it is.", 150, 70, ConsoleColor.DarkCyan);
 
-            Dragon dragonLord = new Dragon ("Dragon Lord", "The guardian of the treasure. The final boss. Also known as 'OPie - the not-so-friendly dragon'", 500, 200, ConsoleColor.DarkCyan);
+            Dragon dragonLord = new Dragon ("Dragon Lord", "The guardian of the treasure. The final boss. Also known as 'OPie - the not-so-friendly dragon'", 500, 150, ConsoleColor.DarkCyan);
 
             EnemiesAtLvl1 = new List<Character>() { lostBandit, bigSpider, youngMinotaur };
             EnemiesAtLvl2 = new List<Character>() { poisonSpider, battleScarredBandit, minotaurGuard };
@@ -86,8 +86,6 @@ namespace SUVRPG
         public void BattleFinalBoss()
         {
             Clear();
-            Random random = new Random();
-
             CurrentEnemy = EnemyBoss[0];
 
             CombatUI.IntroCurrentEnemy();
