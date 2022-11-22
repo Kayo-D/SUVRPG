@@ -15,7 +15,7 @@ namespace SUVRPG
             
         }
 
-        public void Bite()
+        private void Bite()
         {
             BackgroundColor = Color;
             Write($"{Name} ");
