@@ -92,3 +92,9 @@ C:\Users\cw94\Desktop\Skolarbeten\SUVRPG\bin\Debug\net6.0\System.Windows.Extensi
 C:\Users\cw94\Desktop\Skolarbeten\SUVRPG\bin\Debug\net6.0\runtimes\win\lib\net6.0\Microsoft.Win32.SystemEvents.dll
 C:\Users\cw94\Desktop\Skolarbeten\SUVRPG\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Drawing.Common.dll
 C:\Users\cw94\Desktop\Skolarbeten\SUVRPG\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Windows.Extensions.dll
+C:\Users\cw94\Desktop\Projects\SUVRPG\bin\Debug\net6.0\Microsoft.Win32.SystemEvents.dll
+C:\Users\cw94\Desktop\Projects\SUVRPG\bin\Debug\net6.0\System.Drawing.Common.dll
+C:\Users\cw94\Desktop\Projects\SUVRPG\bin\Debug\net6.0\System.Windows.Extensions.dll
+C:\Users\cw94\Desktop\Projects\SUVRPG\bin\Debug\net6.0\runtimes\win\lib\net6.0\Microsoft.Win32.SystemEvents.dll
+C:\Users\cw94\Desktop\Projects\SUVRPG\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Drawing.Common.dll
+C:\Users\cw94\Desktop\Projects\SUVRPG\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Windows.Extensions.dll
