@@ -5,19 +5,27 @@
       "Dapper/2.0.123": {
         "type": "package",
         "compile": {
-          "lib/net5.0/Dapper.dll": {}
+          "lib/net5.0/Dapper.dll": {
+            "related": ".xml"
+          }
         },
         "runtime": {
-          "lib/net5.0/Dapper.dll": {}
+          "lib/net5.0/Dapper.dll": {
+            "related": ".xml"
+          }
         }
       },
       "Microsoft.Win32.SystemEvents/7.0.0": {
         "type": "package",
         "compile": {
-          "lib/net6.0/Microsoft.Win32.SystemEvents.dll": {}
+          "lib/net6.0/Microsoft.Win32.SystemEvents.dll": {
+            "related": ".xml"
+          }
         },
         "runtime": {
-          "lib/net6.0/Microsoft.Win32.SystemEvents.dll": {}
+          "lib/net6.0/Microsoft.Win32.SystemEvents.dll": {
+            "related": ".xml"
+          }
         },
         "build": {
           "buildTransitive/net6.0/_._": {}
@@ -32,10 +40,14 @@
       "MySqlConnector/2.1.13": {
         "type": "package",
         "compile": {
-          "lib/net6.0/MySqlConnector.dll": {}
+          "lib/net6.0/MySqlConnector.dll": {
+            "related": ".xml"
+          }
         },
         "runtime": {
-          "lib/net6.0/MySqlConnector.dll": {}
+          "lib/net6.0/MySqlConnector.dll": {
+            "related": ".xml"
+          }
         }
       },
       "System.Drawing.Common/7.0.0": {
@@ -44,10 +56,14 @@
           "Microsoft.Win32.SystemEvents": "7.0.0"
         },
         "compile": {
-          "lib/net6.0/System.Drawing.Common.dll": {}
+          "lib/net6.0/System.Drawing.Common.dll": {
+            "related": ".xml"
+          }
         },
         "runtime": {
-          "lib/net6.0/System.Drawing.Common.dll": {}
+          "lib/net6.0/System.Drawing.Common.dll": {
+            "related": ".xml"
+          }
         },
         "build": {
           "buildTransitive/net6.0/_._": {}
@@ -65,10 +81,14 @@
           "System.Drawing.Common": "7.0.0"
         },
         "compile": {
-          "lib/net6.0/System.Windows.Extensions.dll": {}
+          "lib/net6.0/System.Windows.Extensions.dll": {
+            "related": ".xml"
+          }
         },
         "runtime": {
-          "lib/net6.0/System.Windows.Extensions.dll": {}
+          "lib/net6.0/System.Windows.Extensions.dll": {
+            "related": ".xml"
+          }
         },
         "runtimeTargets": {
           "runtimes/win/lib/net6.0/System.Windows.Extensions.dll": {
@@ -228,38 +248,24 @@
     ]
   },
   "packageFolders": {
-<<<<<<< HEAD
     "C:\\Users\\cw94\\.nuget\\packages\\": {}
-=======
-    "C:\\Users\\Simon\\.nuget\\packages\\": {}
->>>>>>> fc8a93a8284c1058a9d256db3019d43e179997a7
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-<<<<<<< HEAD
       "projectUniqueName": "C:\\Users\\cw94\\Desktop\\Skolarbeten\\SUVRPG\\SUVRPG.csproj",
-=======
-      "projectUniqueName": "C:\\Users\\Simon\\Documents\\SUVNET\\SUVRPG\\SUVRPG.csproj",
->>>>>>> fc8a93a8284c1058a9d256db3019d43e179997a7
       "projectName": "SUVRPG",
-      "projectPath": "C:\\Users\\Simon\\Documents\\SUVNET\\SUVRPG\\SUVRPG.csproj",
-      "packagesPath": "C:\\Users\\Simon\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Simon\\Documents\\SUVNET\\SUVRPG\\obj\\",
+      "projectPath": "C:\\Users\\cw94\\Desktop\\Skolarbeten\\SUVRPG\\SUVRPG.csproj",
+      "packagesPath": "C:\\Users\\cw94\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\cw94\\Desktop\\Skolarbeten\\SUVRPG\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-<<<<<<< HEAD
         "C:\\Users\\cw94\\AppData\\Roaming\\NuGet\\NuGet.Config"
-=======
-        "C:\\Users\\Simon\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
->>>>>>> fc8a93a8284c1058a9d256db3019d43e179997a7
       ],
       "originalTargetFrameworks": [
         "net6.0"
       ],
       "sources": {
-        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -301,7 +307,8 @@
           "net47",
           "net471",
           "net472",
-          "net48"
+          "net48",
+          "net481"
         ],
         "assetTargetFallback": true,
         "warn": true,
@@ -310,11 +317,7 @@
             "privateAssets": "all"
           }
         },
-<<<<<<< HEAD
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.400\\RuntimeIdentifierGraph.json"
-=======
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.201\\RuntimeIdentifierGraph.json"
->>>>>>> fc8a93a8284c1058a9d256db3019d43e179997a7
       }
     }
   },
@@ -323,11 +326,7 @@
       "code": "Undefined",
       "level": "Warning",
       "warningLevel": 1,
-<<<<<<< HEAD
       "message": "Problem reading the cache file C:\\Users\\cw94\\Desktop\\Skolarbeten\\SUVRPG\\obj\\project.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
-=======
-      "message": "Problem reading the cache file C:\\Users\\Simon\\Documents\\SUVNET\\SUVRPG\\obj\\project.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
->>>>>>> fc8a93a8284c1058a9d256db3019d43e179997a7
     }
   ]
 }
