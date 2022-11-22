@@ -8,6 +8,7 @@
     ".NETCoreApp,Version=v6.0": {
       "SUVRPG/1.0.0": {
         "dependencies": {
+          "System.Drawing.Common": "7.0.0",
           "System.Windows.Extensions": "7.0.0",
           "Dapper": "2.0.123",
           "MySqlConnector": "2.1.13"

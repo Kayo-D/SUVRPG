@@ -7,7 +7,7 @@
         {     
 
             //Testa inom dessa
-        
+            MainMenu.Mainmenu();
             //Testa inom dessa 
 
             //MainMenu.Mainmenu();
