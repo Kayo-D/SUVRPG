@@ -26,20 +26,19 @@ public class DB
     {
         Connection().Query($"INSERT INTO player (name, characterDescription, hitpoints, maxhitpoints, armor, attackdmg, race, currentGold) VALUES ('{player.Name}', '{player.CharacterDescription}', '{player.Health}', '{player.MaxHealth}', '{player.Armor}', '{player.AttackDmg}', '{player.Race}', '{player.CurrentGold}');");
     }
-}
- /*   public LoadedLevel LoadLevelMap(string input)
+
+    public LoadedLevel LoadLevelMap(SUVRPG.Player player)
     {
+        var id = Connection().Query($"SELECT player.id FROM player WHERE player.name = '{player.Name}'");
         LoadedLevel loadedLevel = new();
-        var levelMapList = Connection().Query<LoadedLevel>($"SELECT currentLevel, mapData, playerStartPosX, playerStartPosY FROM leveldata;").ToList();
-        foreach (LoadedLevel l in levelMapList)
+        List<LoadedLevel> mapDataList = Connection().Query<LoadedLevel>($"SELECT currentLevel, mapData, playerStartPosX, playerStartPosY FROM leveldata WHERE leveldata.playerid = {id}").ToList();
+        
+        foreach (var item in mapDataList)
         {
-            if (input == l.currentLevel)
-            {
-                loadedLevel.currentLevel = l.currentLevel;
-                loadedLevel.mapData = l.mapData;
-                loadedLevel.playerStartPosX = l.playerStartPosX;
-                loadedLevel.playerStartPosY = l.playerStartPosY;
-            }
+           loadedLevel.currentLevel = item.currentLevel;
+           loadedLevel.mapData = item.mapData;
+           loadedLevel.playerStartPosX = item.playerStartPosX;
+           loadedLevel.playerStartPosY = item.playerStartPosY;
         }
         return loadedLevel;
     } 
