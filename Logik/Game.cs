@@ -86,12 +86,5 @@ namespace SUVRPG
                 }
             }
         }
-
-        public static void WaitForKey() // Flytta till CombatUI(?)
-        {
-            WriteLine("Press any key to continue...\n");
-            ReadKey(true);
-        }
-
     }
 }

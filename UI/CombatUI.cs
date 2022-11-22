@@ -15,7 +15,7 @@ namespace SUVRPG
             ResetColor();
             Combat.CurrentEnemy.DisplayInfo();
             WriteLine();
-            Game.WaitForKey();
+            CombatUI.WaitForKey();
         }
 
         public static void WonBattle()
@@ -23,7 +23,7 @@ namespace SUVRPG
             WriteLine(@$"Good job, {Combat.CurrentPlayer.Name}, you have bested the enemy. Now, if only the developers had time to implement loot..
             
             ");
-            Game.WaitForKey();
+            CombatUI.WaitForKey();
         }
 
         public static void RunGameOver()
@@ -38,7 +38,7 @@ This game was made by Christian, Isabell & Simon. Thank you for playing!
 
 ");
 
-            Game.WaitForKey();
+            CombatUI.WaitForKey();
             MainMenu.Mainmenu();
             }
         }
@@ -47,6 +47,12 @@ This game was made by Christian, Isabell & Simon. Thank you for playing!
         {
             Clear();
             WriteLine("Congratulations! You have slayed the beast and stolen the treasure!");
+        }
+
+        public static void WaitForKey()
+        {
+            WriteLine("Press any key to continue...\n");
+            ReadKey(true);
         }
     }
 

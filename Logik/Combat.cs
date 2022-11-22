@@ -120,7 +120,7 @@ namespace SUVRPG
                     break;
                 }
 
-                Game.WaitForKey();
+                CombatUI.WaitForKey();
                 Clear();
                 
                 CurrentPlayer.DisplayHealthBar();
@@ -128,7 +128,7 @@ namespace SUVRPG
 
                 CurrentEnemy.Fight(CurrentPlayer);
                 
-                Game.WaitForKey();
+                CombatUI.WaitForKey();
             }
         }
     }
