@@ -9,6 +9,7 @@ namespace SUVRPG
     public class Player : Character
     {
         public int CurrentGold { get; set; }
+        public int ID;
 
         private const int smallAttack = 2;
         private const int bigAttack = 5;
@@ -19,6 +20,7 @@ namespace SUVRPG
             {
                 Armor = armor;
                 CurrentGold = currentGold;
+                MaxHealth = 30;
             }
 
             private void Attack1(Character otherCharacter)

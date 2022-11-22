@@ -43,7 +43,7 @@ public class LevelManager
         if (levelID == 4)
         {
             LoadedLevel loadlvl = new LoadedLevel();
-            levelData = loadlvl.mapData;
+            levelData = loadlvl.level;
             playerStartPosX = loadlvl.playerStartPosX;
             playerStartPosY = loadlvl.playerStartPosY;
             mapWidth = loadlvl.mapWidth;

@@ -9,7 +9,7 @@ namespace SUVRPG
             Clear();
             //Make this into a single transaction
             db.SavePlayer(player);
-            //db.SaveLevelMap(manager.currentLevel, manager.levelData, engine.currentPlayerPosX, engine.currentPlayerPosY);
+            db.SaveLevelMap(player.Name,manager.levelData,engine,manager.currentLevel);
             WriteLine("Succesfully saved game");
             WriteLine("In order to load game search for your characters name: " + player.Name);
             WriteLine("Press any key to go back");

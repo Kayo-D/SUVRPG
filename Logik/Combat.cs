@@ -88,6 +88,8 @@ namespace SUVRPG
             else
             {
                 CombatUI.WonBattle();
+                LootHandler lootHandler = new();
+                //CurrentPlayer = lootHandler.PickupLootLevel1(manager,"add other dependencies");
                 Battleloop.Stop();
             }
         }
