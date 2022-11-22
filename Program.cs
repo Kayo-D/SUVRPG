@@ -2,13 +2,11 @@
 {
     internal class Program
     {
-
         private static void Main(string[] args)
-        {
-            //Testa inom dessa
+        {     
+            // Projektarbete SUVNET22 - Av Christian, Isabell och Simon. 
 
-            //Testa inom dessa 
-
+            System.Console.Title = "SUVRPG";
             MainMenu.Mainmenu();
 
         }

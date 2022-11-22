@@ -1,10 +1,9 @@
 {
   "ExpandedNodes": [
     "",
-    "\\Enemies",
     "\\Logik",
     "\\UI"
   ],
-  "SelectedNode": "\\Logik\\Player.cs",
+  "SelectedNode": "\\Program.cs",
   "PreviewInSolutionExplorer": false
 }
