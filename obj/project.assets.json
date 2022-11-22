@@ -294,5 +294,13 @@
         "runtimeIdentifierGraphPath": "C:\\Users\\belle\\AppData\\Roaming\\.dotnet\\sdk\\6.0.102\\RuntimeIdentifierGraph.json"
       }
     }
-  }
+  },
+  "logs": [
+    {
+      "code": "Undefined",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Problem reading the cache file C:\\Users\\belle\\Documents\\SUVNET22\\C#\\Betygsatta inlämningar\\SUVRPG\\SUVRPG\\obj\\project.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
+    }
+  ]
 }
