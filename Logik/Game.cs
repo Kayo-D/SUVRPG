@@ -76,8 +76,8 @@ namespace SUVRPG
                 }
                 if (keyInput.Key == ConsoleKey.M)
                 {
-                    // SaveGameUI saveGameUI = new();
-                    // saveGameUI.OpenSaveGameUI(player,manager,engine);
+                    SaveGameUI saveGameUI = new();
+                    saveGameUI.OpenSaveGameUI(player,manager,engine);
                     mapUI.UILevelLoad(manager.levelData, manager.mapHeight, manager.mapWidth, engine.currentPlayerPosX, engine.currentPlayerPosY, player);
                 }
                 if(keyInput.Key == ConsoleKey.Q)

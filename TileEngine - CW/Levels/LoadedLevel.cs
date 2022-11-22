@@ -2,7 +2,8 @@
 
 public class LoadedLevel
 {
-    public string[,] mapData;
+    public string[,] level = new string[29,1];
+    public string mapData;
 
     public int playerStartPosY;
 
@@ -13,5 +14,4 @@ public class LoadedLevel
     public int mapWidth = 23;
 
     public int currentLevel;
-
 }
