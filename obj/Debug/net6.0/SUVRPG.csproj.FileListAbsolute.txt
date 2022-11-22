@@ -70,15 +70,19 @@ C:\Users\cw94\Desktop\Projects\SUVRPG\obj\Debug\net6.0\refint\SUVRPG.dll
 C:\Users\cw94\Desktop\Projects\SUVRPG\obj\Debug\net6.0\SUVRPG.pdb
 C:\Users\cw94\Desktop\Projects\SUVRPG\obj\Debug\net6.0\SUVRPG.genruntimeconfig.cache
 C:\Users\cw94\Desktop\Projects\SUVRPG\obj\Debug\net6.0\ref\SUVRPG.dll
-<<<<<<< HEAD
 C:\Users\Simon\Documents\SUVNET\SUVRPG\bin\Debug\net6.0\Microsoft.Win32.SystemEvents.dll
 C:\Users\Simon\Documents\SUVNET\SUVRPG\bin\Debug\net6.0\System.Drawing.Common.dll
 C:\Users\Simon\Documents\SUVNET\SUVRPG\bin\Debug\net6.0\System.Windows.Extensions.dll
 C:\Users\Simon\Documents\SUVNET\SUVRPG\bin\Debug\net6.0\runtimes\win\lib\net6.0\Microsoft.Win32.SystemEvents.dll
 C:\Users\Simon\Documents\SUVNET\SUVRPG\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Drawing.Common.dll
 C:\Users\Simon\Documents\SUVNET\SUVRPG\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Windows.Extensions.dll
-=======
 C:\Users\belle\Documents\SUVNET22\C#\Betygsatta inlämningar\SUVRPG\SUVRPG\bin\Debug\net6.0\Dapper.dll
 C:\Users\belle\Documents\SUVNET22\C#\Betygsatta inlämningar\SUVRPG\SUVRPG\bin\Debug\net6.0\MySqlConnector.dll
 C:\Users\belle\Documents\SUVNET22\C#\Betygsatta inlämningar\SUVRPG\SUVRPG\obj\Debug\net6.0\SUVRPG.csproj.CopyComplete
 >>>>>>> d2f6bb2d8801f4dcd938b03eacd602099a787db0
+C:\Users\cw94\Desktop\Skolarbeten\SUVRPG\bin\Debug\net6.0\Microsoft.Win32.SystemEvents.dll
+C:\Users\cw94\Desktop\Skolarbeten\SUVRPG\bin\Debug\net6.0\System.Drawing.Common.dll
+C:\Users\cw94\Desktop\Skolarbeten\SUVRPG\bin\Debug\net6.0\System.Windows.Extensions.dll
+C:\Users\cw94\Desktop\Skolarbeten\SUVRPG\bin\Debug\net6.0\runtimes\win\lib\net6.0\Microsoft.Win32.SystemEvents.dll
+C:\Users\cw94\Desktop\Skolarbeten\SUVRPG\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Drawing.Common.dll
+C:\Users\cw94\Desktop\Skolarbeten\SUVRPG\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Windows.Extensions.dll
