@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Simon\\Documents\\SUVNET\\SUVRPG\\SUVRPG.csproj": {}
+    "c:\\Users\\Simon\\Documents\\SUVNET\\SUVRPG\\SUVRPG.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Simon\\Documents\\SUVNET\\SUVRPG\\SUVRPG.csproj": {
+    "c:\\Users\\Simon\\Documents\\SUVNET\\SUVRPG\\SUVRPG.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Simon\\Documents\\SUVNET\\SUVRPG\\SUVRPG.csproj",
+        "projectUniqueName": "c:\\Users\\Simon\\Documents\\SUVNET\\SUVRPG\\SUVRPG.csproj",
         "projectName": "SUVRPG",
-        "projectPath": "C:\\Users\\Simon\\Documents\\SUVNET\\SUVRPG\\SUVRPG.csproj",
+        "projectPath": "c:\\Users\\Simon\\Documents\\SUVNET\\SUVRPG\\SUVRPG.csproj",
         "packagesPath": "C:\\Users\\Simon\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Simon\\Documents\\SUVNET\\SUVRPG\\obj\\",
+        "outputPath": "c:\\Users\\Simon\\Documents\\SUVNET\\SUVRPG\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Simon\\AppData\\Roaming\\NuGet\\NuGet.Config",

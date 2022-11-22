@@ -82,7 +82,8 @@ namespace SUVRPG
                 }
                 if(keyInput.Key == ConsoleKey.Q)
                 {
-                    return;
+                    Environment.Exit(0);
+                    break;
                 }
             }
         }

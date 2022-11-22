@@ -34,7 +34,7 @@ public class DB
         loadedLevel.currentLevel = mapDataList[0].currentLevel;
         loadedLevel.playerStartPosX = mapDataList[0].playerStartPosX;
         loadedLevel.playerStartPosY = mapDataList[0].playerStartPosY;
-        string[] temparray = new string[29];
+        string[] temparray = new string[30];
         temparray = mapDataList[0].mapData.Split("C");
         for (int i = 0; i < temparray.Length; i++)
         {
@@ -46,15 +46,14 @@ public class DB
     {
         List<SUVRPG.Player> playerID = Connection().Query<SUVRPG.Player>($"SELECT player.id FROM player WHERE player.name = '{playerName}'").ToList();
         string leveldatastring;
-        string[] tempArray = new string[29];
+        string[] tempArray = new string[30];
         for (int i = 0; i < leveldata.Length; i++)
         {
             string addSeperator = leveldata[i, 0].Insert(45, "C");
             tempArray[i] = addSeperator;
         }
         leveldatastring = String.Join("",tempArray);
-        Console.WriteLine(leveldatastring);
-        Connection().Query($"INSERT INTO leveldata (playerid, mapData, playerStartPosX, playerStartPosY, currentLevel) VALUES ('{playerID[0]}', '{leveldatastring}', '{engine.currentPlayerPosX}', '{engine.currentPlayerPosY}', '{currentLevel}');");
+        Connection().Query($"INSERT INTO leveldata (playerid, mapData, playerStartPosX, playerStartPosY, currentLevel) VALUES ({playerID[0].ID}, '{leveldatastring}', '{engine.currentPlayerPosX}', '{engine.currentPlayerPosY}', '{currentLevel}');");
     }
 }
 
