@@ -1,28 +1,7 @@
 {
   "format": 1,
   "restore": {
-<<<<<<< HEAD
     "C:\\Users\\belle\\Documents\\SUVNET22\\C#\\Betygsatta inlämningar\\SUVRPG\\SUVRPG\\SUVRPG.csproj": {}
-=======
-<<<<<<< HEAD
-    "C:\\Users\\Simon\\Documents\\SUVNET\\SUVRPG\\SUVRPG.csproj": {}
-  },
-  "projects": {
-    "C:\\Users\\Simon\\Documents\\SUVNET\\SUVRPG\\SUVRPG.csproj": {
-      "version": "1.0.0",
-      "restore": {
-        "projectUniqueName": "C:\\Users\\Simon\\Documents\\SUVNET\\SUVRPG\\SUVRPG.csproj",
-        "projectName": "SUVRPG",
-        "projectPath": "C:\\Users\\Simon\\Documents\\SUVNET\\SUVRPG\\SUVRPG.csproj",
-        "packagesPath": "C:\\Users\\Simon\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Simon\\Documents\\SUVNET\\SUVRPG\\obj\\",
-        "projectStyle": "PackageReference",
-        "configFilePaths": [
-          "C:\\Users\\Simon\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
-=======
-    "C:\\Users\\cw94\\Desktop\\Skolarbeten\\SUVRPG\\SUVRPG.csproj": {}
->>>>>>> e711844029857fab4e1d855f56d42fe1bc93140b
   },
   "projects": {
     "C:\\Users\\belle\\Documents\\SUVNET22\\C#\\Betygsatta inlämningar\\SUVRPG\\SUVRPG\\SUVRPG.csproj": {
@@ -35,18 +14,12 @@
         "outputPath": "C:\\Users\\belle\\Documents\\SUVNET22\\C#\\Betygsatta inlämningar\\SUVRPG\\SUVRPG\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-<<<<<<< HEAD
           "C:\\Users\\belle\\AppData\\Roaming\\NuGet\\NuGet.Config"
-=======
-          "C:\\Users\\cw94\\AppData\\Roaming\\NuGet\\NuGet.Config"
->>>>>>> a71c1359bb56f5fef72e694a93d260d507c0a891
->>>>>>> e711844029857fab4e1d855f56d42fe1bc93140b
         ],
         "originalTargetFrameworks": [
           "net6.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -93,15 +66,7 @@
               "privateAssets": "all"
             }
           },
-<<<<<<< HEAD
           "runtimeIdentifierGraphPath": "C:\\Users\\belle\\AppData\\Roaming\\.dotnet\\sdk\\6.0.102\\RuntimeIdentifierGraph.json"
-=======
-<<<<<<< HEAD
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.201\\RuntimeIdentifierGraph.json"
-=======
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.400\\RuntimeIdentifierGraph.json"
->>>>>>> a71c1359bb56f5fef72e694a93d260d507c0a891
->>>>>>> e711844029857fab4e1d855f56d42fe1bc93140b
         }
       }
     }
