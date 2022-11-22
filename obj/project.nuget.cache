@@ -1,23 +1,21 @@
 {
   "version": 2,
-<<<<<<< HEAD
   "dgSpecHash": "G/yaeGWtf9JogJgSMaqOtrlBROV/1nyI7KY8dFC7DJwQ+96AIFIT3WV6eOSBANQqAmxCHNB5SKSV55CyMVECgQ==",
-=======
-  "dgSpecHash": "ZY3KDS3pg0yb/ODeLGrlbkWAQJE3b0pEA0lm1xN7hG6hZsgOkceehJpagkSw5usmsj73DfXz0S71HQqGCzFEtg==",
->>>>>>> d2f6bb2d8801f4dcd938b03eacd602099a787db0
   "success": true,
-  "projectFilePath": "C:\\Users\\belle\\Documents\\SUVNET22\\C#\\Betygsatta inlämningar\\SUVRPG\\SUVRPG\\SUVRPG.csproj",
+  "projectFilePath": "C:\\Users\\Simon\\Documents\\SUVNET\\SUVRPG\\SUVRPG.csproj",
   "expectedPackageFiles": [
-<<<<<<< HEAD
     "C:\\Users\\Simon\\.nuget\\packages\\dapper\\2.0.123\\dapper.2.0.123.nupkg.sha512",
     "C:\\Users\\Simon\\.nuget\\packages\\microsoft.win32.systemevents\\7.0.0\\microsoft.win32.systemevents.7.0.0.nupkg.sha512",
     "C:\\Users\\Simon\\.nuget\\packages\\mysqlconnector\\2.1.13\\mysqlconnector.2.1.13.nupkg.sha512",
     "C:\\Users\\Simon\\.nuget\\packages\\system.drawing.common\\7.0.0\\system.drawing.common.7.0.0.nupkg.sha512",
     "C:\\Users\\Simon\\.nuget\\packages\\system.windows.extensions\\7.0.0\\system.windows.extensions.7.0.0.nupkg.sha512"
-=======
-    "C:\\Users\\belle\\.nuget\\packages\\dapper\\2.0.123\\dapper.2.0.123.nupkg.sha512",
-    "C:\\Users\\belle\\.nuget\\packages\\mysqlconnector\\2.1.13\\mysqlconnector.2.1.13.nupkg.sha512"
->>>>>>> d2f6bb2d8801f4dcd938b03eacd602099a787db0
   ],
-  "logs": []
+  "logs": [
+    {
+      "code": "Undefined",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Problem reading the cache file C:\\Users\\Simon\\Documents\\SUVNET\\SUVRPG\\obj\\project.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
+    }
+  ]
 }

@@ -42,6 +42,12 @@ This game was made by Christian, Isabell & Simon. Thank you for playing!
             MainMenu.Mainmenu();
             }
         }
+
+        public static void YouWon()
+        {
+            Clear();
+            WriteLine("Congratulations! You have slayed the beast and stolen the treasure!");
+        }
     }
 
 

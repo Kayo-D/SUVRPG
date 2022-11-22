@@ -6,49 +6,38 @@ using System.Threading;
 using static System.Console;
 using System.Timers;
 using System.Diagnostics;
+using Dapper;
+using MySqlConnector;
 
 
 namespace SUVRPG
 {
-    public class Highscore
+    public static class Highscore
     {
-        public int Score { get; private set; }
-        
-        public static void BeginTimer()
+        public static void TriggerHoF()
         {
-            Stopwatch stopWatch = new Stopwatch();
-            stopWatch.Start();
-            Thread.Sleep(1000);
-            stopWatch.Stop();
-
-
-            TimeSpan ts = stopWatch.Elapsed;
-            string elapsedTime = String.Format("{0:00}:{1:00}:{2:00}.{3:00}",
-                ts.Hours, ts.Minutes, ts.Seconds,
-                ts.Milliseconds / 10);
-            Console.WriteLine("RunTime " + elapsedTime);
+            
         }
         
-
         
-        // static int seconds = 0;
-
-        // public static void StartTimer()
+        // Stopwatch-kod för att sedan eventuellt kunna impletementera tidtagning. 
+        
+        // public int Score { get; private set; }
+        
+        // public static void BeginTimer()
         // {
-        //     System.Timers.Timer aTimer = new System.Timers.Timer();
-        //     aTimer.Elapsed += new ElapsedEventHandler(OnTimedEvent);
-        //     aTimer.Interval = 1000;
-        //     aTimer.Enabled = true;
+        //     Stopwatch stopWatch = new Stopwatch();
+        //     stopWatch.Start();
+        //     Thread.Sleep(1000);
+        //     stopWatch.Stop();
 
-        //     WriteLine("Press \'q\' to quit the sample.");
-        //     while (Console.Read() != 'q') ;
+
+        //     TimeSpan ts = stopWatch.Elapsed;
+        //     string elapsedTime = String.Format("{0:00}:{1:00}:{2:00}.{3:00}",
+        //         ts.Hours, ts.Minutes, ts.Seconds,
+        //         ts.Milliseconds / 10);
+        //     Console.WriteLine("RunTime " + elapsedTime);
         // }
-
-        // public static void OnTimedEvent(object source, ElapsedEventArgs e)
-        // {
-        //     seconds++;
-        // }
-
 
     }
 }
