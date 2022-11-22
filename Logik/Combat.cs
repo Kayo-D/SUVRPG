@@ -22,9 +22,9 @@ namespace SUVRPG
             Spider bigSpider = new Spider ("Bigger-Than-Average Spider", "Size do matters when it comes to hideous disgusting spiders that are staring hungrily at you.", 10, 0, ConsoleColor.DarkGreen, false);
             Minotaur youngMinotaur = new Minotaur("Young Minotaur", "A minotaur is part man and part bull. Well, this one is more part teenager, part bull. 'It's not a phase, mooooh-m.'", 6, 3, ConsoleColor.Magenta);
 
-            Spider poisonSpider = new Spider ("Poison Spider", "This one looks angry... And hungry.", 20, 2, ConsoleColor.DarkGreen, true);
-            Bandit battleScarredBandit = new Bandit ("Battle-scarred Bandit", "You see what you assume are battle scars all over his face. This one must have been in a lot of fights!", 30, 4, ConsoleColor.DarkGray);
-            Minotaur minotaurGuard = new Minotaur("Minotaur Guard", "These mythical creatures guard the treasure of the cave. Real beef cakes.", 45, 7, ConsoleColor.Red);
+            Spider poisonSpider = new Spider ("Poison Spider", "This one looks angry... And hungry.", 40, 10, ConsoleColor.DarkGreen, true);
+            Bandit battleScarredBandit = new Bandit ("Battle-scarred Bandit", "You see what you assume are battle scars all over his face. This one must have been in a lot of fights!", 60, 15, ConsoleColor.DarkGray);
+            Minotaur minotaurGuard = new Minotaur("Minotaur Guard", "These mythical creatures guard the treasure of the cave. Real beef cakes.", 70, 20, ConsoleColor.Red);
 
 
             Bandit banditLeader = new Bandit ("Bandit-Leader", "It takes a lof of strength to become the leader of such a hideous group of bandits", 100, 40, ConsoleColor.DarkYellow);
@@ -99,7 +99,6 @@ namespace SUVRPG
             }
             else
             {
-                Highscore.TriggerHoF();
                 CombatUI.YouWon();
             }
         }

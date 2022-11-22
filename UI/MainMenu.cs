@@ -22,7 +22,7 @@ namespace SUVRPG
 
             string[] options = { "NEW GAME",
             "LOAD GAME",
-            "HALL OF FAME",
+            // "HALL OF FAME",
             "QUIT"};
 
             SoundPlayer Menuloop = new SoundPlayer(@"UI\Sound\Menuloop.wav");
@@ -50,9 +50,6 @@ namespace SUVRPG
                     break;
 
                 case 2:
-                    break;
-
-                case 3:
                     Environment.Exit(0);
                     break;
             }

@@ -43,7 +43,7 @@ namespace SUVRPG
                 if (randPercent <= 50)
                 {
                     WriteLine("and it's A PERFECT HIT! \n");
-                    otherCharacter.TakeDamage(AttackDmg + bigAttack);
+                    otherCharacter.TakeDamage((AttackDmg * 2) + bigAttack);
                 }
                 else
                 {
@@ -59,7 +59,7 @@ namespace SUVRPG
 
                 WriteLine($"   You are facing a {otherCharacter.Name}! What would you like to do? \n");
                 WriteLine($"   [1] Light attack (90% chance for {2 + AttackDmg} dmg)");
-                WriteLine($"   [2] Heavy attack (50% chance for {5 + AttackDmg} dmg)");
+                WriteLine($"   [2] Heavy attack (50% chance for {5 + AttackDmg + AttackDmg} dmg)");
                 // WriteLine($"[3] Run away (And lose your chance to fight this monster)");
                 ResetColor();
                 
