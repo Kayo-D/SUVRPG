@@ -149,7 +149,7 @@ namespace SUVRPG
         }
         public void DrawShopButton()
         {
-            WriteLine("Press S to enter the shop, M to save game, Q to quit to main menu.");
+            WriteLine("Press S to enter the shop, M to save game, Q to quit the game.");
         }
         public void DrawCharacterInfo(Player player)
         {
