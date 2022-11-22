@@ -149,7 +149,7 @@ Is the loot.
                 }
             }
 
-            Game.WaitForKey();
+            CombatUI.WaitForKey();
         }
     }
 
