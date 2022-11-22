@@ -27,12 +27,12 @@ namespace SUVRPG
             Minotaur minotaurGuard = new Minotaur("Minotaur Guard", "These mythical creatures guard the treasure of the cave. Real beef cakes.", 45, 7, ConsoleColor.Red);
 
 
-            Bandit banditLeader = new Bandit ("Bandit-Leader", "It takes a lof of strength to become the leader of such a hideous group of bandits", 50, 10, ConsoleColor.DarkYellow);
-            Minotaur minotaurChampion = new Minotaur("Minotaur Champion", "The Minotaur Champion has served the Dragon Lord well and been given a special rank of Champion. No extra salary or benefits though. Some extra overtime required. They should perhaps be in touch with a muu-union.", 70, 15, ConsoleColor.DarkBlue);
-            Spider giantSpider = new Spider ("Giant freakin' Spider", "It's a huge freakin' spider and he's about to smash you with all of his eight legs", 80, 20, ConsoleColor.DarkGreen, true);
-            Dragon youngDragon = new Dragon ("Young Dragon", "When a mommy drake and daddy drake love each other very much, they hug very hard and, uhm, well, here it is.", 50, 30, ConsoleColor.DarkCyan);
+            Bandit banditLeader = new Bandit ("Bandit-Leader", "It takes a lof of strength to become the leader of such a hideous group of bandits", 100, 40, ConsoleColor.DarkYellow);
+            Minotaur minotaurChampion = new Minotaur("Minotaur Champion", "The Minotaur Champion has served the Dragon Lord well and been given a special rank of Champion. No extra salary or benefits though. Some extra overtime required. They should perhaps be in touch with a muu-union.", 140, 60, ConsoleColor.DarkBlue);
+            Spider giantSpider = new Spider ("Giant freakin' Spider", "It's a huge freakin' spider and he's about to smash you with all of his eight legs", 160, 60, ConsoleColor.DarkGreen, true);
+            Dragon youngDragon = new Dragon ("Young Dragon", "When a mommy drake and daddy drake love each other very much, they hug very hard and, uhm, well, here it is.", 150, 70, ConsoleColor.DarkCyan);
 
-            Dragon dragonLord = new Dragon ("Dragon Lord", "The guardian of the treasure. The final boss. Also known as 'OPie - the not-so-friendly dragon'", 100, 50, ConsoleColor.DarkCyan);
+            Dragon dragonLord = new Dragon ("Dragon Lord", "The guardian of the treasure. The final boss. Also known as 'OPie - the not-so-friendly dragon'", 500, 200, ConsoleColor.DarkCyan);
 
             EnemiesAtLvl1 = new List<Character>() { lostBandit, bigSpider, youngMinotaur };
             EnemiesAtLvl2 = new List<Character>() { poisonSpider, battleScarredBandit, minotaurGuard };
@@ -99,7 +99,8 @@ namespace SUVRPG
             }
             else
             {
-                CombatUI.WonBattle();
+                Highscore.TriggerHoF();
+                CombatUI.YouWon();
             }
         }
 
@@ -119,7 +120,7 @@ namespace SUVRPG
                     break;
                 }
 
-                Game.WaitForKey();
+                CombatUI.WaitForKey();
                 Clear();
                 
                 CurrentPlayer.DisplayHealthBar();
@@ -127,7 +128,7 @@ namespace SUVRPG
 
                 CurrentEnemy.Fight(CurrentPlayer);
                 
-                Game.WaitForKey();
+                CombatUI.WaitForKey();
             }
         }
     }

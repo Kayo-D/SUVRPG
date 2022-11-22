@@ -1,4 +1,5 @@
 //Made by Christian Vallvingskog
+using System.Media;
 
 namespace SUVRPG
 {
@@ -11,11 +12,24 @@ namespace SUVRPG
             Combat combat = new Combat();
             engine.ChangeTileID(manager.levelData, engine.currentPlayerPosY, engine.currentPlayerPosX, manager.mapWidth, "1");
             Combat.RunCombat(manager);
+            if (OperatingSystem.IsWindows())
+                {           
+                    SoundPlayer Caveloop = new SoundPlayer(@"UI\Sound\Caveloop.wav");
+                    Caveloop.Load();
+                    Caveloop.PlayLooping();
+                }
         }
         public void BossTileEvent(LevelManager manager, TileEngine engine, Player player)
         {
+            Combat combat = new Combat();
             engine.ChangeTileID(manager.levelData, engine.currentPlayerPosY, engine.currentPlayerPosX, manager.mapWidth, "1");
-            //combat.StartCombat(player, manager);
+            combat.BattleFinalBoss();
+                if (OperatingSystem.IsWindows())
+                {           
+                    SoundPlayer Caveloop = new SoundPlayer(@"UI\Sound\Caveloop.wav");
+                    Caveloop.Load();
+                    Caveloop.PlayLooping();
+                }
         }
         public int ExitTileEvent(int currentLevel)
         {

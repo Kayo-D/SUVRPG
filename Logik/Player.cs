@@ -18,12 +18,12 @@ namespace SUVRPG
             : base(name, characterDescription, health, attackDmg, armor, color, ArtAssets.Player)
             {
                 Armor = armor;
-                CurrentGold = 0;
+                CurrentGold = currentGold;
             }
 
             private void Attack1(Character otherCharacter)
             {
-                Write("You make a precise but light attack attack against your enemy ");
+                Write("You make a precise but light attack against your enemy ");
                 int randPercent = RandGenerator.Next(1, 101);
                 if (randPercent <= 90)
                 {
