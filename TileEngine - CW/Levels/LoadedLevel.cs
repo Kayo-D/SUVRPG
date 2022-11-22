@@ -8,9 +8,9 @@ public class LoadedLevel
 
     public int playerStartPosX;
 
-    public int mapHeight;
+    public int mapHeight = 29;
 
-    public int mapWidth;
+    public int mapWidth = 23;
 
     public int currentLevel;
 
