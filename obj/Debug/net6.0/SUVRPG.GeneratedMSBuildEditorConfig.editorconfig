@@ -8,7 +8,11 @@ build_property.PlatformNeutralAssembly =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = SUVRPG
 <<<<<<< HEAD
+build_property.ProjectDir = c:\Users\belle\Documents\SUVNET22\C#\Betygsatta inlämningar\SUVRPG\SUVRPG\
+=======
+<<<<<<< HEAD
 build_property.ProjectDir = C:\Users\Simon\Documents\SUVNET\SUVRPG\
 =======
 build_property.ProjectDir = c:\Users\cw94\Desktop\Skolarbeten\SUVRPG\
 >>>>>>> a71c1359bb56f5fef72e694a93d260d507c0a891
+>>>>>>> e711844029857fab4e1d855f56d42fe1bc93140b

@@ -18,7 +18,7 @@ namespace SUVRPG
             : base(name, characterDescription, health, attackDmg, armor, color, ArtAssets.Player)
             {
                 Armor = armor;
-                CurrentGold = 0;
+                CurrentGold = currentGold;
             }
 
             private void Attack1(Character otherCharacter)
